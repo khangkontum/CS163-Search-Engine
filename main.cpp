@@ -6,8 +6,8 @@ int main() {
 	Trie* root = new Trie;
 	Trie* stopwordsRoot = new Trie;
 	Trie* thesaurusRoot = new Trie;
-	bool check = loadData(root,stopwordsRoot,thesaurusRoot);
-	system("cls");   //clear the screen
+	bool check = loadData(root, stopwordsRoot, thesaurusRoot);
+	//system("cls");   //clear the screen
 
 	if (check)
 		cout << "Loading successfully\n\n";
@@ -15,15 +15,15 @@ int main() {
 		cout << "The system can't access to your data!\n\n";
 		exit(1);
 	}
-	
+
 
 	// searhing menu
 	cout << "Please choose one of the following queries: \n";
-	
-	cout <<  "1. AND \n2. OR \n3. Manchester-united \n4. Intitle \n5. Peanut Butter and Jam\n6. Filetype\n7. Search for a price\n8. Search hashtags\n9. Search for an exact match\n10. Search for wildcards or unknown words\n11. Search within a range of numbers\n12. Synonyms search\n0. Exit\n";
-	
+
+	cout << "1. AND \n2. OR \n3. Manchester-united \n4. Intitle \n5. Peanut Butter and Jam\n6. Filetype\n7. Search for a price\n8. Search hashtags\n9. Search for an exact match\n10. Search for wildcards or unknown words\n11. Search within a range of numbers\n12. Synonyms search\n0. Exit\n";
+
 	cout << "Your query: ";
-	int choose; 
+	int choose;
 	while (cin >> choose && choose) {
 		switch (choose)
 		{

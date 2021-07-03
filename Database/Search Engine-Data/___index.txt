@@ -8784,7 +8784,7 @@ Eat like a god on this sun-soaked Greek island.txt
 Egypt's pharaohs welcomed summer with this fabulous festival.txt
 FEEL THE RHYTHM OF COLOMBIA IN THESE 12 VIBRANT LOCATIONS.txt
 FINDING CLOTILDA.txt
-First blue feathers found on a fossilized birdư.txt
+First blue feathers found on a fossilized bird.txt
 First mammal species recognized as extinct due to climate change.txt
 Giant Panda.txt
 giraffe.txt
@@ -11217,7 +11217,7 @@ How to celebrate summer in the world's coldest city.txt
 How to stay safe from tornadoes.txt
 How whales and dolphins may be harmed by new seismic airgun approval.txt
 Iceland's tallest church was inspired by volcanoes.txt
-INSIDER'S GUIDEs CRUISING THE GALÁPAGOS.txt
+INSIDER'S GUIDEs CRUISING THE GALAPAGOS.txt
 jaguar.txt
 Kids suing governments about climate It's a global trend.txt
 King Cobra.txt
@@ -11251,7 +11251,7 @@ These are the most endangered U.S. rivers.txt
 These monkeys are 3,000 years into their own 'Stone Age'.txt
 This map shows millions of acres of lost Amazon rainforest.txt
 This Teenage Girl Made a Plastic Bag From Shrimp.txt
-This vanishing forest protects the coasts—and lives—of two countries.txt
+This vanishing forest protects the coasts-and lives-of two countries.txt
 This young nuclear engineer has a new plan for clean energy.txt
 Time-lapse shows how 337 dead whales can reshape a landscape.txt
 Vietnam Travel Guide.txt

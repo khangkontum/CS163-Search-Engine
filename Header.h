@@ -1,12 +1,12 @@
-#ifndef _myfunction_
-#define _myfunction_
+#ifndef myfunction
+#define myfunction
 
 #include<bits/stdc++.h>
 using namespace std;
 
 struct Trie {
 	Trie* child[96];  // from "33" to "128"
-	std::set<string> fileName;
+	list<string> fileName;
 	int cnt;
 	Trie() {
 		for (int i = 0; i < 96; ++i)
@@ -14,7 +14,6 @@ struct Trie {
 		cnt = 0;
 	}
 	void insert(string word, string fileName);
-	bool isExist(string word);
 };
 
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
@@ -33,4 +32,4 @@ void function_10(Trie* root);
 void function_11(Trie* root);
 void function_12(Trie* root);
 
-#endif 
+#endif myfunction
