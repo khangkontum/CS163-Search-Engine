@@ -1,8 +1,21 @@
 #include"Header.h"
+#include <bits/stdc++.h>
+using namespace std;
 
-bool loadData(Trie* root) {
+bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
+	//Load data
+
+	//Load stopwords
+
+	//Load thesaurus 
+
+
 	return false;
 }
+
+bool isStopWords(Trie* stopWordsTrie, string s) {
+}
+
 void function_1(Trie* root){
 
 }

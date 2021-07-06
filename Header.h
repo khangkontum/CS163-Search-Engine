@@ -1,15 +1,21 @@
-#ifndef myfunction
-#define myfunction
+#ifndef _myfunction_
+#define _myfunction_
 
 #include<bits/stdc++.h>
 using namespace std;
 
 struct Trie {
-	map<char, Trie*> child;
-	int cnt = 0;
+	Trie* child[128];
+	vector<string> list_file;
+	int cnt;
+	Trie() {
+		for (int i = 0; i <= 127; i++)
+			child[i] = NULL;
+		cnt = 0;
+	}
 };
 
-bool loadData(Trie* root);
+bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
 void function_1(Trie* root);
 void function_2(Trie* root);
 void function_3(Trie* root);
@@ -23,4 +29,4 @@ void function_10(Trie* root);
 void function_11(Trie* root);
 void function_12(Trie* root);
 
-#endif myfunction
+#endif 
