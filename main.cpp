@@ -3,11 +3,10 @@
 int main() {
 	// loading data
 	cout << "Data loading!";
-	Trie* dataRoot = new Trie;
-	Trie* stopwordsRoot = new Trie;
-	Trie* thesaurusRoot = new Trie;
-	bool check = loadData(dataRoot, stopwordsRoot, thesaurusRoot);
-	system("clear");
+	Trie* root = new Trie;
+	bool check = loadData(root);
+	system("cls");   //clear the screen
+
 	if (check)
 		cout << "Loading successfully\n\n";
 	else {
@@ -27,40 +26,40 @@ int main() {
 		switch (choose)
 		{
 		case 1:
-			function_1(dataRoot);
+			function_1(root);
 			break;
 		case 2:
-			function_2(dataRoot);
+			function_2(root);
 			break;
 		case 3:
-			function_3(dataRoot);
+			function_3(root);
 			break;
 		case 4:
-			function_4(dataRoot);
+			function_4(root);
 			break;
 		case 5:
-			function_5(dataRoot);
+			function_5(root);
 			break;
 		case 6:
-			function_6(dataRoot);
+			function_6(root);
 			break;
 		case 7:
-			function_7(dataRoot);
+			function_7(root);
 			break;
 		case 8:
-			function_8(dataRoot);
+			function_8(root);
 			break;
 		case 9:
-			function_9(dataRoot);
+			function_9(root);
 			break;
 		case 10:
-			function_10(dataRoot);
+			function_10(root);
 			break;
 		case 11:
-			function_11(dataRoot);
+			function_11(root);
 			break;
 		case 12:
-			function_12(dataRoot);
+			function_12(root);
 			break;
 		default:
 			break;

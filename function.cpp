@@ -1,21 +1,31 @@
 #include"Header.h"
-#include <bits/stdc++.h>
-using namespace std;
-
-bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
-	//Load data
-
-	//Load stopwords
-
-	//Load thesaurus 
-
-
-	return false;
+void Trie::insert(string word,string fileName) {
+	Trie* pCur = this;
+	for (int i = 0; i < word.length(); ++i) {
+		if(!pCur->child[word[i] - ' '])
+			pCur->child[word[i] - ' '] = new Trie();
+		pCur = pCur->child[word[i] - ' '];
+	}
+	pCur->fileName.insert(fileName);
+	pCur->cnt++;
 }
 
-bool isStopWords(Trie* stopWordsTrie, string s) {
+bool loadData(Trie* root) {
+	ifstream fin("Search Engine-Data\\___index.txt");
+	if (!fin.is_open())
+		return false;
+	while (!fin.eof()) {
+		string fileName; getline(fin,fileName,'\n');
+		ifstream fin1("Search Engine-Data\\" + fileName);
+		if (!fin1.is_open())
+			return false;
+		while (!fin1.eof()) {
+			string word; fin1 >> word;
+			root->insert(word,fileName);
+		}
+	}
+	return true;
 }
-
 void function_1(Trie* root){
 
 }
