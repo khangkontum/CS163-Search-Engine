@@ -10,7 +10,9 @@ void Trie::insert(string word,string fileName) {
 	pCur->cnt++;
 }
 
-bool loadData(Trie* root) {
+bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
+
+	// load data
 	ifstream fin("Search Engine-Data\\___index.txt");
 	if (!fin.is_open())
 		return false;
@@ -21,11 +23,21 @@ bool loadData(Trie* root) {
 			return false;
 		while (!fin1.eof()) {
 			string word; fin1 >> word;
-			root->insert(word,fileName);
+			dataRoot->insert(word,fileName);
 		}
 	}
+
+	// load stopwords
+
+	// load thesaurus
+
+
 	return true;
 }
+bool isStopWords(Trie* stopWordsTrie, string s) {
+
+}
+
 void function_1(Trie* root){
 
 }

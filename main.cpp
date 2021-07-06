@@ -4,7 +4,9 @@ int main() {
 	// loading data
 	cout << "Data loading!";
 	Trie* root = new Trie;
-	bool check = loadData(root);
+	Trie* stopwordsRoot = new Trie;
+	Trie* thesaurusRoot = new Trie;
+	bool check = loadData(root,stopwordsRoot,thesaurusRoot);
 	system("cls");   //clear the screen
 
 	if (check)

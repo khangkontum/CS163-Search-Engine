@@ -5,17 +5,20 @@
 using namespace std;
 
 struct Trie {
-	Trie* child[95];  // from "33" to "128"
+	Trie* child[96];  // from "33" to "128"
 	std::set<string> fileName;
-	int cnt = 0;
+	int cnt;
 	Trie() {
-		for (int i = 0; i < 128; ++i)
+		for (int i = 0; i < 96; ++i)
 			child[i] =nullptr;
+		cnt = 0;
 	}
 	void insert(string word, string fileName);
 };
 
-bool loadData(Trie* root);
+bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
+bool isStopWords(Trie* stopWordsTrie, string s);
+
 void function_1(Trie* root);
 void function_2(Trie* root);
 void function_3(Trie* root);
