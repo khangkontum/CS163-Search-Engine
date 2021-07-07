@@ -35,14 +35,14 @@ The first step to demystifying your electricity bill, and hopefully reducing it,
 
 "Cutting energy waste results in energy savings, but it also translates into money savings," said Kateri Callahan, president of the Alliance to Save Energy, a coalition that promotes energy efficiency.
 
-You can find a professional energy auditor to help you assess your home's energy use, potentially for free, through your electric company or the Department of Energys website. If you follow their efficiency upgrade recommendations, you could shave 5% to 30% off your energy bill. 
+You can find a professional energy auditor to help you assess your home's energy use, potentially for free, through your electric company or the Department of Energy’s website. If you follow their efficiency upgrade recommendations, you could shave 5% to 30% off your energy bill. 
 
 Free and easy lifestyle changes can add up
 Heating/Cooling
 
 Heating and cooling takes up the largest chunk of your monthly energy bill, but cutting back doesn't have to mean being uncomfortable.
 
-Callahan recommends cleaning your heating, ventilation and air conditioning (HVAC) unit every 30 days to keep the system running efficiently. If youve got clogged or dirty filters, youre just using more energy to push that air through, she said.
+Callahan recommends cleaning your heating, ventilation and air conditioning (HVAC) unit every 30 days to keep the system running efficiently. “If you’ve got clogged or dirty filters, you’re just using more energy to push that air through,” she said.
 
 Keeping the blinds open in the winter and closed in the summer can also reduce the burden on your HVAC system, she added.
 
@@ -52,7 +52,7 @@ These three steps combined can save you anywhere from $62 to $118 per year, Ener
 
 Water heaters
 
-Water heaters are typically large energy consumers and Callahan suggests lowering the temperature on your water heater from the standard 140F to 120F.
+Water heaters are typically large energy consumers and Callahan suggests lowering the temperature on your water heater from the standard 140°F to 120°F.
 
 This can reduce water heating costs by 4%-22% annually, according to the Department of Energy.
 
@@ -64,14 +64,14 @@ A typical American home has 40 products that are constantly drawing power, even 
 
 Energy vampires, like your phone charger, computer and coffeemaker, can cost the average household $100 a year, according to the Energy Deparment, and should always be unplugged when not in use.
 
-An easy way to do this and make sure it all gets done is to have a power strip, said Callahan. Power strips make it easy to unplug everything at once, and smart power strips automatically cut power to devices that are in standby mode.
+“An easy way to do this and make sure it all gets done is to have a power strip,” said Callahan. Power strips make it easy to unplug everything at once, and smart power strips automatically cut power to devices that are in standby mode.
 
 If you're diligent, you can cut your standby power consumption by 30%, the Lawrence Berkeley National Laboratory reports. 
 
 More: How to slash your electric bill by killing 'vampire' power drains
 
 
-Here are 3 ways you can save on your electricity bill, and you wont need any garlic. USA TODAY
+Here are 3 ways you can save on your electricity bill, and you won’t need any garlic. USA TODAY
 
 Discounts
 
@@ -98,15 +98,15 @@ If you're planning on upgrading your appliances, many companies and states offer
 
 Heating/cooling
 
- Seal leaks, doors and windows. Homeowners should start by buying cheap caulk and weatherstripping, Callahan says. This can reduce energy use by at 15% to 30% on your heating and cooling costs each year, the Department of Energy estimates.
+• Seal leaks, doors and windows. Homeowners should start by buying cheap caulk and weatherstripping, Callahan says. This can reduce energy use by at 15% to 30% on your heating and cooling costs each year, the Department of Energy estimates.
 
 "Those cracks and leaks can be the equivalent of a 3-foot-by-3-foot window open all the time," Callahan said.
 
-  Buy a programmable thermostat. For as little as $20, you can automatically set your thermostat back 7-10F for 8 hours a day. Doing so can save up to 10% on your heating and cooling costs, according to the Department of Energy.
+•  Buy a programmable thermostat. For as little as $20, you can automatically set your thermostat back 7°-10°F for 8 hours a day. Doing so can save up to 10% on your heating and cooling costs, according to the Department of Energy.
 
-"Thats a great way to make sure that youre not wasting energy when no ones home except the goldfish," she said. 
+"That’s a great way to make sure that you’re not wasting energy when no one’s home except the goldfish," she said. 
 
- Install or add insulation. Insulation can cut your costs but estimated savings vary depending on your location and fuel type.
+• Install or add insulation. Insulation can cut your costs but estimated savings vary depending on your location and fuel type.
 
 "There are many utility programs out there that will give you a pretty good rebate if you add insulation to your home," Walker said. 
 
@@ -118,7 +118,7 @@ Replacing your five most used lights with Energy Star approved LED bulbs can sav
 
 Appliances
 
-"Don't throw out good equipment, but if youre in the market or the systems are getting old, buy the most efficient items," said Callahan.
+"Don't throw out good equipment, but if you’re in the market or the systems are getting old, buy the most efficient items," said Callahan.
 
 Energy efficient appliances sometimes cost more upfront, but can save you money in the long run.
 

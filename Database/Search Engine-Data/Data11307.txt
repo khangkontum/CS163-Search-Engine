@@ -1,19 +1,19 @@
 June 12, 2019
-NASA's Mars 2020 Will Blaze a Trail  for Humans
+NASA's Mars 2020 Will Blaze a Trail — for Humans
 This artist's concept depicts astronauts and human habitats on Mars
 This artist's concept depicts astronauts and human habitats on Mars. NASA's Mars 2020 rover will carry a number of technologies that could make Mars safer and easier to explore for humans.
 Credits: NASA
 Full image and caption
 When a female astronaut first sets foot on the Moon in 2024, the historic moment will represent a step toward another NASA first: eventually putting humans on Mars. NASA's latest robotic mission to the Red Planet, Mars 2020, aims to help future astronauts brave that inhospitable landscape.
 
-While the science goal of the Mars 2020 rover is to look for signs of ancient life  it will be the first spacecraft to collect samples of the Martian surface, caching them in tubes that could be returned to Earth on a future mission  the vehicle also includes technology that paves the way for human exploration of Mars.
+While the science goal of the Mars 2020 rover is to look for signs of ancient life — it will be the first spacecraft to collect samples of the Martian surface, caching them in tubes that could be returned to Earth on a future mission — the vehicle also includes technology that paves the way for human exploration of Mars.
 
 
-Crazy Engineering explores a technology demonstration riding aboard NASAs Mars 2020 rover that's straight out of science fiction novels like "The Martian." It's an oxygen generator called MOXIE, designed to convert carbon dioxide  which constitutes about 96% of the Martian atmosphere  into breathable oxygen.
+Crazy Engineering explores a technology demonstration riding aboard NASA’s Mars 2020 rover that's straight out of science fiction novels like "The Martian." It's an oxygen generator called MOXIE, designed to convert carbon dioxide — which constitutes about 96% of the Martian atmosphere — into breathable oxygen.
 The atmosphere on Mars is mostly carbon dioxide and extremely thin (about 100 times less dense than Earth's), with no breathable oxygen. There's no water on the surface to drink, either. The landscape is freezing, with no protection from the Sun's radiation or from passing dust storms. The keys to survival will be technology, research and testing.
 
-Members of NASAs Mars 2020 project install the Mars Oxygen In-Situ Resource Utilization Experiment 
-Members of NASAs Mars 2020 project install the Mars Oxygen In-Situ Resource Utilization Experiment (MOXIE) into the chassis of NASAs next Mars rover. MOXIE will demonstrate a way that future explorers might produce oxygen from the Martian atmosphere for propellant and for breathing.
+Members of NASA’s Mars 2020 project install the Mars Oxygen In-Situ Resource Utilization Experiment 
+Members of NASA’s Mars 2020 project install the Mars Oxygen In-Situ Resource Utilization Experiment (MOXIE) into the chassis of NASA’s next Mars rover. MOXIE will demonstrate a way that future explorers might produce oxygen from the Martian atmosphere for propellant and for breathing.
 Credits: NASA/JPL-Caltech
 Full image and caption
 Mars 2020 will help on all those fronts. When it launches in July of 2020, the spacecraft will carry the latest scientific and engineering tools, which are coming together as the rover is built at NASA's Jet Propulsion Laboratory in Pasadena, California. Here's a closer look.
@@ -34,7 +34,7 @@ Terrain Relative Navigation allowed the 2020 team to select a landing site, Jeze
 
 Oxygen
 
-Living on Mars will require a steady supply of oxygen, which would be costly to transport from Earth in the necessary volumes. A cube-shaped device called the Mars Oxygen In-Situ Resource Utilization Experiment (MOXIE) is exploring a space-saving alternative that converts carbon dioxide  which constitutes about 96% of the Martian atmosphere  into oxygen. Although MOXIE is a small-scale demonstration, the hope is that its technology could evolve into bigger and more efficient oxygen generators in the future. Those would allow astronauts to create their own breathable air and would provide oxygen to burn rocket fuel needed to return humans to the Earth.
+Living on Mars will require a steady supply of oxygen, which would be costly to transport from Earth in the necessary volumes. A cube-shaped device called the Mars Oxygen In-Situ Resource Utilization Experiment (MOXIE) is exploring a space-saving alternative that converts carbon dioxide — which constitutes about 96% of the Martian atmosphere — into oxygen. Although MOXIE is a small-scale demonstration, the hope is that its technology could evolve into bigger and more efficient oxygen generators in the future. Those would allow astronauts to create their own breathable air and would provide oxygen to burn rocket fuel needed to return humans to the Earth.
 
 More importantly, MOXIE's descendants would save precious space on the first crewed vehicle to Mars. Not only would that leave more room for supplies, it could also reduce the cost and difficulty of getting from Earth to Mars.
 

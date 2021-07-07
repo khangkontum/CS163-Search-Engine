@@ -8,7 +8,7 @@ Rocket Ranch podcast cover illustration
 
 Joshua Santora: You might credit some modern technology to NASA, but have you ever wondered how that technology got from use in space exploration to you. And do you think you could you go an entire day without using NASA technology? Next, on the Rocket Ranch.
 
-Dr. Phil Metzger: These are spacecraft that can keep on going forever and ever in space, and they will open up the resources of the solar system to humanity so we dont have just one planet any more.
+Dr. Phil Metzger: These are spacecraft that can keep on going forever and ever in space, and they will open up the resources of the solar system to humanity so we don’t have just one planet any more.
 
 Launch Countdown Sequence: EGS Program Chief Engineer, verify no constraints to launch.
 
@@ -24,11 +24,11 @@ Now passing through max q, maximum dynamic pressure.
 
 Welcome to space.
 
-Joshua Santora: NASA has a reputation for creating history changing technology, and much of that technology is available to you right now. One of our secrets to success is that we arent developing all of this by ourselves. Were leveraging industry and students to make innovative leaps. This is done primarily through our small business innovative research and small business technology transfer research programs.
+Joshua Santora: NASA has a reputation for creating history changing technology, and much of that technology is available to you right now. One of our secrets to success is that we aren’t developing all of this by ourselves. We’re leveraging industry and students to make innovative leaps. This is done primarily through our small business innovative research and small business technology transfer research programs.
 
-But before we get going, we want to make sure you know wed love to hear your questions. Well tackle one each show and you might even inspire a whole episode. Tweet us using hashtag rocketranch.
+But before we get going, we want to make sure you know we’d love to hear your questions. We’ll tackle one each show and you might even inspire a whole episode. Tweet us using hashtag rocketranch.
 
-Today were going to talk with Dr Phil Metzger, who works for the University of Central Florida in partnership with NASA, about his World Is Not Enough robotic spacecraft. But first, we caught up with Mike Vinje, the Small Business Technology Manager with NASAs Kennedy Space Center who helped us understand how the foundation of our collaborative programs work.
+Today we’re going to talk with Dr Phil Metzger, who works for the University of Central Florida in partnership with NASA, about his World Is Not Enough robotic spacecraft. But first, we caught up with Mike Vinje, the Small Business Technology Manager with NASA’s Kennedy Space Center who helped us understand how the foundation of our collaborative programs work.
 
 All right. I am in the booth now with Mike Vinje. Mike, thanks for being here today.
 
@@ -64,7 +64,7 @@ And many times, there's that sort of incremental progress that can really make a
 
 For those who have been following the progress that we've had on the International Space Station, a few years ago, we had a really remarkable moment where, for the first time, humans grew their own crop in space, and were able to eat that crop.
 
-[Soundbite]: On August 10, astronauts on the International Space Station sampled their first space-grown salad and pronounced it, good. They were treated to freshly-harvested red romaine lettuce grown in the VEGGIE plant growth chamber  a special structure designed to make gardens flourish in weightlessness.
+[Soundbite]: On August 10, astronauts on the International Space Station sampled their first space-grown salad and pronounced it, “good”. They were treated to freshly-harvested red romaine lettuce grown in the VEGGIE plant growth chamber – a special structure designed to make gardens flourish in weightlessness.
 
 Joshua Santora: Which is awesome.
 
@@ -88,7 +88,7 @@ Mike Vinje: And although we did have some prototype systems, we found out quickl
 
 And that ended up creating a need that we realized to have some sort of watering system that didn't rely on gravity.
 
-Scott Kelly: Hi, Scott Kelly onboard the International Space Station. I wanna go and check on my flowers I am growing here in the Columbus module. Kind of nice to have some flowers up here. You dont see much that is alive and growing besides the six of us here. 
+Scott Kelly: Hi, Scott Kelly onboard the International Space Station. I wanna go and check on my flowers I am growing here in the Columbus module. Kind of nice to have some flowers up here. You don’t see much that is alive and growing besides the six of us here. 
 
 So, there was an example of the type of technology call that went out, and so people across other agricultural industries, who had never thought that they were gonna have a need to talk or an opportunity to talk to NASA suddenly found themselves to be right in the area of discussion.
 
@@ -118,7 +118,7 @@ Mike Vinje: Sure. This particular company, they were able to essentially produce
 
 That's about the best way to describe it.
 
-Joshua Santora: Sounds cool, right? Now heres Dr. Phil Metzger to talk more about it.
+Joshua Santora: Sounds cool, right? Now here’s Dr. Phil Metzger to talk more about it.
 
 All right.
 
@@ -260,7 +260,7 @@ Like, how do we know this isn't gonna happen?
 
 Dr. Phil Metzger: Well, it definitely can happen.
 
-And when we devised this project, our thinking was that, "We will send swarms of these out into space.
+And when we devised this project, our thinking was that, "We will send swarms of these out into space.”
 
 They can be made very inexpensively using student teams, using off-the-shelf CubeSat hardware, 3-D printing the custom components.
 
@@ -710,9 +710,9 @@ So thank you for being with me today.
 
 Dr. Phil Metzger: Thank you, Josh.
 
-Joshua Santora: As promised, we wanted to answer a question from a listener. Cassashine asks, What is the most exciting thing to look forward to regarding SpaceX and private companies also being about to travel to outer space?
+Joshua Santora: As promised, we wanted to answer a question from a listener. Cassashine asks, “What is the most exciting thing to look forward to regarding SpaceX and private companies also being about to travel to outer space?”
 
-So you may or may not know, but part of NASAs mission is to expand commercial space. So for any company that gets into that game of taking humans into space thats a huge win for NASA. And we really see that as a benefit for all mankind because the more companies that enter the field, the more competition there is and so that actually will drive costs down and make commercial space more accessible for most people. So, over time, the cost of flying into space will take a huge plummet and thats awesome because then everyone will get a chance to hopefully some day vacation in space, visit the moon or even further than that. So were excited for all these commercial companies and a growing field.
+So you may or may not know, but part of NASA’s mission is to expand commercial space. So for any company that gets into that game of taking humans into space that’s a huge win for NASA. And we really see that as a benefit for all mankind because the more companies that enter the field, the more competition there is and so that actually will drive costs down and make commercial space more accessible for most people. So, over time, the cost of flying into space will take a huge plummet and that’s awesome because then everyone will get a chance to hopefully some day vacation in space, visit the moon or even further than that. So we’re excited for all these commercial companies and a growing field.
 
 [Sound Effect]
 
@@ -840,13 +840,13 @@ Thanks for joining me.
 
 Mike Vinje: Thank you.
 
-Joshua Santora: Im Joshua Santora, and thats our show. Thanks for stoppin by the rocket ranch. And special thanks to our guests Mike Vinje and Dr. Phil Metzger.  To learn more about SBIR and STTR visit sbir.nasa.gov.
+Joshua Santora: I’m Joshua Santora, and that’s our show. Thanks for stoppin’ by the rocket ranch. And special thanks to our guests Mike Vinje and Dr. Phil Metzger.  To learn more about SBIR and STTR visit sbir.nasa.gov.
 
 To learn more about how NASA technology benefits life on earth, check out the 2019 NASA Spinoff magazine, which is out now, at spinoff.nasa.gov.
 
-And to learn more about everything going on at the Kennedy Space Center, go to nasa.gov/kennedy. Check out NASAs other podcasts to learn more about whats happening at all of our centers at nasa.gov/podcasts.
+And to learn more about everything going on at the Kennedy Space Center, go to nasa.gov/kennedy. Check out NASA’s other podcasts to learn more about what’s happening at all of our centers at nasa.gov/podcasts.
 
-A special shout-out to our producer, John Sackman, our soundman Lorne Mathre, editor Michelle Stone, and our production manager, Leejay Lockhart. And remember: on the rocket ranch even the sky isnt the limit.
+A special shout-out to our producer, John Sackman, our soundman Lorne Mathre, editor Michelle Stone, and our production manager, Leejay Lockhart. And remember: on the rocket ranch… even the sky isn’t the limit.
 
 Last Updated: April 6, 2019
 

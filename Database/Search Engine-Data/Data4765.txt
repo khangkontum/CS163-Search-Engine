@@ -3,7 +3,7 @@ The iPhone's new dark mode: Why you should care
 Dark mode is finally coming to iPhone.
 The new feature announced at Apple's annual developers conference WWDC on Monday is one of the most anticipated new tools coming to iOS 13.
 On stage at the press conference, an Apple (AAPL) representative previewed what the setting will look like on various apps, from Apple Music to Photos and News. It will be available on iPhones via an app with an owl icon and will mostly likely debut this fall. (Dark mode on Mac launched last year).
-Not surprisingly, the mode is  well, dark. So what's the big deal?
+Not surprisingly, the mode is — well, dark. So what's the big deal?
 Ultimately, some experts say it's easier on the eyes and could even save battery power. Here's what to expect.
 How it'll look
 True to its name, dark mode embraces a darker color scheme and enables a black background on the iPhone. It also incorporates a grey keyboard and icons that are meant to be less stark than brighter or white backgrounds.

@@ -1,9 +1,9 @@
 https://www.businessinsider.com/florida-city-paid-600k-hackers-shows-us-unprepared-for-threat-2019-6
 
-A Florida city paid a $600,000 bitcoin ransom to hackers who took over its computers  and it's a massive alarm bell for the rest of the US
-Sinad Baker 12m 
+A Florida city paid a $600,000 bitcoin ransom to hackers who took over its computers — and it's a massive alarm bell for the rest of the US
+Sinéad Baker 12m 
 
-A Florida city's council voted to pay a ransom of $600,000 in Bitcoin to hackers that targeted its computer systems  and the payout is a sign of how unprepared much of the US is to deal with a coming wave of cyber attacks. 
+A Florida city's council voted to pay a ransom of $600,000 in Bitcoin to hackers that targeted its computer systems — and the payout is a sign of how unprepared much of the US is to deal with a coming wave of cyber attacks. 
 The city council of Riviera Beach, 50 miles north of Fort Lauderdale, voted on Monday to meet the demands of their hackers in the hope of getting back their compromised data, CBS News reported. 
 According to The Palm Beach Post, the attack began on May 29, when a employee from the police department opened an email attachment that contained malware. 
 The software quickly spread through the city's computer systems, affecting its email system and even the 911 dispatch operations. 
@@ -21,7 +21,7 @@ Albany in New York, San Diego in California, Sarasota in Florida, and a Los Ange
 Tyler Moore, a University of Tulsa cybersecurity professor, told The Guardian in June that "attackers have found a playbook that is working." They continue to target smaller governments until they find some that are vulnerable and are willing to pay. 
 The US Department of Security warned in 2018 that governments around the US were being hit by malware that is "among the most costly and destructive." 
 Small-scale attacks like these, while damaging themselves, could also be a precursor to something larger. 
-Last month, Business Insider published an extensive feature describing how a large-scale cyber attack  particularly one targeted at the electricity grid  could cripple the US. 
+Last month, Business Insider published an extensive feature describing how a large-scale cyber attack — particularly one targeted at the electricity grid — could cripple the US. 
 Some experts believe that US cyber-defenses will continue to be ignored until an attack so catastrophic that people are forced to take notice. 
 James Andrew Lewis, a senior vice president and technology director at the Center for Strategic and International Studies, told Business Insider: "I'm often asked: How many people have died in a cyberattack? Zero. 
 "Maybe that's the threshold. People underappreciate the effects that aren't immediately visible to them." 

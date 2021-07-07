@@ -3,7 +3,7 @@ The research project "The Social Costs of incarceration" is the largest study of
 
 They have done this to measure the effect of what happens when the criminals have received different penalties for the same offense because they randomly met different judges in court with different leniency towards incarcerating. In other words: if a judge incarcerates differently for the same offense, what will be the consequences for the offender in the long term?
 
-"The results show that the Norwegian prison model with extensive use of labour training while serving time, gives surprisingly good results," says Professor Katrine Lken at the Department of Economics, University of Bergen (UiB), who led the research project.
+"The results show that the Norwegian prison model with extensive use of labour training while serving time, gives surprisingly good results," says Professor Katrine Løken at the Department of Economics, University of Bergen (UiB), who led the research project.
 
 The study shows:
 
@@ -17,17 +17,17 @@ The effect of imprisonment on a criminal path is not well known. In Western coun
 
 If rehabilitation programmes in prison work, is your opinion that we should send more offenders to jail?
 
-"Not necessarily. Work is the key to get out of a criminal pattern. We see that labour-programmes in prison give people opportunities, while those offenders that are not sentenced to prison, are more difficult to follow up," says Lken, adding:
+"Not necessarily. Work is the key to get out of a criminal pattern. We see that labour-programmes in prison give people opportunities, while those offenders that are not sentenced to prison, are more difficult to follow up," says Løken, adding:
 
 "A relevant question is whether we should aim for full package of job-training outside prison. But research shows that work training outside of prison is more difficult to enforce. It appears that a certain element of coercion is needed to get offenders on a new track."
 
-Katrine Lken stresses that the research does not take a stand on the principle of imprisonment, but simply says something about how prison is perceived for the individual, and shows the effects of different sentencing.
+Katrine Løken stresses that the research does not take a stand on the principle of imprisonment, but simply says something about how prison is perceived for the individual, and shows the effects of different sentencing.
 
 Opposite results in the US
 
 The idea for the project came after researchers heard about a couple of American studies of imprisonment with similar research method. In one of the newer US studies,from Texas, they find however that time served in prison leads to relapse into crime and exclusion from working life. The Norwegian researchers were curious if they would find the same tendencies in Norway.
 
-"But the main reason why we thought the area could also be interesting to study in Norway is the unique data sets that exist here. While the US study was only conducted in one particular state in the US, we could get a total overview of all convicts in Norway over a long time period," says Lken.
+"But the main reason why we thought the area could also be interesting to study in Norway is the unique data sets that exist here. While the US study was only conducted in one particular state in the US, we could get a total overview of all convicts in Norway over a long time period," says Løken.
 
 Unique Norwegian registry
 
@@ -35,7 +35,7 @@ In Norway there are data for the whole population from Statistics Norway (SSB). 
 
 The researchers intertwined these datasets against the Norwegian legal data base "Lovdata" and could thus identify how different judges sentenced the same offense differently. Then they measured the effect of the prison sentence and whether it was conditional or unconditional, and saw how this influenced future criminal behaviour and attachment to the labour market.
 
-"By focusing on the direct impact of a judge's sentencing, we ended up with a better set of data, which told us much more about the effect of prison than most previous studies have been able to," says Lken.
+"By focusing on the direct impact of a judge's sentencing, we ended up with a better set of data, which told us much more about the effect of prison than most previous studies have been able to," says Løken.
 
 FACTS: The Social Costs of Incarceration
 
@@ -51,4 +51,4 @@ By comparing offenders who had committed the same type of crime, but who were se
 
 The number of inmates in prisons in Western countries has risen sharply over the last 30 years. In the US, the number has increased from 220 per 100,000 in 1980 to 700 per 100,000 in 2012. In Western Europe, the number of inmates increased from 62 per 100,000 in 1980 to 112 in 2010.
 
-Katrine Lken is one of four researchers behind the article "Incarceration, Recidivism and Employment". The other three are Gordon Dahl from UC San Diego and Magne Mogstad and Manudeep Bhullar, both from the University of Chicago.
+Katrine Løken is one of four researchers behind the article "Incarceration, Recidivism and Employment". The other three are Gordon Dahl from UC San Diego and Magne Mogstad and Manudeep Bhullar, both from the University of Chicago.

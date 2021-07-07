@@ -1,5 +1,4 @@
-https://phys.org/news/2019-06-stars-photons-revolutionize-space-flight.html
-
+https://phys.org/news/2019-06-stars-photons-revolutionize-space-flight.html
 
 June 20, 2019 
 Sailing among the stars: how photons could revolutionize space flight
@@ -7,7 +6,7 @@ by Ivan Couronne
 
 A few days from now, a SpaceX Falcon Heavy rocket will lift off from Florida, carrying a satellite the size of a loaf of bread with nothing to power it but a huge polyester "solar sail." 
 It's been the stuff of scientists' dreams for decades but has only very recently become a reality.
-The idea might sounds crazy: propelling a craft through the vacuum of space with no engine, no fuel, and no solar panels, but instead harnessing the momentum of packets of light energy known as photonsin this case from our Sun.
+The idea might sounds crazy: propelling a craft through the vacuum of space with no engine, no fuel, and no solar panels, but instead harnessing the momentum of packets of light energy known as photons—in this case from our Sun.
 The spacecraft to be launched on Monday, called LightSail 2, was developed by the Planetary Society, a US organization that promotes space exploration which was co-founded by the legendary astronomer Carl Sagan in 1980.
 But the idea itself has been around for a lot longer than that.
 "In the 1600s, Johannes Kepler talked about sailing among the stars," Bill Nye, the chief executive of the Planetary Society, told AFP. 
@@ -17,7 +16,7 @@ It's essentially a large square of very thin film (less than the width of a huma
 It has an area of 32 square meters and is made from Mylar, a brand of polyester that has been on the market since the 1950s.
 As photons bounce off the sail, they transfer their momentum in the opposite direction to the bouncing light.
 "The bigger and shinier and lower mass the spacecraft, the more of a push it gets," explains Nye.
-The thrust provided by these photons is tinybut it's also unlimited. "Once you're in orbit, you never run out of fuel," he said.
+The thrust provided by these photons is tiny—but it's also unlimited. "Once you're in orbit, you never run out of fuel," he said.
 Japan's space agency launched a solar sail in 2010, dubbed Ikaros, but others haven't been able to fully test the concept.
 "It's a romantic idea whose time has finally come," said Nye. "We hope this technology catches on."
 
