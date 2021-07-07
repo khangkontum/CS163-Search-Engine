@@ -10,7 +10,7 @@ Contents
 About the Game
 Viridi is most simply described as a plant growing simulator, and stretches the definition of what would traditionally be considered a game. It was designed as an escape from the bustle of everyday life, and rewards players for their persistence in caring for a pot of succulents primarily through the satisfaction of a job-well-done -- though there are achievements to record your accomplishments as well. The official description reads:
 
-Åg	Viridi is a meditative potted plant app for both desktop (PC/OSX) and mobile (Android/iOS). Nurture a small pot of succulents that grow in real time. Viridi is a safe haven, a place you can return to for a moment of peace and quiet whenever you need it.	?
+g	Viridi is a meditative potted plant app for both desktop (PC/OSX) and mobile (Android/iOS). Nurture a small pot of succulents that grow in real time. Viridi is a safe haven, a place you can return to for a moment of peace and quiet whenever you need it.	?
 It is based around a free-to-play model, wherein players pay absolutely nothing to download, install, and play the game. What you get for free is a single pot, the choice between three starter packs of plants (each containing 10 plants), one free seed per week, and the ability to earn the full range of achievements with enough patience.
 
 Paid content comes in the form of additional seeds beyond your starter pack and weekly freebies, as well as additional environments such as the Grove. Seeds vary in price from $0.09 to $0.39, and the additional environments are between $2.99 and $4.99.

@@ -10,7 +10,7 @@ Huawei will only be able to use the public version of Android and will not be ab
 Google said consumers who already own Huawei smartphones will be largely unaffected for now.
 "Google Play and the security protections from Google Play Protect will continue to function on existing Huawei devices," the spokesperson added, without providing further details.
 The ban threatens Huawei's supply chain and could delay the rollout of 5G services around the world. But the most immediate headache for Huawei is what the decision means for future smartphone sales.
-Most of Google's most popular products — like Gmail, YouTube and Google Maps — are banned in China, where Huawei offers domestic alternatives like Tencent's (TCEHY) WeChat and Baidu (BIDU) Maps.
+Most of Google's most popular products  like Gmail, YouTube and Google Maps  are banned in China, where Huawei offers domestic alternatives like Tencent's (TCEHY) WeChat and Baidu (BIDU) Maps.
 But the company is hugely dependent on countries other than China. Roughly half its smartphone sales last year were made outside China, according to research firms Canalys and IDC.
 Huawei said it is "examining the implications from the US actions for consumers," adding that it will continue to provide "security updates and after sales services" for all existing smartphones and tablets, including its Honor budget brand.
 China's response: 'Wait and see'
@@ -22,7 +22,7 @@ Beijing has repeatedly criticized the US-led campaign against Huawei, and called
 "In terms of what measures either Chinese companies or Chinese government would take, please wait and see," he said.
 Killing Huawei outside China?
 Being cut off from the Google ecosystem would be a huge blow to Huawei's ambitions to overtake Samsung (SSNLF) as the world's biggest smartphone maker.
-The consumer business — which includes smartphones, laptops, tablets and wearable devices like smart watches — was the biggest contributor to Huawei's earnings last year. The division made nearly 349 billion yuan ($50 billion) in 2018, accounting for more than 45% of revenue.
+The consumer business  which includes smartphones, laptops, tablets and wearable devices like smart watches  was the biggest contributor to Huawei's earnings last year. The division made nearly 349 billion yuan ($50 billion) in 2018, accounting for more than 45% of revenue.
 For the millions of users outside of China, being cut off from Google's apps and services "kills the attractiveness of a Huawei phone," said IDC analyst Bryan Ma.
 "It kills the usability of a Huawei phone outside of China, thus rendering them dead in the water," he added.
 Theoretically, Huawei can try to win over consumers with its competitive hardware and innovation, and then convince them to download Google apps after they buy a Huawei phone, said Nicole Peng, an analyst with Canalys.

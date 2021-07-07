@@ -36,4 +36,4 @@ Materials provided by Technical University of Munich (TUM). Note: Content may be
 
 Journal Reference:
 
-Christian Stoll, Lena Klaaßen, Ulrich Gallersdörfer. The Carbon Footprint of Bitcoin. Joule, 2019; DOI: 10.1016/j.joule.2019.05.012
+Christian Stoll, Lena Klaaen, Ulrich Gallersdrfer. The Carbon Footprint of Bitcoin. Joule, 2019; DOI: 10.1016/j.joule.2019.05.012

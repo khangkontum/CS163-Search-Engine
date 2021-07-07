@@ -45,7 +45,7 @@ Right after the banning phase, the picking phase begins.
 Teams have up to 25 seconds to pick a hero. If the timer expires, each player that hasn't selected a hero loses 2 gold per second. The selection will stay on this team until a hero is picked.
 Once a selection is made, it immediately switches to the other team to pick.
 Initial starting team is random, but known at the start of the strategy period.
-If a team has not picked and continued losing gold for more than 30 seconds, a player that hasn’t picked is assigned a random hero and the turn resumes to the other team.
+If a team has not picked and continued losing gold for more than 30 seconds, a player that hasnt picked is assigned a random hero and the turn resumes to the other team.
 If one player disconnects in this stage before picking a hero, turns continue and other players are able to spawn after 30 seconds of his turn to pick. That player is assigned a random hero upon their reconnect.
 If a player does not enter battle with his hero until after the 0:00 mark, that player's gold is removed and distrubited to all of the players on his team. Similar to if he had abandoned, but it does not count as an abandon for the sake of the game being safe to leave.
 Randoming: Players can choose to random a hero from a pool of 12 daily heroes.

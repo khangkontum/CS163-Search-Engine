@@ -4,7 +4,7 @@ Jupiter
 Scientists used red, blue and yellow to infuse this infrared image of Jupiter's atmosphere (red and yellow indicate the hotter regions), which was recorded by the Cooled Mid-Infrared Camera and Spectrograph (COMICS) at the Subaru Telescope on the summit of Mauna Kea, Hawaii on Jan. 12, 2017.
 Credits: NAOJ and NASA/JPL-Caltech
 Full image and caption
-New Earth-based telescope observations show that auroras at Jupiter's poles are heating the planet's atmosphere to a greater depth than previously thought — and that it is a rapid response to the solar wind.
+New Earth-based telescope observations show that auroras at Jupiter's poles are heating the planet's atmosphere to a greater depth than previously thought  and that it is a rapid response to the solar wind.
 
 "The solar wind impact at Jupiter is an extreme example of space weather," said James Sinclair of NASA's Jet Propulsion Laboratory in Pasadena, California, who led new research published April 8 in Nature Astronomy. "We're seeing the solar wind having an effect deeper than is normally seen."
 
@@ -16,11 +16,11 @@ Credits: NAOJ and NASA/JPL-Caltech
 Full image and caption
 Understanding how the Sun's constant outpouring of solar wind interacts with planetary environments is key to better understanding the very nature of how planets and their atmospheres evolve.
 
-"What is startling about the results is that we were able to associate for the first time the variations in solar wind and the response in the stratosphere — and that the response to these variations is so quick for such a large area," said JPL's Glenn Orton, co-author and part of the observing team.
+"What is startling about the results is that we were able to associate for the first time the variations in solar wind and the response in the stratosphere  and that the response to these variations is so quick for such a large area," said JPL's Glenn Orton, co-author and part of the observing team.
 
 Within a day of the solar wind hitting Jupiter, the chemistry in its atmosphere changed and its temperature rose, the team found. An infrared image captured during their observing campaign in January, February and May of 2017 clearly shows hot spots near the poles, where Jupiter's auroras are. The scientists based their findings on observations by the Subaru Telescope, atop the summit of Mauna Kea in Hawaii, which is operated by the National Astronomical Observatory of Japan.
 
-The telescope's Cooled Mid-Infrared Camera and Spectograph (COMICS) recorded thermal images — which capture areas of higher or lower temperatures — of Jupiter's stratosphere. 
+The telescope's Cooled Mid-Infrared Camera and Spectograph (COMICS) recorded thermal images  which capture areas of higher or lower temperatures  of Jupiter's stratosphere. 
 
 "Such heating and chemical reactions may tell us something about other planets with harsh environments, and even early Earth," said Yasumasa Kasaba of Tohoku University, who also worked on the observing team.
 

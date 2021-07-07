@@ -1,7 +1,7 @@
 Dota Underlords
 
 June 13, 2019 - Dota Team
-A few weeks ago we posted about our love of Auto Chess and how we were working on our own standalone version of it. In that same post we promised we would share information about the game soon. As it turns out, “soon” is today.
+A few weeks ago we posted about our love of Auto Chess and how we were working on our own standalone version of it. In that same post we promised we would share information about the game soon. As it turns out, soon is today.
  
 Dota Underlords
 
@@ -27,7 +27,7 @@ Because the game is in active development, both the Preview and Open Beta have o
 
 BETA FEEDBACK
 
-We're sharing Dota Underlords fairly early in development. And while we intend to constantly be updating the game and adding features throughout the Beta Season, your feedback is critical to help the team know what issues are important to you. On the main screen we've added a ‘Submit Feedback' button to the game. Feel free to wear it out. Tell us what you love, and tell us what could be better. We welcome it all.
+We're sharing Dota Underlords fairly early in development. And while we intend to constantly be updating the game and adding features throughout the Beta Season, your feedback is critical to help the team know what issues are important to you. On the main screen we've added a Submit Feedback' button to the game. Feel free to wear it out. Tell us what you love, and tell us what could be better. We welcome it all.
 
 See you in the game,
 The Underlords Team

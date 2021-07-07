@@ -6,7 +6,7 @@ Pilots claim that active cell phones could interfere with their navigation equip
 But the real reason airlines in the U.S. make you put your phone on "Airplane Mode" is because of the Federal Communications Commission.
 FCC regulations ban the use of cell phones on planes in order to "protect against radio interference to cell phone networks on the ground." Meaning at 40,000 feet in the air, active cell phones would be picking up service from multiple cell towers on the ground. This could crowd the networks on the ground and disrupt service.
 Some international airlines have cell phone receivers installed on select planes. So passengers on certain flights can call or text in the air. You can also connect to Wi-Fi on a lot of domestic flights. So you can surf the web and send messages. But most airlines restrict passengers from making calls over in-flight Wi-Fi.
-"Cell phone and Voice-over Internet Protocol (VOIP) services are not available with inflight Wi-Fi." — American Airlines
-"For the safety and comfort of our guests, VoIP and Video Chat are also prohibited." — Virgin America
-"Voice and video calls are not permitted." — United Airlines
+"Cell phone and Voice-over Internet Protocol (VOIP) services are not available with inflight Wi-Fi."  American Airlines
+"For the safety and comfort of our guests, VoIP and Video Chat are also prohibited."  Virgin America
+"Voice and video calls are not permitted."  United Airlines
 But who makes phone calls these days anyway?

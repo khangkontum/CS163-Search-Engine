@@ -75,7 +75,7 @@ Choice Comedy Movie
 "Instant Family"
 "Isn't It Romantic"
 "Little"
-"Pokémon Detective Pikachu"
+"Pokmon Detective Pikachu"
 "The Perfect Date"
 Choice Comedy Movie Actor
 Henry Golding -- "Crazy Rich Asians"
@@ -83,7 +83,7 @@ Kevin Hart -- "Night School"
 Liam Hemsworth -- "Isn't It Romantic"
 Mark Wahlberg -- "Instant Family"
 Noah Centineo -- "The Perfect Date"
-Ryan Reynolds -- "Pokémon Detective Pikachu"
+Ryan Reynolds -- "Pokmon Detective Pikachu"
 Choice Comedy Movie Actress
 Awkwafina -- "Crazy Rich Asians"
 Constance Wu -- "Crazy Rich Asians"

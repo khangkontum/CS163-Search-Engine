@@ -1,13 +1,13 @@
 Where's my iPhone How to find a lost phone
 
-If you're like me, you've made a habit of checking for your phone, wallet, and keys before leaving every bar, restaurant, and movie theater you happen to visit on your travels. But the system doesn't always work, and all it takes is one slip of the mind for your phone to be left behind—on a park bench, at a coffee shop, or on the beach.
+If you're like me, you've made a habit of checking for your phone, wallet, and keys before leaving every bar, restaurant, and movie theater you happen to visit on your travels. But the system doesn't always work, and all it takes is one slip of the mind for your phone to be left behindon a park bench, at a coffee shop, or on the beach.
 
-But don't fret: If you're quick enough, there are simple steps you can take—whether you're an Android user or an iPhone owner—that'll greatly increase your chances of tracking down your wandering phone.
+But don't fret: If you're quick enough, there are simple steps you can takewhether you're an Android user or an iPhone ownerthat'll greatly increase your chances of tracking down your wandering phone.
 
 Time is of the essence. With any luck, you won't have seen the last of your smartphone.
 
 What to do if you lose an iPhone
-iPhone users will be happy to learn that they're already well-equipped to find their misplaced smartphone—Apple includes phone-finding software in every iPhone it currently makes. Hurrah! The app is called Find My iPhone, and it its settings can be accessed via iOS's settings menu.
+iPhone users will be happy to learn that they're already well-equipped to find their misplaced smartphoneApple includes phone-finding software in every iPhone it currently makes. Hurrah! The app is called Find My iPhone, and it its settings can be accessed via iOS's settings menu.
 
 A word of caution: In order for this feature to be of any use, certain situational requirements need to be met. Let's get into it.
 
@@ -36,13 +36,13 @@ Android Lost Phone Settings
 Having these settings enabled ahead of time is the only way to use them in the event of a misplaced phone.
 The settings themselves will most likely be found in pre-installed app called Find My Device by Google. On some Android phones, the features are folded into the phone's settings rather than a separate Google App. I've found the most reliable way to locate these settings is to simply search your entire device for the word "find."
 
-Making sure all of these settings are enabled—particularly Google's location service—will go a long way in boosting the odds of finding your lost Android device.
+Making sure all of these settings are enabledparticularly Google's location servicewill go a long way in boosting the odds of finding your lost Android device.
 
 Android Lost Phone Google Maps
-Like iOS, Android's lost phone features allow you to control the device remotely—as long as it's still on and connected to a network.
+Like iOS, Android's lost phone features allow you to control the device remotelyas long as it's still on and connected to a network.
 If you manage to successfully secure a line to your phone, you'll be given the option to ping your phone with a sound, secure it via Android's version of "lost mode" (which signs you out of Google and displays a lost-and-found phone number on the lock screen), or wipe the phone of its contents.
 
-Similarly to the iOS process, your Android location-tracking features are only as good as your phone's battery and its connection to the web—once your device is dead or disconnected, you'll find yourself in a proverbial dead end.
+Similarly to the iOS process, your Android location-tracking features are only as good as your phone's battery and its connection to the webonce your device is dead or disconnected, you'll find yourself in a proverbial dead end.
 
 Lost Smartphone on the Beach
 A beach is no place for an unattended smartphone.

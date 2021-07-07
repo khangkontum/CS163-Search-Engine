@@ -1,6 +1,6 @@
 Watch your waste The problem with airline food and packaging
 
-(CNN) — Every day, Emirates' airline catering facility prepares 180,000 meals to service its more than 400 daily flights around the globe. The Emirates facility is one of the world's biggest airline food factories, but there are similar operations across the world.
+(CNN)  Every day, Emirates' airline catering facility prepares 180,000 meals to service its more than 400 daily flights around the globe. The Emirates facility is one of the world's biggest airline food factories, but there are similar operations across the world.
 
 The scale of inflight catering is astonishing -- as is its waste problem.
 
@@ -16,7 +16,7 @@ The problem is compounded by various factors: the sheer scale of the catering pr
 
 Airlines must plan for food safety, hygiene, freshness and weight -- hence the vast amounts of plastic in every plane cabin.
 
-"Dining in the sky is quite different [than] popping down to your local café," Mark Ross-Smith, a big data specialist, airline consultant, and founder of Travel Data Daily, tells CNN Travel. "Individual wrapping is required to keep food fresh, hygienic and free from contamination. Anyone who has eaten a bread roll on a plane that has been out of wrapping for more than a few minutes can attest to how dry air affects food quality!"
+"Dining in the sky is quite different [than] popping down to your local caf," Mark Ross-Smith, a big data specialist, airline consultant, and founder of Travel Data Daily, tells CNN Travel. "Individual wrapping is required to keep food fresh, hygienic and free from contamination. Anyone who has eaten a bread roll on a plane that has been out of wrapping for more than a few minutes can attest to how dry air affects food quality!"
 
 There's also a concern about customer satisfaction, which leads airlines to stock more food than required on board flights.
 

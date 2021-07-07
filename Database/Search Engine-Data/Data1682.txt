@@ -22,7 +22,7 @@ Credits: Photo illustration courtesy of NovaWurks
 
 The Rapid Response Radiation Survey, or R3S, is hosted on a rapidly reconfigurable smallsat developed by the Defense Advanced Research Projects Agency. NovaWurks, a company based in Los Alamitos, California, built the smallsat and integrated the sensors.
 
-The NovaWurks smallsat is one of more than 60 scheduled to launch aboard a SpaceX Falcon 9 rocket 1:32 p.m. EDT Monday, Nov. 19, from Vandenberg Air Force Base in central California as part of Spaceflight Industries' SSO-A: SmallSat Express, an organized rideshare that will deposit multiple satellites into a sun synchronous polar orbit. Using smallsats to study our space environment is a key way to increase our sensors in space, and improve our understanding of space weather the same way that terrestrial sensors help us understand Earth’s weather.
+The NovaWurks smallsat is one of more than 60 scheduled to launch aboard a SpaceX Falcon 9 rocket 1:32 p.m. EDT Monday, Nov. 19, from Vandenberg Air Force Base in central California as part of Spaceflight Industries' SSO-A: SmallSat Express, an organized rideshare that will deposit multiple satellites into a sun synchronous polar orbit. Using smallsats to study our space environment is a key way to increase our sensors in space, and improve our understanding of space weather the same way that terrestrial sensors help us understand Earths weather.
 
 R3S, Langley's first smallsat instrument, incorporates two dosimeters, which measure exposure to ionizing radiation, and a magnetometer, which will allow the instrument to map radiation exposure related to the strength of Earth's geomagnetic field.
 
@@ -46,7 +46,7 @@ They came together thanks, in large part, to something called Lab 77. Led by res
 
 Miller and Norman sketched out the initial plan for R3S after work one day in October 2015. From that initial sketch, it only took a few months for the project to evolve through to development, testing and hardware integration. The total cost to NASA was only about $50,000 and the equivalent of half a full-time employee.
 
-"We provided the sensors to NovaWurks — literally things you can buy off-the-shelf — specified how they needed to work and handed them over to them," said Miller.
+"We provided the sensors to NovaWurks  literally things you can buy off-the-shelf  specified how they needed to work and handed them over to them," said Miller.
 
 The only snag was in finding a launch vehicle. NovaWurks originally planned to launch its satellite in 2016, but has twice had to rebook due to delays with launch providers.
 

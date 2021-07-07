@@ -25,5 +25,5 @@ Dynamic day, night and moon cycles
 Seasonal time effects and shifting weather
 Six playable ships
 Semi-realistic fishing methods - easy to learn, hard to master
-Advanced fish AI that influences your preyÅfs behavior
+Advanced fish AI that influences your preyfs behavior
 Includes licensed Catch Control Systems by Scanmar and officially licensed Hermes trawler

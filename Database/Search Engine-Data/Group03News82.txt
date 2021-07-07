@@ -2,11 +2,11 @@ New automated biological-sample analysis systems to accelerate disease detection
 Date:
 April 17, 2019
 Source:
-Polytechnique Montréal
+Polytechnique Montral
 Summary:
 Microfluidics refers to the manipulation of fluids in microscale devices. Commonly called "labs on a chip," microfluidic systems are used to study and analyze very small-scale chemical or biological samples, replacing the extremely expensive and cumbersome instruments used for traditional biological analyses.
 
-Professor Thomas Gervais of Polytechnique Montréal and his students Pierre-Alexandre Goyette and Étienne Boulais, in partnership with the team led by Professor David Juncker of McGill University, have developed a new microfluidic process aimed at automating protein detection by antibodies. This work, the topic of an article in Nature Communications, points to the arrival of new portable instruments to accelerate the screening process and molecule analysis in biological laboratories to accelerate research in cancer biology.
+Professor Thomas Gervais of Polytechnique Montral and his students Pierre-Alexandre Goyette and tienne Boulais, in partnership with the team led by Professor David Juncker of McGill University, have developed a new microfluidic process aimed at automating protein detection by antibodies. This work, the topic of an article in Nature Communications, points to the arrival of new portable instruments to accelerate the screening process and molecule analysis in biological laboratories to accelerate research in cancer biology.
 
 Microfluidics refers to the manipulation of fluids in microscale devices. Commonly called "labs on a chip," microfluidic systems are used to study and analyze very small-scale chemical or biological samples, replacing the extremely expensive and cumbersome instruments used for traditional biological analyses. Listed in 2001 among the "10 Emerging Technologies That Will Change the World" by the MIT Technology Review, microfluidics is considered just as revolutionary for biology and chemistry as microprocessors have been to electronics and IT, and it applies to a huge market.
 
@@ -20,7 +20,7 @@ ELEGANT VISUAL SYMMETRY REMINISCENT OF THE WORK OF ARTIST M. C. ESCHER
 
 To understand these patterns, Professor Gervais's team had to develop a new mathematical model for open multipolar flows. This model is based on a classical branch of mathematics known as conformal mapping that solves a problem related to a complex geometry by reducing it to a simpler geometry (and vice-versa).
 
-PhD student Étienne Boulais first developed a model to study microjet collisions in a multifluidic dipole (an MFM with only two openings), and then, relying on this mathematical theory, extrapolated the model to MFMs with multiple openings. "We can make an analogy with a game of chess in which there is a version with four players, then six or eight, applying a spatial deformation while maintaining the same rules of the game," he explains.
+PhD student tienne Boulais first developed a model to study microjet collisions in a multifluidic dipole (an MFM with only two openings), and then, relying on this mathematical theory, extrapolated the model to MFMs with multiple openings. "We can make an analogy with a game of chess in which there is a version with four players, then six or eight, applying a spatial deformation while maintaining the same rules of the game," he explains.
 
 "When subjected to conformal mapping, the patterns created by fluid jet collisions form symmetrical images reminiscent of the paintings of Dutch artist M.C. Escher," adds the young researcher, who has a passion for visual arts. "But far beyond its aesthetic appeal, our model allows us to describe the speed with which molecules move through fluids as well as their concentration. We have defined valid rules for all possible systems configurations of up to 12 poles in order to generate a wide variety of flow and diffusion patterns."
 
@@ -30,7 +30,7 @@ FABRICATION OF THE DEVICE USING 3D PRINTING
 
 The design and manufacture of the MFM device was accomplished by Pierre-Alexandre Goyette. This device is a small probe made out of resin using a low-cost 3D printing process and connected to a system of pumps and injectors.
 
-"The expertise of Professor Juncker's team in the detection of proteins by antibodies immobilized on a surface has been invaluable in managing the biological aspects of this project," says the PhD student in biomedical engineering. "The results obtained with assays validated the accuracy of the models developed by my colleague Étienne."
+"The expertise of Professor Juncker's team in the detection of proteins by antibodies immobilized on a surface has been invaluable in managing the biological aspects of this project," says the PhD student in biomedical engineering. "The results obtained with assays validated the accuracy of the models developed by my colleague tienne."
 
 The device allows for the simultaneous use of several reagents to detect various molecules in the same sample, which saves biologists valuable time. For certain types of tests, the analysis time could be reduced from several days to a few hours, or even a matter of minutes. In addition, the versatility of this technology should make it usable for various analytical processes, including immunological and DNA tests.
 

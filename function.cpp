@@ -13,12 +13,12 @@ void Trie::insert(string word,string fileName) {
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
 
 	// load data
-	ifstream fin("Search Engine-Data\\___index.txt");
+	ifstream fin("Search Engine-Data/___index.txt");
 	if (!fin.is_open())
 		return false;
 	while (!fin.eof()) {
 		string fileName; getline(fin,fileName,'\n');
-		ifstream fin1("Search Engine-Data\\" + fileName);
+		ifstream fin1("Search Engine-Data/" + fileName);
 		if (!fin1.is_open())
 			return false;
 		while (!fin1.eof()) {

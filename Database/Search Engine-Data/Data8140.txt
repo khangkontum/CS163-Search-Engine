@@ -4,7 +4,7 @@ Automakers are on the verge of a prolonged period of rapid change to the way the
 
 By the end of 2019, Google spinoff Waymo, Uber, and GM all plan to have fleets of autonomous cars deployed in various US cities to provide on-demand rides for passengers. By eliminating the cost of the driver, these rides are expected to be far cheaper than typical Uber or Lyft rides, and even cheaper than owning a car for personal transportation.
 
-Many industry experts are predicting that such cheap on-demand autonomous rides service will result in a long-term decline in car ownership rates — PwC predicts that the total number of cars on the road in the US and EU will drop from 556 million last year to 416 million in 2030.
+Many industry experts are predicting that such cheap on-demand autonomous rides service will result in a long-term decline in car ownership rates  PwC predicts that the total number of cars on the road in the US and EU will drop from 556 million last year to 416 million in 2030.
 
 This decline in car ownership represents an enormous threat to automakers' traditional business models, forcing them to find alternative revenue sources. Many of these automakers, including GM, Ford, and Daimler, have plans to launch their own on-demand ride-hailing services with fleets of self-driving cars they will manufacture, potentially giving them a new stream of recurring revenue. This could set them up to take a sizeable share of a market that is expected to be worth trillions by 2030.
 

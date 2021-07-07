@@ -6,7 +6,7 @@ Ultra-processed foods include packaged baked goods and snacks, fizzy drinks, sug
 They are thought to account for around 25-60% of daily energy intake in many countries.
 Previous studies have linked ultra-processed foods to higher risks of obesity, high blood pressure, high cholesterol, and some cancers, but firm evidence is still scarce.
 In the first study, researchers based in France and Brazil assessed potential associations between ultra-processed foods and risk of cardiovascular and cerebrovascular disease (conditions affecting blood supply to the heart and brain).
-Their findings are based on 105,159 French adults (21% men; 79% women) with an average age of 43 years who completed an average of six 24-hour dietary questionnaires to measure usual intake of 3,300 different food items, as part of the NutriNet-Santé study.
+Their findings are based on 105,159 French adults (21% men; 79% women) with an average age of 43 years who completed an average of six 24-hour dietary questionnaires to measure usual intake of 3,300 different food items, as part of the NutriNet-Sant study.
 Foods were grouped according to degree of processing and rates of disease were measured over a maximum follow-up of 10 years (2009-2018).
 Results showed that an absolute 10% increase in the proportion of ultra-processed food in the diet was associated with significantly higher rates of overall cardiovascular disease, coronary heart disease, and cerebrovascular disease (increase of 12%, 13%, and 11% respectively).
 In contrast, the researchers found a significant association between unprocessed or minimally processed foods and lower risks of all reported diseases.

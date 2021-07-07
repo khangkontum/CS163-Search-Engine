@@ -24,9 +24,9 @@ Overarching Policies
 
 Accessibility/Section 508
 
-    Section 508 Standards for Electronic and Information Technology (29 USC § 794d)
-    Section 508 Laws – Section508.gov
-    Web Content Accessibility Guidelines 2.0 (WCAG 2.0) – W3C
+    Section 508 Standards for Electronic and Information Technology (29 USC  794d)
+    Section 508 Laws  Section508.gov
+    Web Content Accessibility Guidelines 2.0 (WCAG 2.0)  W3C
     WCAG 2.0 Quick Reference Digital Government Strategy (May 2012)
 
 Analytics
@@ -45,7 +45,7 @@ Copyright
 
 Customer Service
 
-    Executive Order 13571 – Streamlining Service Delivery and Improving Customer Service (April 2011)
+    Executive Order 13571  Streamlining Service Delivery and Improving Customer Service (April 2011)
     See all Government Customer Service Policies & Requirements
 
 Design Standards
@@ -55,7 +55,7 @@ Design Standards
 Domains and Branding
 
     GOV Domain Name Registration Service
-    Final Rule – 41 CFR Part 102-173 authorizing GSA to manage the .gov registration process
+    Final Rule  41 CFR Part 102-173 authorizing GSA to manage the .gov registration process
 
 Governance
 
@@ -68,7 +68,7 @@ Mandatory Content
 
     Freedom of Information Act (FOIA) (PDF, 109 KB, 13 pages, April 2007)
     Memo to Agency Heads with updated guidance on implementing the Freedom of Information Act (March 19, 2009) (PDF, 1 MB, 3 pages, March 2009)
-    FOIA Frequently Asked Questions – FOIA.gov
+    FOIA Frequently Asked Questions  FOIA.gov
     Government Performance Results Act of 1993 (GPRA)
 
 Mobile/Device Agnostic
@@ -83,8 +83,8 @@ Multilingual Websites
 Open Government/Data/Content
 
     A Strategy for American Innovation (PDF, 1.22 MB, 120 pages, October 2015)
-    Executive Order—Making Open and Machine Readable the New Default for Government Information (May 2013)
-    OMB M-13-13 Open Data Policy—Managing Information as an Asset (PDF, 5.83 MB, 12 pages, May 2013)
+    Executive OrderMaking Open and Machine Readable the New Default for Government Information (May 2013)
+    OMB M-13-13 Open Data PolicyManaging Information as an Asset (PDF, 5.83 MB, 12 pages, May 2013)
     OMB M-10-06, Open Government Directive (December 2009)
     Guidance on the Use of Challenges and Prizes to Promote Open Government
     View all Open Government policies on whitehouse.gov
@@ -112,8 +112,8 @@ Plain Writing
 Privacy and Identity Management
 
     Requirements for Accepting Externally Issued Identity Credentials (PDF, 166 KB, 4 pages, October 2011)
-    OMB M-03–22, Guidance for Implementing the Privacy Provisions of the E–Government Act of 2002 (September 2003)
-    Children’s Online Privacy Protection Act of 1998 (COPPA)
+    OMB M-0322, Guidance for Implementing the Privacy Provisions of the EGovernment Act of 2002 (September 2003)
+    Childrens Online Privacy Protection Act of 1998 (COPPA)
     Privacy Act of 1974
 
 Prohibition on Advertising

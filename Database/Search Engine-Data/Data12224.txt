@@ -4,7 +4,7 @@ Porsche prides itself on its high-tech sports cars. But now it's bringing that p
 
 The German automaker announced Tuesday that it is supplying its 189 U.S. dealerships with augmented-reality glasses that can help mechanics solve issues that arise on today's increasingly complex automobiles. 
 
-With the AR glasses on, a service technician can conference in a Porsche specialist located at the company's U.S. headquarters in Atlanta and be talked through a repair job — the technician can stream live video of the problem area, while the remote support worker can post helpful repair tips in the worker's peripheral vision.
+With the AR glasses on, a service technician can conference in a Porsche specialist located at the company's U.S. headquarters in Atlanta and be talked through a repair job  the technician can stream live video of the problem area, while the remote support worker can post helpful repair tips in the worker's peripheral vision.
 
 "By solving issues fast, our dealer partners can get their customers back into cars with less disruption," Porsche Cars North America CEO Klaus Kellmer said in a statement. 
 
@@ -14,7 +14,7 @@ More: Review: With the 2018 Porsche 911 GT3, drive it like you stole it
 
 More: Porsche ordered to recall 60,000 Cayenne and Macan vehicles in Europe
 
-Porsche says today's cars — now considered rolling computers often with complicated propulsion systems that combine gasoline and battery powered engines — prompted the decision to use AR glasses to help mechanics. The company is working on its first all-electric Tesla competitor, the Mission E sedan.
+Porsche says today's cars  now considered rolling computers often with complicated propulsion systems that combine gasoline and battery powered engines  prompted the decision to use AR glasses to help mechanics. The company is working on its first all-electric Tesla competitor, the Mission E sedan.
 
 In addition, Porsche is also trying to win back to its dealership repair centers customers of older cars who currently might service their vehicles with independent mechanics. The infrequent nature of dealership repairs on Porsches that are decades old makes Tech Look Live valuable to a new car mechanic perhaps seeing an older component for the first time.
 

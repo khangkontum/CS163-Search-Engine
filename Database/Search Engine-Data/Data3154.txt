@@ -15,6 +15,6 @@ Blockchain-based solutions will start to emerge in different areas of financial 
 In full, the report:
 
 Outlines banks' experiments with blockchain technology.
-Details blockchain projects at three major banks — UBS, Credit Suisse, and Banco Santander — based on in-depth interviews.
+Details blockchain projects at three major banks  UBS, Credit Suisse, and Banco Santander  based on in-depth interviews.
 Discusses the likely trends that will emerge in the technology over the next several years.
 Highlights the factors that will be critical to the success of banks implementing blockchain-based solutions.

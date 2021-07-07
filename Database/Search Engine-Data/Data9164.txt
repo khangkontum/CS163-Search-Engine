@@ -16,7 +16,7 @@ Spearheaded by NASA's Disasters Program in the Earth Science Division, the team 
 
 These products are distributed to agencies working on the ground in California, including the state National Guard, Department of Forestry and Fire Protection (Cal Fire), the Governor's Office of Emergency Services, the California Earthquake Clearinghouse and the Federal Emergency Management Agency (FEMA).
 
-On Nov. 15, 2018, NASA’s C-20A aircraft took off from its base at NASA's Armstrong Flight Research Center Building 703 in Palmdale, California, carrying the Uninhabited Aerial Vehicle Synthetic Aperture Radar (UAVSAR). The instrument, developed and operated by NASA's Jet Propulsion Laboratory, observed and mapped fire scar in the areas affected by the Woosley Fire. The goal was to identify areas at risk of catastrophic mudslides in the coming winter rains.
+On Nov. 15, 2018, NASAs C-20A aircraft took off from its base at NASA's Armstrong Flight Research Center Building 703 in Palmdale, California, carrying the Uninhabited Aerial Vehicle Synthetic Aperture Radar (UAVSAR). The instrument, developed and operated by NASA's Jet Propulsion Laboratory, observed and mapped fire scar in the areas affected by the Woosley Fire. The goal was to identify areas at risk of catastrophic mudslides in the coming winter rains.
 
 NASA's Disasters Program mobilizes for intensive risk events globally, including earthquakes, wildfires, floods and severe weather. The program capitalizes on the wealth of environmental data gathered by Earth-observing satellites and other remote-sensing technology to help emergency response managers prepare for, respond to and recover from disasters. In 2017, the program responded to 89 events.
 

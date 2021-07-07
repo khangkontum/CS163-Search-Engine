@@ -5,7 +5,7 @@ Fortnite's newest limited time mode, Playground, will leave the game on Thursday
 The next version of Playground is expected to feature new functionality that will allow players to select teams from within Playground. If Epic can deliver this, it will give players the ability to have things like:
 1v1s and 2v2s
 Aim assist for controllers
-Editing other player’s structures
+Editing other player's structures
 Traps affecting teammates/enemies correctly
 Highlighting teammates on the map
 Damaging enemies with your pickaxe

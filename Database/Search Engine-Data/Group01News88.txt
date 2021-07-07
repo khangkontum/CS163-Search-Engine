@@ -5,7 +5,7 @@ With Face ID, which Apple unveiled Tuesday, owners of the company's new top-of-t
 
 "Nothing has ever been simpler, more natural and effortless," Phil Schiller, senior vice president of worldwide marketing, said during Apple's first product launch at its new headquarters in Cupertino, Calif. "Face ID is the future of how we unlock our smartphones and protect our sensitive information."
 
-Though still a novel concept for many Americans, biometric technology — which includes face, fingerprint, iris and retina recognition identification systems — has been a hotbed of research this decade. With Apple's backing, the field just got its most high-profile boost yet and could soon become the industry standard, even if many consumers aren't quite comfortable with the concept.
+Though still a novel concept for many Americans, biometric technology  which includes face, fingerprint, iris and retina recognition identification systems  has been a hotbed of research this decade. With Apple's backing, the field just got its most high-profile boost yet and could soon become the industry standard, even if many consumers aren't quite comfortable with the concept.
 
 Technologists tout a futuristic experience that is more secure than entering a passcode. They predict the technology could one day be used to unlock cars, withdraw money from ATMs or enter connected homes.
 
@@ -19,19 +19,19 @@ Revenue for the biometrics scan software industry is projected to reach $5.5 bil
 
 Facial recognition technology has slowly crept into everyday life, most notably with personal photos. Upload a picture to Facebook, and the social media giant suggests friends to tag. Google and Apple can automatically identify faces in photos, making it easier for users to search their photos for a specific friend or relative.
 
-But Face ID takes facial recognition a step further. It works by relying on an advanced suite of tech — including an infrared camera, flood illuminator, front camera, dot projector, proximity sensor and ambient light sensor — packed into the front of the new iPhone X, which starts at $999.
+But Face ID takes facial recognition a step further. It works by relying on an advanced suite of tech  including an infrared camera, flood illuminator, front camera, dot projector, proximity sensor and ambient light sensor  packed into the front of the new iPhone X, which starts at $999.
 
 To set it up, hold your iPhone X in front of your face and move your head around slowly. That becomes the stored version on your phone.
 
 To use it, glance at the front-facing camera. The dot projector beams out more than 30,000 invisible infrared dots, and the infrared camera captures an image.
 
-Apple uses the infrared image and dot pattern and pushes them through neural networks — a kind of machine learning model — to create a mathematical model of your face, and then checks that model against the stored image captured during the setup phase. Once it detects a match, the phone unlocks; Face ID will also work with Apple Pay and third-party apps.
+Apple uses the infrared image and dot pattern and pushes them through neural networks  a kind of machine learning model  to create a mathematical model of your face, and then checks that model against the stored image captured during the setup phase. Once it detects a match, the phone unlocks; Face ID will also work with Apple Pay and third-party apps.
 
-Face ID is sophisticated enough to work in the dark, and to learn your face under different circumstances — so go ahead and wear those funky glasses or grow that hipster beard.
+Face ID is sophisticated enough to work in the dark, and to learn your face under different circumstances  so go ahead and wear those funky glasses or grow that hipster beard.
 
 Schiller said Apple also worked hard to ensure the technology "can't be easily spoofed." Photographs won't fool it, and Apple even worked with professional mask makers and makeup artists in Hollywood to protect against attempts to beat Face ID, he said.
 
-The tech also requires user attention — your eyes have to be open, and you can't be looking away (meaning there's little risk of intrusion while you sleep).
+The tech also requires user attention  your eyes have to be open, and you can't be looking away (meaning there's little risk of intrusion while you sleep).
 
 Identical twins may trip up the system, but for them and anyone else averse to using their faces, the iPhone X can still be unlocked using an old-fashioned passcode.
 

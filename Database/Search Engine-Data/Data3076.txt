@@ -24,6 +24,6 @@ Services: There are 4 different services in RCTW: Medical, Janitorial, Entertain
 Native sharing and social features:=
 Social media integration: RCTW provides an easy way for the player to share what they create in the game via social media.
 Freeform cameras: There are multiple ways to view your park, such as from the guests point of view and from a birds-eye view. This feature appears somewhat in all of the RCT editions, but there are a lot more possibilities in RCTW.
-FriendÅfs lists and stat comparisons: The player is able to view the statistics of other parks that other people have made while in their park, such as when they created their latest coaster or when they last edited the park. Players can also visit other users' parks, so that they can give feedback about their park. These features are exclusive to RCTW.
+Friendfs lists and stat comparisons: The player is able to view the statistics of other parks that other people have made while in their park, such as when they created their latest coaster or when they last edited the park. Players can also visit other users' parks, so that they can give feedback about their park. These features are exclusive to RCTW.
 Native steam workshop support: Native Steam Workshop allows the player to customize many of the in-game features. It allows players to create their own custom rides, scenery, and more.
 Screenshots: You can take a screenshot and get it from the RCTW directory by pressing F11. This can then be used for UGC creation covers, sharing parks, etc.

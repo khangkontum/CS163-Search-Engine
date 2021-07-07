@@ -3,7 +3,7 @@ This is a preview of a research report from Business Insider Intelligence, Busin
 
 Digital disruption is rocking the payments industry. But merchants, consumers, and the companies that help move money between them are all feeling its effects differently.
 
-For banks, card networks, and processors, the digital revolution is bringing new opportunities — and new challenges. With new ways to pay emerging, incumbent firms can take advantage of solid brand recognition and large customer bases to woo new customers and keep those they already have.
+For banks, card networks, and processors, the digital revolution is bringing new opportunities  and new challenges. With new ways to pay emerging, incumbent firms can take advantage of solid brand recognition and large customer bases to woo new customers and keep those they already have.
 
 And for consumers, the digital revolution is providing more choice and making their lives easier. Digital wallets are simplifying purchases, allowing users to pay online with only a username and password and in-store with just a swipe of their thumb.
 
