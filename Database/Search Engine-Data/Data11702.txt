@@ -1,6 +1,6 @@
 Boat or plane? The Caspian Sea Monster and next-gen hybrids
 #Travel
-(CNN)  In the late 1960s, decades deep into the Cold War, US intelligence analysts monitoring the Caspian Sea came across satellite images of an oddly shaped, winged machine of huge proportions.
+(CNN) — In the late 1960s, decades deep into the Cold War, US intelligence analysts monitoring the Caspian Sea came across satellite images of an oddly shaped, winged machine of huge proportions.
 The unfamiliar structure, a kind of hybrid between aircraft and ship, was quickly dubbed the "Caspian Sea Monster."
 What they were looking at was an early prototype of the Soviet Union's Korabl Maket ground-effect vehicle, also known as an ekranoplan.
 Ekranoplans make use of "ground effect" -- the aerodynamic forces at play when skimming close to the surface of water -- to achieve fast, but stable, low-level flight.
@@ -15,7 +15,7 @@ Has the ekranoplan's time come?
 But this isn't the first time ground-effect vehicles have been on the verge of taking off.
 While the Soviet Union was trying to develop a military ekranoplan in the 1960s, German engineers were working on their own ground-effect vehicle concept, although this was the product of a private initiative.
 Alexander Lippisch, an aeronautical engineer, produced several prototypes with an inverted delta wing design, the Collins X-112, the RFB X-113 and the RFB X-114. However, they were never commercialized.
-Lippisch's work was continued by his protg, Hanno Fischer, who went on to create the AirFish 2 and AirFish 3, both precursors to the AirFish 8.
+Lippisch's work was continued by his protégé, Hanno Fischer, who went on to create the AirFish 2 and AirFish 3, both precursors to the AirFish 8.
 Fischer managed to complete the first working prototype of the AirFish 8 for an Australian company called Flightship, but it was never serially produced.
 Subsequently, the prototype, intellectual property rights and assets were acquired by Singapore-based Wigetworks, who spent the next decade perfecting its design.
 Now there are two newly built prototypes of the AirFish 8, a vehicle capable of carrying up to eight passengers and two crew, as well as its smaller sibling, the AirFish 3, which can hold just two people.

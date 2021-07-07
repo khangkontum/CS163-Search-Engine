@@ -10,7 +10,7 @@ Share:
 FULL STORY
 
 Moon.
-Credit:  astrosystem / Adobe Stock
+Credit: © astrosystem / Adobe Stock
 The stark difference between the Moon's heavily-cratered farside and the lower-lying open basins of the Earth-facing nearside has puzzled scientists for decades.
 
 Now, new evidence about the Moon's crust suggests the differences were caused by a wayward dwarf planet colliding with the Moon in the early history of the solar system. A report on the new research has been published in AGU's Journal of Geophysical Research: Planets.
@@ -43,7 +43,7 @@ Materials provided by American Geophysical Union. Note: Content may be edited fo
 
 Journal Reference:
 
-Meng-Hua Zhu, Kai Wnnemann, Ross W.K. Potter, Thorsten Kleine, Alessandro Morbidelli. Are the Moon's nearside-farside asymmetries the result of a giant impact? Journal of Geophysical Research: Planets, 2019; DOI: 10.1029/2018JE005826
+Meng-Hua Zhu, Kai Wünnemann, Ross W.K. Potter, Thorsten Kleine, Alessandro Morbidelli. Are the Moon's nearside-farside asymmetries the result of a giant impact? Journal of Geophysical Research: Planets, 2019; DOI: 10.1029/2018JE005826
 Cite This Page:
 MLA
 APA
@@ -73,13 +73,13 @@ Eclipse
 Jupiter
 RELATED STORIES
 Martian Moon May Have Come from Impact on Home Planet
-Sep. 24, 2018  Phobos, the larger of Mars' two tiny satellites, is the darkest moon in the solar system. This dark aspect inspired the hypothesis that the close-orbiting moon may be a captured asteroid, but its ... read more 
+Sep. 24, 2018 — Phobos, the larger of Mars' two tiny satellites, is the darkest moon in the solar system. This dark aspect inspired the hypothesis that the close-orbiting moon may be a captured asteroid, but its ... read more 
 How Earth's Previous Moons Collided to Form the Moon: New Theory
-Jan. 9, 2017  A new theory suggests the Moon we see every night is not Earth's first moon, but rather the last in a series of moons that orbited our planet. Moons formed through the process could cross orbits, ... read more 
+Jan. 9, 2017 — A new theory suggests the Moon we see every night is not Earth's first moon, but rather the last in a series of moons that orbited our planet. Moons formed through the process could cross orbits, ... read more 
 New Model Explains the Moon's Weird Orbit
-Nov. 1, 2016  The moon, Earth's closest neighbor, is among the strangest planetary bodies in the solar system. Its orbit lies unusually far away from Earth, with a surprisingly large orbital tilt. Planetary ... read more 
+Nov. 1, 2016 — The moon, Earth's closest neighbor, is among the strangest planetary bodies in the solar system. Its orbit lies unusually far away from Earth, with a surprisingly large orbital tilt. Planetary ... read more 
 Tidal Forces Gave Moon Its Shape Early in Its History, New Analysis Finds
-July 30, 2014  The shape of the moon deviates from a simple sphere in ways that scientists have struggled to explain. A new study shows that most of the moon's overall shape can be explained by taking into account ... read more 
+July 30, 2014 — The shape of the moon deviates from a simple sphere in ways that scientists have struggled to explain. A new study shows that most of the moon's overall shape can be explained by taking into account ... read more 
 FROM AROUND THE WEB
 Below are relevant articles that may interest you. ScienceDaily shares links with scholarly publications in the TrendMD network and earns revenue from third-party advertisers, where indicated.
 Grail Seeks to Raise $1B in Series B; Illumina's Stake to Fall Below 20 Percent
@@ -88,7 +88,7 @@ On-orbit modulation transfer function measurements based on lunar limb for FY-2G
 CHEN Lin et al., Optics and Precision Engineering, 2018
 Simulation of one-dimensional column leaching of weathered crust elution-deposited rare earth ore
 PingLONG, Transactions of Nonferrous Metals Society of China, 2019
-Overview of Chinas 2020 Mars mission design and navigation
+Overview of China’s 2020 Mars mission design and navigation
 Xiuqiang Jiang et al., Astrodynamics, 2017
 Design and implement of extreme ultraviolet camera software system
 YU Tao et al., Chinese Journal of Liquid Crystals and Displays, 2018

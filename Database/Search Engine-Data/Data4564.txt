@@ -1,7 +1,7 @@
 As campaigners call for better protection of UK waters and the wildlife within them, we take a look at the special statuses already in place and what exactly they aim to preserve.
 According to the Wildlife Trusts charity, giving protected status to areas is a "tried and tested" way of protecting habitats and wildlife.
 We asked Callum Roberts, professor of marine conservation at the University of York and scientific adviser to BBC Blue Planet II, for the lowdown on the protected areas.
-::What is a marine protected area?
+:: What is a marine protected area?
 Marine protected areas are places where the seabed and overlying waters are given protection from one or more damaging activities for the benefit of wildlife.
 
 :: How much of our oceans are currently protected?
@@ -18,7 +18,7 @@ There are plans for more protected areas around remote Atlantic and sub-Antarcti
 At present, there is so little protection given to most UK marine protected areas that enforcement is unnecessary.
 Only 0.001% of UK seas are protected from all fishing, and only 1% from seabed-damaging trawls and dredges.
 Most areas are protected in name only.
-::Government's promise to protect UK seas a 'sham'
+:: Government's promise to protect UK seas a 'sham'
 The few that do have regulations are protected mainly through bylaws of inshore fisheries and conservation authorities who patrol coastal seas to six nautical miles offshore.
 In Chagos and Pitcairn, by contrast, complete protection from fishing is policed via satellite surveillance and patrol boats.
 :: Why do we need more?
@@ -42,4 +42,4 @@ Overfished and polluted seas promote blooms of toxic algae and jellyfish that ca
 
 Climate change is ramping up stresses and without sufficient protection will amplify these problems. A world class network of highly protected marine areas will rebuild the vitality of our seas, ensuring future prosperity for all those who love and depend on them.
 :: Follow Sky News from Thursday 12 July for updates on endurance swimmer Lewis Pugh as he attempts to swim the Channel, from Cornwall to Dover
-:: Sky's Ocean Rescue campaign encourages people to reduce their single-use plastics. You can find out more about the campaign and how to get involved atwww.skyoceanrescue.com
+:: Sky's Ocean Rescue campaign encourages people to reduce their single-use plastics. You can find out more about the campaign and how to get involved at www.skyoceanrescue.com

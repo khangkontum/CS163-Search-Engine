@@ -8,7 +8,7 @@ After years of complaints from unhappy customers, Apple is finally taking action
 
 In a statement provided to Apple blog 9to5Mac, an Apple spokesperson said: "Today we launched a keyboard service program for our customers that covers a small percentage of keyboards in certain MacBook and MacBook Pro models which may exhibit one or more of the following behaviors: letters or characters that repeat unexpectedly or don't appear when pressed or keys that feel "sticky" or aren't responding in a consistent manner."
 
-When the company redesigned the MacBook in 2015, it introduced a new "butterfly" keyboard design. It was slimmer than previous models  but also plagued by technical issues. Customers have complained endlessly that it breaks easily, and that keys can be jammed by a single spec of dust.
+When the company redesigned the MacBook in 2015, it introduced a new "butterfly" keyboard design. It was slimmer than previous models — but also plagued by technical issues. Customers have complained endlessly that it breaks easily, and that keys can be jammed by a single spec of dust.
 
 Apple's response thus far had largely been to provide cleaning instructions to blow out dust, a solution that many customers found unsatisfactory.
 But on Friday, the California company announced it is taking more substantial steps to solve tackle the problem: It is providing repairs to affected customers free-of-charge, and giving refunds to those who had to pay to get their laptops repaired because of the issue.
