@@ -2,7 +2,7 @@
 
 int main() {
 	// loading data
-	cout << "Data loading!";
+	cout << "Data loading...\n";
 	Trie* root = new Trie;
 	Trie* stopwordsRoot = new Trie;
 	Trie* thesaurusRoot = new Trie;
@@ -16,56 +16,45 @@ int main() {
 		exit(1);
 	}
 
-
+	
 	// searhing menu
-	cout << "Please choose one of the following queries: \n";
-
-	cout << "1. AND \n2. OR \n3. Manchester-united \n4. Intitle \n5. Peanut Butter and Jam\n6. Filetype\n7. Search for a price\n8. Search hashtags\n9. Search for an exact match\n10. Search for wildcards or unknown words\n11. Search within a range of numbers\n12. Synonyms search\n0. Exit\n";
-
-	cout << "Your query: ";
-	int choose;
-	while (cin >> choose && choose) {
-		switch (choose)
+	do{
+		cout << "Input keyword (0 to exit): ";
+		pair<int, string> command = getInput(); // command.first = commmand | command.second = keyword
+		switch (command.first)
 		{
-		case 1:
-			function_1(root);
-			break;
-		case 2:
-			function_2(root);
-			break;
-		case 3:
-			function_3(root);
-			break;
-		case 4:
-			function_4(root);
-			break;
-		case 5:
-			function_5(root);
-			break;
-		case 6:
-			function_6(root);
-			break;
-		case 7:
-			function_7(root);
-			break;
-		case 8:
-			function_8(root);
-			break;
-		case 9:
-			function_9(root);
-			break;
-		case 10:
-			function_10(root);
-			break;
-		case 11:
-			function_11(root);
-			break;
-		case 12:
-			function_12(root);
-			break;
-		default:
-			break;
+			case 0:
+				cout << "Program Stop!";
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			case 10:
+				break;
+			case 11:
+				break;
+			case 12:
+				break;
+			default:
+				cout << "Input invalid or could not found keyword.\n";
+				break;
 		}
-	}
+	}while(true);
+
 	return 0;
 }

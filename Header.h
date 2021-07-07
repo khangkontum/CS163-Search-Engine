@@ -14,11 +14,14 @@ struct Trie {
 		cnt = 0;
 	}
 	void insert(string word, string fileName);
+	bool isExist(string word);
+	bool isExistInFile(string word, string fileName);
 };
 
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
 bool isStopWords(Trie* stopWordsTrie, string s);
 
+pair<int, string> getInput();
 void function_1(Trie* root);
 void function_2(Trie* root);
 void function_3(Trie* root);
@@ -32,4 +35,4 @@ void function_10(Trie* root);
 void function_11(Trie* root);
 void function_12(Trie* root);
 
-#endif myfunction
+#endif 

@@ -1,4 +1,53 @@
 #include"Header.h"
+
+pair<int, string> getInput() {
+	string keyword;
+	cin >> keyword;
+	//1
+
+	//2
+
+	//3
+	for (int i = 0; i < keyword.length(); i++) {
+		if (keyword[i] == '-' && i == 0)
+			return pair<int, string>(13, keyword);
+		if (keyword[i] == '-' && keyword[i - 1] == ' ')
+			return pair<int, string>(3, keyword);
+	}
+	
+	//4
+
+	//5
+
+	//6
+
+	//7
+
+	//8
+
+	//9
+
+	//10
+
+	//11
+	
+	//12
+
+	return pair<int, string>(-1, keyword); //Normal keyword
+}
+
+bool Trie::isExist(string word) {
+	Trie* pCur = this;
+	int x;
+	for (int i = 0; i < word.length(); i++) {
+		x = word[i] - ' ';
+		if (!pCur->child[x])
+			return false;
+		pCur = pCur->child[x];
+	}
+	return true;
+}
+
 string wordIgnore(string t) {
 	string result = "";
 	for (int i = 0; i < t.length(); i++) {
@@ -19,25 +68,36 @@ void Trie::insert(string word, string fileName) {
 }
 
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
+	// load stopwords
+	ifstream input("Database/Stopwords/stopwords.txt");
+	string stopword;
+	while(input >> stopword) {
+		stopwordsRoot->insert(stopword, "");
+	}
+	input.close();
 
 	// load data
-	ifstream fin("Search Engine-Data/___index.txt");
+	ifstream fin("Database/Search Engine-Data/___index.txt");
 	if (!fin.is_open())
 		return false;
 	while (!fin.eof()) {
-		string fileName; getline(fin, fileName, '\n');
-		ifstream fin1("Search Engine-Data/" + fileName);
-		if (!fin1.is_open())
+		string fileName; 
+		getline(fin, fileName, '\n');
+		ifstream fin1("Database/Search Engine-Data/" + fileName);
+		if (fin1.is_open() == false) {
+			cout << "Failed load file " << fileName  << "\n" << "\n";
 			return false;
-		cout << fileName << endl;
+		}
 		while (!fin1.eof()) {
-			string word; fin1 >> word;
+			string word; 
+			fin1 >> word;
+			if (stopwordsRoot->isExist(wordIgnore(word))) //Ignore stopwords
+				continue;
 			dataRoot->insert(wordIgnore(word), fileName);
 		}
+		fin1.close();
 	}
-
-
-	// load stopwords
+	fin.close();
 
 	// load thesaurus
 
