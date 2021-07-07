@@ -10,32 +10,50 @@ void Trie::insert(string word,string fileName) {
 	pCur->cnt++;
 }
 
+bool Trie::isExist(string word) {
+	Trie* pCur = this;
+	for (int i = 0; i < word.length(); i++) {
+		if (!pCur->child[word[i] - ' '])
+			return false;
+		pCur = pCur->child[word[i] - ' '];
+	}
+	return true;
+}
+
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
+	// load stopword
+	ifstream Read("Database/Stopwords/stopwords.txt");
+	string stopword;
+	while(Read >> stopword) {
+		stopwordsRoot->insert(stopword, "");
+	}
 
 	// load data
-	ifstream fin("Search Engine-Data/___index.txt");
+	ifstream fin("Database/Search Engine-Data/___index.txt");
 	if (!fin.is_open())
 		return false;
 	while (!fin.eof()) {
-		string fileName; getline(fin,fileName,'\n');
-		ifstream fin1("Search Engine-Data/" + fileName);
+		string fileName; 
+		getline(fin,fileName,'\n');
+		ifstream fin1("Database/Search Engine-Data/" + fileName);
 		if (!fin1.is_open())
 			return false;
 		while (!fin1.eof()) {
-			string word; fin1 >> word;
+			string word; 
+			fin1 >> word;
+			if (stopwordsRoot->isExist(word))	//If word is stopword then ignore
+				continue;
 			dataRoot->insert(word,fileName);
 		}
 	}
+	fin.close();
 
-	// load stopwords
+	
 
 	// load thesaurus
 
 
 	return true;
-}
-bool isStopWords(Trie* stopWordsTrie, string s) {
-
 }
 
 void function_1(Trie* root){

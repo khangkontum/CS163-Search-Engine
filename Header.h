@@ -1,5 +1,5 @@
-#ifndef myfunction
-#define myfunction
+#ifndef _myfunction_
+#define _myfunction_
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -10,10 +10,11 @@ struct Trie {
 	int cnt;
 	Trie() {
 		for (int i = 0; i < 96; ++i)
-			child[i] =nullptr;
+			child[i] = nullptr;
 		cnt = 0;
 	}
 	void insert(string word, string fileName);
+	bool isExist(string word);
 };
 
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
@@ -32,4 +33,4 @@ void function_10(Trie* root);
 void function_11(Trie* root);
 void function_12(Trie* root);
 
-#endif myfunction
+#endif 
