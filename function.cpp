@@ -3,6 +3,7 @@
 pair<int, string> getInput() {
 	string keyword;
 	cin >> keyword;
+
 	//1
 
 	//2
@@ -16,6 +17,17 @@ pair<int, string> getInput() {
 	}
 	
 	//4
+	string intitle = "intitle:";
+	for (int i = 0; i < intitle.length(); i++) {
+		if (intitle[i] == keyword[i]) {
+			if(i == intitle.length() - 1)
+				return pair<int,string>(4, keyword);
+			else
+				continue;
+		}
+		else 
+			break;
+	}
 
 	//5
 
@@ -104,9 +116,13 @@ bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
 
 	return true;
 }
-bool isStopWords(Trie* stopWordsTrie, string s) {
-	return true;
-}
+
+
+
+
+
+
+
 
 void function_1(Trie* root) {
 

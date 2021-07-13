@@ -21,8 +21,12 @@ int main() {
 	do{
 		cout << "Input keyword (0 to exit): ";
 		pair<int, string> command = getInput(); // command.first = commmand | command.second = keyword
+		string keyword = command.second;
 		switch (command.first)
 		{
+			case -1:	//Normal keyword
+
+				break;
 			case 0:
 				cout << "Program Stop!";
 				break;
@@ -30,9 +34,10 @@ int main() {
 				break;
 			case 2:
 				break;
-			case 3:
+			case 3:		//	-
+				leaveOut(root, keyword);
 				break;
-			case 4:
+			case 4:		// intitle
 				break;
 			case 5:
 				break;
