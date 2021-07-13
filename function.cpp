@@ -1,9 +1,15 @@
 #include"Header.h"
 
+typedef pair<int, string> is;
+
 // Input function
-pair<int, string> getInput() {
+is getInput() {
 	string keyword;
 	cin >> keyword;
+
+	//0
+	if (keyword.size() == 1 && keyword[0] == '0')
+		return is(0, "");
 
 	//1
 
@@ -12,9 +18,9 @@ pair<int, string> getInput() {
 	//3
 	for (int i = 0; i < keyword.length(); i++) {
 		if (keyword[i] == '-' && i == 0)
-			return pair<int, string>(13, keyword);
+			return is(13, keyword);
 		if (keyword[i] == '-' && keyword[i - 1] == ' ')
-			return pair<int, string>(3, keyword);
+			return is(3, keyword);
 	}
 
 	//4
@@ -22,7 +28,7 @@ pair<int, string> getInput() {
 	for (int i = 0; i < intitle.length(); i++) {
 		if (intitle[i] == keyword[i]) {
 			if(i == intitle.length() - 1)
-				return pair<int,string>(4, keyword);
+				return is(4, keyword);
 			else
 				continue;
 		}
@@ -46,7 +52,7 @@ pair<int, string> getInput() {
 
 	//12
 
-	return pair<int, string>(-1, keyword); //Normal keyword
+	return is(-1, keyword); //Normal keyword
 }
 
 // Trie function
@@ -57,19 +63,21 @@ void Trie::insert(string word, string fileName) {
 			pCur->child[word[i] - ' '] = new Trie();
 		pCur = pCur->child[word[i] - ' '];
 	}
-	pCur->fileName.push_front(fileName);
+	pCur->fileArr[fileName]++;
+	maxwd[fileName] = max(maxwd[fileName], pCur->fileArr[fileName]); 
 	pCur->cnt++;
 }
-bool Trie::isExist(string word) {
+
+int Trie::wordInFile(string word, string fileName) {
 	Trie* pCur = this;
 	int x;
 	for (int i = 0; i < word.length(); i++) {
 		x = word[i] - ' ';
 		if (!pCur->child[x])
-			return false;
+			return 0;
 		pCur = pCur->child[x];
 	}
-	return true;
+	return pCur->fileArr[fileName];
 }
 
 // Load data function
@@ -81,7 +89,8 @@ string wordIgnore(string t) {
 	}
 	return result;
 }
-bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
+
+bool loadData() {
 	// load stopwords
 	ifstream input("Database/Stopwords/stopwords.txt");
 	string stopword;
@@ -105,9 +114,10 @@ bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
 		while (!fin1.eof()) {
 			string word; 
 			fin1 >> word;
-			if (stopwordsRoot->isExist(wordIgnore(word))) //Ignore stopwords
+			if (stopwordsRoot->wordInFile(wordIgnore(word), "")) //Ignore stopwords
 				continue;
 			dataRoot->insert(wordIgnore(word), fileName);
+			totalWord++;
 		}
 		fin1.close();
 	}
@@ -119,12 +129,29 @@ bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
 	return true;
 }
 
+//TF-IDF
+double tf(string word, string fileName) {
+	int ftd = dataRoot->wordInFile(word, fileName);
+	return double(ftd / maxwd[fileName]);
+}
 
+double idf(string word) {
+	string fileName;
+	int fileCount = 0;
+	int numOfFile = 0;
+	ifstream fin("Database/Search Engine-Data/___index.txt");
+	while (fin >> fileName) {
+		numOfFile++;
+		if (dataRoot->wordInFile(word, fileName))
+			fileCount++;
+	}
 
+	return log(double(numOfFile / (1 + fileCount)));
+}
 
-
-
-
+double tfidf(string word, string fileName) {
+	return tf(word, fileName) * idf(word);
+}
 
 
 void function_1(Trie* root) {
