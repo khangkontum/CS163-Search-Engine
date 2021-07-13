@@ -3,7 +3,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
+// structure
 struct Trie {
 	Trie* child[96];  // from "33" to "128"
 	list<string> fileName;
@@ -17,11 +17,14 @@ struct Trie {
 	bool isExist(string word);
 	bool isExistInFile(string word, string fileName);
 };
-
+// input function
+pair<int, string> getInput();
+// load function
+string wordIgnore(string t);
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
 bool isStopWords(Trie* stopWordsTrie, string s);
 
-pair<int, string> getInput();
+// implement function
 void function_1(Trie* root);
 void function_2(Trie* root);
 void function_3(Trie* root);

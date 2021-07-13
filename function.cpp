@@ -1,5 +1,6 @@
 #include"Header.h"
 
+// Input function
 pair<int, string> getInput() {
 	string keyword;
 	cin >> keyword;
@@ -15,7 +16,7 @@ pair<int, string> getInput() {
 		if (keyword[i] == '-' && keyword[i - 1] == ' ')
 			return pair<int, string>(3, keyword);
 	}
-	
+
 	//4
 	string intitle = "intitle:";
 	for (int i = 0; i < intitle.length(); i++) {
@@ -42,12 +43,23 @@ pair<int, string> getInput() {
 	//10
 
 	//11
-	
+
 	//12
 
 	return pair<int, string>(-1, keyword); //Normal keyword
 }
 
+// Trie function
+void Trie::insert(string word, string fileName) {
+	Trie* pCur = this;
+	for (int i = 0; i < word.length(); ++i) {
+		if (!pCur->child[word[i] - ' '])
+			pCur->child[word[i] - ' '] = new Trie();
+		pCur = pCur->child[word[i] - ' '];
+	}
+	pCur->fileName.push_front(fileName);
+	pCur->cnt++;
+}
 bool Trie::isExist(string word) {
 	Trie* pCur = this;
 	int x;
@@ -60,6 +72,7 @@ bool Trie::isExist(string word) {
 	return true;
 }
 
+// Load data function
 string wordIgnore(string t) {
 	string result = "";
 	for (int i = 0; i < t.length(); i++) {
@@ -68,17 +81,6 @@ string wordIgnore(string t) {
 	}
 	return result;
 }
-void Trie::insert(string word, string fileName) {
-	Trie* pCur = this;
-	for (int i = 0; i < word.length(); ++i) {
-		if (!pCur->child[word[i] - ' '])
-			pCur->child[word[i] - ' '] = new Trie();
-		pCur = pCur->child[word[i] - ' '];
-	}
-	pCur->fileName.push_front(fileName);
-	pCur->cnt++;
-}
-
 bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
 	// load stopwords
 	ifstream input("Database/Stopwords/stopwords.txt");
@@ -116,6 +118,7 @@ bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot) {
 
 	return true;
 }
+
 
 
 
