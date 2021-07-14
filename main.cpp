@@ -20,49 +20,49 @@ int main() {
 		exit(1);
 	}
 
-	cout << tfidf("celebration", "0.txt") << "\n";
 	// searhing menu
-	do{
+	do {
 		cout << "Input keyword (0 to exit): ";
 		pair<int, string> command = getInput(); // command.first = commmand | command.second = keyword
 		string keyword = command.second;
 		switch (command.first)
 		{
-			case -1:	//Normal keyword
+		case -1:	//Normal keyword
 
-				break;
-			case 0:
-				return cout << "Program Stop!", 0;
-				break;
-			case 1:
-				break;
-			case 2:
-				break;
-			case 3:		//	-
-				break;
-			case 4:		// intitle
-				break;
-			case 5:
-				break;
-			case 6:
-				break;
-			case 7:
-				break;
-			case 8:
-				break;
-			case 9:
-				break;
-			case 10:
-				break;
-			case 11:
-				break;
-			case 12:
-				break;
-			default:
-				cout << "Input invalid or could not found keyword.\n";
-				break;
+			break;
+		case 0:
+			return cout << "Program Stop!", 0;
+			break;
+		case 1:
+			function_1(command.second);
+			break;
+		case 2:
+			break;
+		case 3:		//	-
+			break;
+		case 4:		// intitle
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
+			break;
+		case 9:
+			break;
+		case 10:
+			break;
+		case 11:
+			break;
+		case 12:
+			break;
+		default:
+			cout << "Input invalid or could not found keyword.\n";
+			break;
 		}
-	}while(true);
+	} while (true);
 
 	return 0;
 }
