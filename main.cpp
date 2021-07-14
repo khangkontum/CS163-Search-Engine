@@ -20,8 +20,7 @@ int main() {
 		exit(1);
 	}
 
-	cout <<	idf("celebration") << "\n";
-	
+	cout << tfidf("celebration", "0.txt") << "\n";
 	// searhing menu
 	do{
 		cout << "Input keyword (0 to exit): ";

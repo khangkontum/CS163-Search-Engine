@@ -132,7 +132,7 @@ bool loadData() {
 //TF-IDF
 double tf(string word, string fileName) {
 	int ftd = dataRoot->wordInFile(word, fileName);
-	return double(ftd / maxwd[fileName]);
+	return double(ftd) / double(maxwd[fileName]);
 }
 
 double idf(string word) {
