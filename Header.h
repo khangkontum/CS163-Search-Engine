@@ -6,7 +6,7 @@ using namespace std;
 // structure
 struct Trie {
 	Trie* child[96];  // from "33" to "128"
-	list<string> fileName;
+	map<string, int> fileArr;
 	int cnt;
 	Trie() {
 		for (int i = 0; i < 96; ++i)
@@ -14,17 +14,26 @@ struct Trie {
 		cnt = 0;
 	}
 	void insert(string word, string fileName);
-	bool isExist(string word);
-	bool isExistInFile(string word, string fileName);
+	int wordInFile(string word, string fileName);
 };
+extern int totalWord;
+extern Trie* dataRoot;
+extern Trie* stopwordsRoot;
+extern Trie* thesaurusRoot;
+extern map<string, int> maxwd;
+
+
 // input function
 pair<int, string> getInput();
 // load function
 string wordIgnore(string t);
-bool loadData(Trie* dataRoot, Trie* stopwordsRoot, Trie* thesaurusRoot);
-bool isStopWords(Trie* stopWordsTrie, string s);
+bool loadData();
 
 // implement function
+double tf(string word, string fileName);
+double idf(string word);
+double tfidf(string word, string fileName);
+
 void function_1(Trie* root);
 void function_2(Trie* root);
 void function_3(Trie* root);
