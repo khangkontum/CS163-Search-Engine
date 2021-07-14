@@ -5,14 +5,15 @@ typedef pair<int, string> is;
 // Input function
 is getInput() {
 	string keyword;
-	cin >> keyword;
+	getline(cin, keyword, '\n');
 
 	//0
 	if (keyword.size() == 1 && keyword[0] == '0')
 		return is(0, "");
 
 	//1
-
+	if (keyword.find(" AND "))
+		return is(1, keyword);
 	//2
 
 	//3
@@ -27,12 +28,12 @@ is getInput() {
 	string intitle = "intitle:";
 	for (int i = 0; i < intitle.length(); i++) {
 		if (intitle[i] == keyword[i]) {
-			if(i == intitle.length() - 1)
+			if (i == intitle.length() - 1)
 				return is(4, keyword);
 			else
 				continue;
 		}
-		else 
+		else
 			break;
 	}
 
@@ -64,7 +65,7 @@ void Trie::insert(string word, string fileName) {
 		pCur = pCur->child[word[i] - ' '];
 	}
 	pCur->fileArr[fileName]++;
-	maxwd[fileName] = max(maxwd[fileName], pCur->fileArr[fileName]); 
+	maxwd[fileName] = max(maxwd[fileName], pCur->fileArr[fileName]);
 	pCur->cnt++;
 }
 
@@ -94,7 +95,7 @@ bool loadData() {
 	// load stopwords
 	ifstream input("Database/Stopwords/stopwords.txt");
 	string stopword;
-	while(input >> stopword) {
+	while (input >> stopword) {
 		stopwordsRoot->insert(stopword, "");
 	}
 	input.close();
@@ -104,15 +105,15 @@ bool loadData() {
 	if (!fin.is_open())
 		return false;
 	while (!fin.eof()) {
-		string fileName; 
+		string fileName;
 		getline(fin, fileName, '\n');
 		ifstream fin1("Database/Search Engine-Data/" + fileName);
 		if (fin1.is_open() == false) {
-			cout << "Failed load file " << fileName  << "\n" << "\n";
+			cout << "Failed load file " << fileName << "\n" << "\n";
 			return false;
 		}
 		while (!fin1.eof()) {
-			string word; 
+			string word;
 			fin1 >> word;
 			if (stopwordsRoot->wordInFile(wordIgnore(word), "")) //Ignore stopwords
 				continue;
@@ -154,9 +155,90 @@ double tfidf(string word, string fileName) {
 }
 
 
-void function_1(Trie* root) {
-
+// function 1
+//
+//
+Trie* getLeaf(string word) {
+	Trie* temp = dataRoot;
+	for (int i = 0; i < word.length(); i++) {
+		int x = word[i] - ' ';
+		temp = temp->child[x];
+		if (!temp)
+			break;
+	}
+	return temp;
 }
+
+void function_1(string doc) {
+	// array stored words
+	vector<string> wordArr;
+	string word;
+	stringstream iss(doc);
+	system("cls");
+	while (iss >> word)
+		if (!stopwordsRoot->wordInFile(wordIgnore(word), "") && word != "AND")
+			wordArr.push_back(word);
+
+	// array stored link
+	map<string, int> fileNameList;
+	map<string, int>::iterator _it;
+	for (int i = 0; i < wordArr.size(); i++) {
+		if (getLeaf(wordArr[i])) {
+			// load filename cua word nay vo fileNameList
+			map<string, int> file = getLeaf(wordArr[i])->fileArr;
+			for (_it = file.begin(); _it != file.end(); _it++)
+				fileNameList[_it->first]++;
+			// neu file nay k bao gom tat ca word truoc, bi loai
+			vector<string> del;
+			for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
+				if (_it->second != i + 1) {
+					del.push_back(_it->first);
+				}
+			}
+			// delete
+			for (int i = 0; i < del.size(); i++)
+				fileNameList.erase(del[i]);
+		}
+	}
+
+	// score cac file trong bang sum cac tf-idf trong fileNameList
+	map<string, double> score;
+	for (int i = 0; i < wordArr.size(); i++) {
+		if (getLeaf(wordArr[i])) {
+			map<string, int> file = getLeaf(wordArr[i])->fileArr;
+			for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
+				//tf
+				double tf = file[_it->first] * 1.0 / maxwd[_it->first];
+				// tdf
+				double tdf = 1; // vi so van ban chua word nay = tong so van ban minh dang xet.
+				// score
+				score[_it->first] += tf * tdf;
+			}
+		}
+	}
+
+	// sort and output
+	map<string, double>::iterator it;
+	vector<pair<double, string>> scoreArr;
+	for (it = score.begin(); it != score.end(); it++)
+		scoreArr.push_back(make_pair(it->second, it->first));
+
+	sort(scoreArr.begin(), scoreArr.end());
+	bool run = false;
+	for (int i = scoreArr.size() - 1; i >= scoreArr.size() - 5; i--)
+		if (i >= 0) {
+			run = true;
+			cout << scoreArr[i].first << " " << scoreArr[i].second << endl;
+		}
+	if (!run) {
+		cout << "Your search did not match any documents." << endl;
+		cout << "Suggestions:\n-Make sure that all words are spelled correctly. \n-Try different keywords.\nTry more general keywords.\n\n";
+	}
+}
+
+//
+//
+//
 void function_2(Trie* root) {
 
 }

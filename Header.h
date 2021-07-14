@@ -33,6 +33,9 @@ bool loadData();
 double tf(string word, string fileName);
 double idf(string word);
 double tfidf(string word, string fileName);
+// function 1
+Trie* getLeaf(string word);
+void function_1(string doc);
 
 void function_1(Trie* root);
 void function_2(Trie* root);
