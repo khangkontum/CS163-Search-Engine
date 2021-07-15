@@ -39,8 +39,12 @@ void rankAndDisplay(map<string, double> score);
 map<string, double> function_1(string doc);
 
 void function_2(Trie* root);
-void function_3(Trie* root);
-void function_4(Trie* root);
+// function 3
+map<string, double> function_3(string doc);
+// function 4
+string upperDocument(string doc);
+map<string, double> function_4(string doc);
+
 void function_5(Trie* root);
 void function_6(Trie* root);
 void function_7(Trie* root);
