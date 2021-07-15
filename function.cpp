@@ -12,7 +12,7 @@ is getInput() {
 		return is(0, "");
 
 	//1
-	if (keyword.find(" AND "))
+	if (keyword.find(" AND ") != string::npos)
 		return is(1, keyword);
 	//2
 
@@ -168,13 +168,33 @@ Trie* getLeaf(string word) {
 	}
 	return temp;
 }
+void rankAndDisplay(map<string, double> score) {
+	// sort and output
+	map<string, double>::iterator it;
+	vector<pair<double, string>> scoreArr;
+	for (it = score.begin(); it != score.end(); it++)
+		scoreArr.push_back(make_pair(it->second, it->first));
 
-void function_1(string doc) {
+	sort(scoreArr.begin(), scoreArr.end());
+	bool run = false;
+	for (int i = scoreArr.size() - 1; i >= (int)scoreArr.size() - 5; i--) {
+		if (i >= 0) {
+			run = true;
+			cout << " " << scoreArr[i].first << " " << scoreArr[i].second << endl;
+		}
+	}
+
+	if (!run) {
+		cout << "Your search did not match any documents." << endl;
+		cout << "Suggestions:\n-Make sure that all words are spelled correctly. \n-Try different keywords.\nTry more general keywords.\n\n";
+	}
+}
+map<string, double> function_1(string doc) {
 	// array stored words
 	vector<string> wordArr;
 	string word;
 	stringstream iss(doc);
-	system("cls");
+	/*system("cls");*/
 	while (iss >> word)
 		if (!stopwordsRoot->wordInFile(wordIgnore(word), "") && word != "AND")
 			wordArr.push_back(word);
@@ -216,24 +236,7 @@ void function_1(string doc) {
 			}
 		}
 	}
-
-	// sort and output
-	map<string, double>::iterator it;
-	vector<pair<double, string>> scoreArr;
-	for (it = score.begin(); it != score.end(); it++)
-		scoreArr.push_back(make_pair(it->second, it->first));
-
-	sort(scoreArr.begin(), scoreArr.end());
-	bool run = false;
-	for (int i = scoreArr.size() - 1; i >= scoreArr.size() - 5; i--)
-		if (i >= 0) {
-			run = true;
-			cout << scoreArr[i].first << " " << scoreArr[i].second << endl;
-		}
-	if (!run) {
-		cout << "Your search did not match any documents." << endl;
-		cout << "Suggestions:\n-Make sure that all words are spelled correctly. \n-Try different keywords.\nTry more general keywords.\n\n";
-	}
+	return score;
 }
 
 //
