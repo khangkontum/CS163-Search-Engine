@@ -34,7 +34,7 @@ int main() {
 			return cout << "Program Stop!", 0;
 			break;
 		case 1:
-			function_1(command.second);
+			rankAndDisplay(function_1(command.second));
 			break;
 		case 2:
 			break;

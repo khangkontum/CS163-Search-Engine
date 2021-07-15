@@ -35,9 +35,9 @@ double idf(string word);
 double tfidf(string word, string fileName);
 // function 1
 Trie* getLeaf(string word);
-void function_1(string doc);
+void rankAndDisplay(map<string, double> score);
+map<string, double> function_1(string doc);
 
-void function_1(Trie* root);
 void function_2(Trie* root);
 void function_3(Trie* root);
 void function_4(Trie* root);
