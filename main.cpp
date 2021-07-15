@@ -7,6 +7,8 @@ Trie* thesaurusRoot = new Trie;
 map<string, int> maxwd;		//the most word occur in file 
 
 int main() {
+
+
 	cout.precision(16);
 	// loading data
 	cout << "Data loading...\n";
@@ -28,7 +30,7 @@ int main() {
 		switch (command.first)
 		{
 		case -1:	//Normal keyword
-
+			// T nghi~ la normal keyword minh se search nhu operator OR
 			break;
 		case 0:
 			return cout << "Program Stop!", 0;
@@ -38,7 +40,8 @@ int main() {
 			break;
 		case 2:
 			break;
-		case 3:		//	-
+		case 3:
+			rankAndDisplay(function_3(command.second));
 			break;
 		case 4:		// intitle
 			break;

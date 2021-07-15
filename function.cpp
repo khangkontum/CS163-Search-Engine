@@ -247,12 +247,55 @@ map<string, double> function_1(string doc) {
 void function_2(Trie* root) {
 
 }
-void function_3(Trie* root) {
+// function 3
+//
+//
+map<string, double> function_3(string doc) {
+	// vi du search: manchester -united soccer, thi minh se search keyword : machester, soccer 
+	// va loai tru nhung file co tu united (google no lam vay)
 
-}
-void function_4(Trie* root) {
+	// search left-hand side
+	string mainDoc, deleteWord, minorDoc;
+	stringstream iss(doc);
+	getline(iss, mainDoc, '-');
+	iss >> deleteWord;
+	getline(iss, minorDoc, '\n');
 
+	map<string, double> score = function_1(mainDoc + minorDoc);
+	// cho nay la search theo OR(function_2) thi dung hon, khi nao viet xong het roi minh edit lai sau.
+
+	// delete unwanted text
+	if (getLeaf(deleteWord)) {
+		map<string, int> file = getLeaf(deleteWord)->fileArr;
+		map<string, int>::iterator it;
+		for (it = file.begin(); it != file.end(); ++it)
+			if (score[it->first] != 0)
+				score.erase(it->first);
+	}
+	return score;
 }
+
+//function 4
+//
+//
+string upperDocument(string doc) {
+	string newDoc, word;
+	stringstream iss(doc);
+	while (iss >> word) {
+		word[0] = toupper(word[0]);
+		newDoc += word + " ";
+	}
+	return newDoc;
+}
+map<string, double> function_4(string doc) {
+	string mainDoc, ignoreWord;
+	stringstream iss(doc);
+	getline(iss, ignoreWord, ':');
+	getline(iss, mainDoc, '\n');
+
+	return function_1(upperDocument(mainDoc));   // titile thi co dang uppercase chu cai dau tien.
+}
+
 void function_5(Trie* root) {
 
 }
