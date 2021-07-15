@@ -16,6 +16,7 @@ is getInput() {
 		return is(1, keyword);
 	//2
 
+
 	//3
 	for (int i = 0; i < keyword.length(); i++) {
 		if (keyword[i] == '-' && i == 0)
@@ -57,15 +58,15 @@ is getInput() {
 }
 
 // Trie function
-void Trie::insert(string word, string fileName) {
+void Trie::insert(string word, string fileName, int pos) {
 	Trie* pCur = this;
 	for (int i = 0; i < word.length(); ++i) {
 		if (!pCur->child[word[i] - ' '])
 			pCur->child[word[i] - ' '] = new Trie();
 		pCur = pCur->child[word[i] - ' '];
 	}
-	pCur->fileArr[fileName]++;
-	maxwd[fileName] = max(maxwd[fileName], pCur->fileArr[fileName]);
+	pCur->fileArr[fileName].push_back(pos);
+	maxwd[fileName] = (int)max(size_t(maxwd[fileName]), pCur->fileArr[fileName].size());
 	pCur->cnt++;
 }
 
@@ -78,7 +79,7 @@ int Trie::wordInFile(string word, string fileName) {
 			return 0;
 		pCur = pCur->child[x];
 	}
-	return pCur->fileArr[fileName];
+	return pCur->fileArr[fileName].size();
 }
 
 // Load data function
@@ -96,7 +97,7 @@ bool loadData() {
 	ifstream input("Database/Stopwords/stopwords.txt");
 	string stopword;
 	while (input >> stopword) {
-		stopwordsRoot->insert(stopword, "");
+		stopwordsRoot->insert(stopword, "", 0);
 	}
 	input.close();
 
@@ -114,10 +115,11 @@ bool loadData() {
 		}
 		while (!fin1.eof()) {
 			string word;
+			int pos = fin1.tellg();
 			fin1 >> word;
 			if (stopwordsRoot->wordInFile(wordIgnore(word), "")) //Ignore stopwords
 				continue;
-			dataRoot->insert(wordIgnore(word), fileName);
+			dataRoot->insert(wordIgnore(word), fileName, pos);
 			totalWord++;
 		}
 		fin1.close();
@@ -205,7 +207,7 @@ map<string, double> function_1(string doc) {
 	for (int i = 0; i < wordArr.size(); i++) {
 		if (getLeaf(wordArr[i])) {
 			// load filename cua word nay vo fileNameList
-			map<string, int> file = getLeaf(wordArr[i])->fileArr;
+			map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
 			for (_it = file.begin(); _it != file.end(); _it++)
 				fileNameList[_it->first]++;
 			// neu file nay k bao gom tat ca word truoc, bi loai

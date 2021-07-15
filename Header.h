@@ -6,14 +6,14 @@ using namespace std;
 // structure
 struct Trie {
 	Trie* child[96];  // from "33" to "128"
-	map<string, int> fileArr;
+	map<string,	vector<int> > fileArr;
 	int cnt;
 	Trie() {
 		for (int i = 0; i < 96; ++i)
 			child[i] = nullptr;
 		cnt = 0;
 	}
-	void insert(string word, string fileName);
+	void insert(string word, string fileName, int pos);
 	int wordInFile(string word, string fileName);
 };
 extern int totalWord;
