@@ -3,6 +3,20 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+//
+
+typedef pair<int, string> is;
+typedef pair<string, int> si;
+typedef pair<string, string> ss;
+typedef pair<string, vector<int> > svec;
+typedef pair<int, int> ii;
+typedef pair<int, ii> iii;
+typedef pair<double, string> ds;
+typedef pair<string, double> sd;
+#define pb push_back
+#define fi first
+#define se second
+
 // structure
 struct Trie {
 	Trie* child[38];  // a->z : 0->25 , 0->9 : 26->35 , # $ : 36->37
@@ -34,6 +48,10 @@ bool loadData();
 double tf(string word, string fileName);
 double idf(string word);
 double tfidf(string word, string fileName);
+vector<string> split(string s);
+string subtract(string s, int start, int end);
+
+
 // function 1
 Trie* getLeaf(string word);
 void rankAndDisplay(map<string, double> score);
@@ -53,7 +71,7 @@ map<string, double> function_7(string doc);
 // function 8
 map<string, double> function_8(string doc);
 
-void function_9(Trie* root);
+void exactMatch(string keyword);
 void function_10(Trie* root);
 void function_11(Trie* root);
 void function_12(Trie* root);

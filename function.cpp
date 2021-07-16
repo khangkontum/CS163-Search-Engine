@@ -1,7 +1,5 @@
 #include"Header.h"
 
-typedef pair<int, string> is;
-
 // Input function
 is getInput() {
 	string keyword;
@@ -47,6 +45,8 @@ is getInput() {
 	if (keyword[0] == '#')
 		return is(8, keyword);
 	//9
+	if (keyword[0] == '"' && keyword[keyword.size() - 1] == '"')
+		return is(9, keyword);
 
 	//10
 
@@ -179,11 +179,45 @@ double idf(string word) {
 			fileCount++;
 	}
 
-	return log(double(numOfFile / (1 + fileCount)));
+	return log(double((numOfFile + 1) / (1 + fileCount))) + 1;
 }
 
-double tfidf(string word, string fileName) {
-	return tf(word, fileName) * idf(word);
+vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
+	double D = fileNameList.size();
+	double d = 0.0;
+
+	Trie* leaf;
+	vector<ds> trace;
+	map<string, double> IDF;
+	for (auto word : wordList) {
+		leaf = getLeaf(word);
+		d = 0.0;
+		for (auto fileName : fileNameList) {
+			if (leaf->fileArr[fileName].size())
+				d++;
+		}
+		IDF[word] = log(double(D / (1 + d)));
+	}
+
+	double sum;
+	for (auto fileName : fileNameList) {
+		sum = 0;
+		for (auto word : wordList) {
+			sum += tf(word, fileName) * IDF[word];
+		}
+		trace.pb(ds(sum, fileName));
+	}
+
+	sort(trace.begin(), trace.end());
+
+	vector<string> tmp;
+	for (auto x : trace) {
+		cout.precision(16);
+		cout << x.fi << " " << x.se << "\n";
+		tmp.pb(x.se);
+	}
+
+	return tmp;
 }
 
 Trie* getLeaf(string word) {
@@ -200,7 +234,7 @@ Trie* getLeaf(string word) {
 void rankAndDisplay(map<string, double> score) {
 	// sort and output
 	map<string, double>::iterator it;
-	vector<pair<double, string>> scoreArr;
+	vector<pair<double, string> > scoreArr;
 	for (it = score.begin(); it != score.end(); it++)
 		scoreArr.push_back(make_pair(it->second, it->first));
 
@@ -265,7 +299,7 @@ map<string, double> function_1(string doc) {
 	if (checkNull)
 		for (int i = 0; i < wordArr.size(); i++) {
 			if (getLeaf(wordArr[i])) {
-				map<string, vector<int>> file = getLeaf(wordArr[i])->fileArr;
+				map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
 				for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
 					// score
 					score[_it->first] += tf(wordArr[i], _it->first); // vi idf = 0 nen minh chi can 
@@ -311,7 +345,7 @@ map<string, double> function_2(string doc) {
 	if (checkNull)
 		for (int i = 0; i < wordArr.size(); i++) {
 			if (getLeaf(wordArr[i])) {
-				map<string, vector<int>> file = getLeaf(wordArr[i])->fileArr;
+				map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
 				for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
 					//tf
 					double TF = tf(wordArr[i], _it->first);
@@ -343,7 +377,7 @@ map<string, double> function_3(string doc) {
 	// delete unwanted text
 	if (getLeaf(deleteWord)) {
 		map<string, vector<int> > file = getLeaf(deleteWord)->fileArr;
-		map<string, vector<int>>::iterator it;
+		map<string, vector<int> >::iterator it;
 		for (it = file.begin(); it != file.end(); ++it)
 			if (score.find(it->first) != score.end()) {
 				score.erase(it->first);
@@ -403,7 +437,7 @@ map<string, double> function_4(string doc) {
 	if (checkNull)
 		for (int i = 0; i < wordArr.size(); i++) {
 			if (getLeaf(wordArr[i])) {
-				map<string, vector<int>> file = getLeaf(wordArr[i])->fileArr;
+				map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
 				for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
 					// score
 					score[_it->first] += tf(wordArr[i], _it->first);
@@ -412,6 +446,68 @@ map<string, double> function_4(string doc) {
 		}
 	return score;
 }
+
+
+//String function
+vector<string> split(string s) {
+	vector<string> trace;
+	stringstream ss(s);
+	string word;
+	while(ss >> word) {
+        trace.push_back(word);
+	}
+    return trace;
+}
+
+string subtract(string s, int start, int end) {
+	string tmp = "";
+	for (int i = start; i <= end; i++)
+		tmp += s[i];
+	return tmp;
+}
+
+
+//exact match, return position of first character
+int continuosString(vector<svec> trace) {
+    queue<iii> qu;
+    for (int i = 0; i < trace[0].se.size(); i++) {
+        qu.push(iii(0, ii(trace[0].fi.size(), trace[0].fi.size() + trace[0].se[i])));
+    }
+
+    int pos = 0;
+    while(qu.size()) {
+        iii tmp = qu.front();
+        qu.pop();
+
+        ii u = ii(tmp.fi, tmp.se.se);
+        int strlen = tmp.se.fi;
+
+        int des = (u.se - strlen == 0) ? u.se : u.se + 1;
+
+        for (int i = 0; i < trace[u.fi + 1].se.size(); i++) {
+            int v = trace[u.fi + 1].se[i];
+            if (des == v) {
+                if (u.fi + 2 == int(trace.size())) {
+                    pos = v;
+                    break;
+                }
+                qu.push(iii(u.fi + 1, ii(trace[u.fi + 1].fi.size() ,v + trace[u.fi + 1].fi.size())));
+            }
+        }
+        if (pos)
+            break;
+    }
+
+    if (pos) {
+        for (int i = trace.size() - 2; i >= 0; i--) {
+            int length = trace[i].fi.size();
+            pos -= length + 1;
+        }
+        return (pos == -1 ? 0 : pos);
+    }
+    return -1;
+}
+
 
 void function_5(Trie* root) {
 
@@ -428,9 +524,50 @@ map<string, double> function_8(string doc) {
 	return function_2(doc);
 }
 
-void function_9(Trie* root) {
+int isSequenceInFile(vector<string> wordList, string fileName) {
+	vector<svec> trace;
+	Trie* leaf;
+	for (auto word : wordList) {
+		leaf = getLeaf(word);
+		trace.pb(svec(word, leaf->fileArr[fileName]));
+	}
 
+	return continuosString(trace);
 }
+
+//function 9
+void exactMatch(string keyword) {
+	keyword = subtract(keyword, 1, keyword.size() - 2);
+	vector<string> wordList = split(keyword);
+	sd maxIdf = sd("", -1.0);
+	for (int i = 0; i < wordList.size(); i++) {
+		int curIdf = idf(wordList[i]);
+		if (curIdf > maxIdf.se) {
+			maxIdf = sd(wordList[i], curIdf);
+		}
+	}
+
+	Trie* leaf = getLeaf(maxIdf.fi);
+	vector<string> fileNameList;
+	for (auto fileName : leaf->fileArr) {
+		if (fileName.se.size())
+			fileNameList.pb(fileName.fi);
+	}
+
+	vector<si> result;
+	for (auto fileName : fileNameList) {
+		int begin = isSequenceInFile(wordList, fileName);
+		if (begin != -1)
+			result.pb(si(fileName, begin));
+	}
+
+	vector<string> tmp;
+	for (auto x : result) {
+		tmp.pb(x.fi);
+	}
+	vector<string> trace = sortFile(wordList, tmp);
+}
+
 void function_10(Trie* root) {
 
 }

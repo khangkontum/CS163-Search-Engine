@@ -58,6 +58,7 @@ int main() {
 			rankAndDisplay(function_8(command.second));
 			break;
 		case 9:
+			exactMatch(command.se);
 			break;
 		case 10:
 			break;
