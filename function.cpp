@@ -97,6 +97,8 @@ int letterToInt(char a) {
 		return x - 97;
 	if ((x - 35) * (x - 36) == 0) // 36 37
 		return x + 1;
+	if ((x - 42) == 0)
+		return 38;
 	return -1;
 }
 string wordIgnore(string t) {
@@ -115,9 +117,9 @@ string standardString(string s) {
 		if (isalpha(s[i]))
 			result += tolower(s[i]);
 		else if (isalnum(s[i]))
-			result += tolower(s[i]);
-		else if (s[i] == '#' || s[i] == '$')
-			result += tolower(s[i]);
+			result += s[i];
+		else if (s[i] == '#' || s[i] == '$' || s[i] == '*')
+			result += s[i];
 	}
 	return result;
 }
@@ -453,10 +455,10 @@ vector<string> split(string s) {
 	vector<string> trace;
 	stringstream ss(s);
 	string word;
-	while(ss >> word) {
-        trace.push_back(word);
+	while (ss >> word) {
+		trace.push_back(word);
 	}
-    return trace;
+	return trace;
 }
 
 string subtract(string s, int start, int end) {
@@ -469,27 +471,27 @@ string subtract(string s, int start, int end) {
 
 //exact match, return position of first character
 int continuosString(vector<string> wordList, vector<int> trace, string fileName) {
-    string tmp;
-    ifstream fin("Database/Search Engine-Data/" + fileName);
-    bool found;
-    for (auto x : trace) {
-        fin.clear();
-        fin.seekg(x);
-        found = true;
-        for (auto word : wordList) {
-            fin >> tmp;
-            if (word == "*")
-                continue;
-            if (tmp != word) {
-                found = false;
-                break;
-            }
-        }
-        if (found)
-            return x;
-    }
+	string tmp;
+	ifstream fin("Database/Search Engine-Data/" + fileName);
+	bool found;
+	for (auto x : trace) {
+		fin.clear();
+		fin.seekg(x);
+		found = true;
+		for (auto word : wordList) {
+			fin >> tmp;
+			if (word == "*")
+				continue;
+			if (tmp != word) {
+				found = false;
+				break;
+			}
+		}
+		if (found)
+			return x;
+	}
 	fin.close();
-    return -1;
+	return -1;
 }
 
 

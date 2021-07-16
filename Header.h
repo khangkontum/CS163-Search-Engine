@@ -19,10 +19,10 @@ typedef pair<string, double> sd;
 
 // structure
 struct Trie {
-	Trie* child[38];  // a->z : 0->25 , 0->9 : 26->35 , # $ : 36->37
+	Trie* child[39];  // a->z : 0->25 , 0->9 : 26->35 , # $ *: 36->38
 	map<string, vector<int> > fileArr;
 	Trie() {
-		for (int i = 0; i < 38; ++i)
+		for (int i = 0; i < 39; ++i)
 			child[i] = nullptr;
 	}
 	void insert(string word, string fileName, int pos);
