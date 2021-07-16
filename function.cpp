@@ -118,7 +118,7 @@ string standardString(string s) {
 			result += tolower(s[i]);
 		else if (isalnum(s[i]))
 			result += s[i];
-		else if (s[i] == '#' || s[i] == '$' || s[i] == '*')
+		else if (s[i] == '#' || s[i] == '$' || s[i] == '*' || s[i] == ' ')
 			result += s[i];
 	}
 	return result;
@@ -232,32 +232,73 @@ Trie* getLeaf(string word) {
 	}
 	return temp;
 }
-
-void rankAndDisplay(map<string, double> score) {
+void highlightLine(string get, vector<string> wordArr) {
+	stringstream iss(get);
+	string word;
+	while (iss >> word) {
+		bool check = true;
+		for (int i = 0; i < wordArr.size(); i++) {
+			if (wordArr[i] == standardString(word)) {
+				check = false;
+				cout << "\033[32m" << word << "\033[m" << " ";
+				break;
+			}
+		}
+		if (check)
+			cout << word << " ";
+	}
+}
+void rankAndDisplay(map<string, double> score, vector<string> wordArr) {
 	// sort and output
 	map<string, double>::iterator it;
 	vector<pair<double, string> > scoreArr;
 	for (it = score.begin(); it != score.end(); it++)
 		scoreArr.push_back(make_pair(it->second, it->first));
-
 	sort(scoreArr.begin(), scoreArr.end());
 	bool run = false;
 	for (int i = scoreArr.size() - 1; i >= (int)scoreArr.size() - 5; i--) {
 		if (i >= 0) {
 			run = true;
-			cout << " " << scoreArr[i].first << " " << scoreArr[i].second << endl;
+			cout << "LINK: " << scoreArr[i].second << endl;
+			ifstream fin("Database/Search Engine-Data/" + scoreArr[i].second);
+			if (fin.is_open()) {
+				string get;
+				while (!fin.eof()) {
+					getline(fin, get, '.');
+					for (int i = 0; i < wordArr.size(); i++)
+						if (standardString(get).find(wordArr[i]) != string::npos) {
+							highlightLine(get, wordArr);
+							cout << endl;
+							break;
+						}
+				}
+			}
+			fin.close();
+			cout << "\n" << endl;
 		}
 	}
-
 	if (!run) {
 		cout << "Your search did not match any documents." << endl;
 		cout << "Suggestions:\n-Make sure that all words are spelled correctly. \n-Try different keywords.\nTry more general keywords.\n\n";
 	}
 }
-
-// function 1
-map<string, double> function_1(string doc) {
-	// array stored words
+vector<string> loadWordArr(string doc, int x) {
+	if (x == 3) {
+		string mainDoc, deleteWord, minorDoc;
+		stringstream iss(doc);
+		system("cls");
+		getline(iss, mainDoc, '-');
+		iss >> deleteWord;
+		getline(iss, minorDoc, '\n');
+		doc = standardString(mainDoc) + standardString(minorDoc);
+	}
+	else if (x == 4) {
+		string mainDoc;
+		stringstream iss(doc);
+		getline(iss, mainDoc, ':'); // ignore titile
+		getline(iss, mainDoc, '\n');
+		doc = mainDoc;
+	}
 	vector<string> wordArr;
 	string word;
 	stringstream iss(doc);
@@ -265,6 +306,16 @@ map<string, double> function_1(string doc) {
 	while (iss >> word)
 		if (!stopwordsRoot->wordInFile(standardString(word), ""))
 			wordArr.push_back(standardString(word));
+	return wordArr;
+}
+
+
+
+
+// function 1
+map<string, double> function_1(string doc) {
+	// array stored words
+	vector<string> wordArr = loadWordArr(doc, 1);
 
 	// array stored link
 	map<string, int> fileNameList;
@@ -315,13 +366,7 @@ map<string, double> function_1(string doc) {
 //function 2
 map<string, double> function_2(string doc) {
 	// array stored words
-	vector<string> wordArr;
-	string word;
-	stringstream iss(doc);
-	system("cls");
-	while (iss >> word)
-		if (!stopwordsRoot->wordInFile(standardString(word), ""))
-			wordArr.push_back(standardString(word));
+	vector<string> wordArr = loadWordArr(doc, 2);
 
 	// array stored link
 	map<string, int> fileNameList;
@@ -391,18 +436,8 @@ map<string, double> function_3(string doc) {
 
 //function 4
 map<string, double> function_4(string doc) {
-	string mainDoc;
-	stringstream iss(doc);
-	getline(iss, mainDoc, ':'); // ignore titile
-	getline(iss, mainDoc, '\n');
 	// array stored words
-	vector<string> wordArr;
-	string word;
-	stringstream _iss(mainDoc);
-	system("cls");
-	while (_iss >> word)
-		if (!stopwordsRoot->wordInFile(standardString(word), ""))
-			wordArr.push_back(standardString(word));
+	vector<string> wordArr = loadWordArr(doc, 4);
 
 	// array stored link
 	map<string, int> fileNameList;

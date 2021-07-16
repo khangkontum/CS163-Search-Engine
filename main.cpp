@@ -36,26 +36,26 @@ int main() {
 			return cout << "Program Stop!", 0;
 			break;
 		case 1:
-			rankAndDisplay(function_1(command.second));
+			rankAndDisplay(function_1(command.second), loadWordArr(command.second, 1));
 			break;
 		case 2:
-			rankAndDisplay(function_2(command.second));
+			rankAndDisplay(function_2(command.second), loadWordArr(command.second, 2));
 			break;
 		case 3:
-			rankAndDisplay(function_3(command.second));
+			rankAndDisplay(function_3(command.second), loadWordArr(command.second, 3));
 			break;
 		case 4:
-			rankAndDisplay(function_4(command.second));
+			rankAndDisplay(function_4(command.second), loadWordArr(command.second, 4));
 			break;
 		case 5:
 			break;
 		case 6:
 			break;
 		case 7:
-			rankAndDisplay(function_7(command.second));
+			rankAndDisplay(function_7(command.second), loadWordArr(command.second, 2));
 			break;
 		case 8:
-			rankAndDisplay(function_8(command.second));
+			rankAndDisplay(function_8(command.second), loadWordArr(command.second, 2));
 			break;
 		case 9:
 			exactMatch(command.se);
