@@ -60,8 +60,6 @@ int main() {
 		case 9:
 			exactMatch(command.se);
 			break;
-		case 10:
-			break;
 		case 11:
 			break;
 		case 12:

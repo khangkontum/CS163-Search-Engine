@@ -48,7 +48,7 @@ is getInput() {
 	if (keyword[0] == '"' && keyword[keyword.size() - 1] == '"')
 		return is(9, keyword);
 
-	//10
+	//10 done in 9
 
 	//11
 
@@ -468,43 +468,27 @@ string subtract(string s, int start, int end) {
 
 
 //exact match, return position of first character
-int continuosString(vector<svec> trace) {
-    queue<iii> qu;
-    for (int i = 0; i < trace[0].se.size(); i++) {
-        qu.push(iii(0, ii(trace[0].fi.size(), trace[0].fi.size() + trace[0].se[i])));
-    }
-
-    int pos = 0;
-    while(qu.size()) {
-        iii tmp = qu.front();
-        qu.pop();
-
-        ii u = ii(tmp.fi, tmp.se.se);
-        int strlen = tmp.se.fi;
-
-        int des = (u.se - strlen == 0) ? u.se : u.se + 1;
-
-        for (int i = 0; i < trace[u.fi + 1].se.size(); i++) {
-            int v = trace[u.fi + 1].se[i];
-            if (des == v) {
-                if (u.fi + 2 == int(trace.size())) {
-                    pos = v;
-                    break;
-                }
-                qu.push(iii(u.fi + 1, ii(trace[u.fi + 1].fi.size() ,v + trace[u.fi + 1].fi.size())));
+int continuosString(vector<string> wordList, vector<int> trace, string fileName) {
+    string tmp;
+    ifstream fin("Database/Search Engine-Data/" + fileName);
+    bool found;
+    for (auto x : trace) {
+        fin.clear();
+        fin.seekg(x);
+        found = true;
+        for (auto word : wordList) {
+            fin >> tmp;
+            if (word == "*")
+                continue;
+            if (tmp != word) {
+                found = false;
+                break;
             }
         }
-        if (pos)
-            break;
+        if (found)
+            return x;
     }
-
-    if (pos) {
-        for (int i = trace.size() - 2; i >= 0; i--) {
-            int length = trace[i].fi.size();
-            pos -= length + 1;
-        }
-        return (pos == -1 ? 0 : pos);
-    }
+	fin.close();
     return -1;
 }
 
@@ -525,14 +509,11 @@ map<string, double> function_8(string doc) {
 }
 
 int isSequenceInFile(vector<string> wordList, string fileName) {
-	vector<svec> trace;
-	Trie* leaf;
-	for (auto word : wordList) {
-		leaf = getLeaf(word);
-		trace.pb(svec(word, leaf->fileArr[fileName]));
-	}
+	string word = wordList[0];
+	Trie* leaf = getLeaf(word);
+	vector<int> trace = leaf->fileArr[fileName];
 
-	return continuosString(trace);
+	return continuosString(wordList, trace, fileName);
 }
 
 //function 9
