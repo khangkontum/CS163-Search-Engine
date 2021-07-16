@@ -39,19 +39,23 @@ int main() {
 			rankAndDisplay(function_1(command.second));
 			break;
 		case 2:
+			rankAndDisplay(function_2(command.second));
 			break;
 		case 3:
 			rankAndDisplay(function_3(command.second));
 			break;
-		case 4:		// intitle
+		case 4:
+			rankAndDisplay(function_4(command.second));
 			break;
 		case 5:
 			break;
 		case 6:
 			break;
 		case 7:
+			rankAndDisplay(function_7(command.second));
 			break;
 		case 8:
+			rankAndDisplay(function_8(command.second));
 			break;
 		case 9:
 			break;

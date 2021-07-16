@@ -10,13 +10,12 @@ is getInput() {
 	//0
 	if (keyword.size() == 1 && keyword[0] == '0')
 		return is(0, "");
-
 	//1
 	if (keyword.find(" AND ") != string::npos)
 		return is(1, keyword);
 	//2
-
-
+	if (keyword.find(" OR ") != string::npos)
+		return is(2, keyword);
 	//3
 	for (int i = 0; i < keyword.length(); i++) {
 		if (keyword[i] == '-' && i == 0)
@@ -24,7 +23,6 @@ is getInput() {
 		if (keyword[i] == '-' && keyword[i - 1] == ' ')
 			return is(3, keyword);
 	}
-
 	//4
 	string intitle = "intitle:";
 	for (int i = 0; i < intitle.length(); i++) {
@@ -43,9 +41,11 @@ is getInput() {
 	//6
 
 	//7
-
+	if (keyword.find("$") != string::npos)
+		return is(7, keyword);
 	//8
-
+	if (keyword[0] == '#')
+		return is(8, keyword);
 	//9
 
 	//10
@@ -58,23 +58,27 @@ is getInput() {
 }
 
 // Trie function
+
 void Trie::insert(string word, string fileName, int pos) {
 	Trie* pCur = this;
 	for (int i = 0; i < word.length(); ++i) {
-		if (!pCur->child[word[i] - ' '])
-			pCur->child[word[i] - ' '] = new Trie();
-		pCur = pCur->child[word[i] - ' '];
+		if (letterToInt(word[i]) != -1) {
+			if (!pCur->child[letterToInt(word[i])])
+				pCur->child[letterToInt(word[i])] = new Trie();
+			pCur = pCur->child[letterToInt(word[i])];
+		}
 	}
 	pCur->fileArr[fileName].push_back(pos);
 	maxwd[fileName] = (int)max(size_t(maxwd[fileName]), pCur->fileArr[fileName].size());
-	pCur->cnt++;
 }
 
 int Trie::wordInFile(string word, string fileName) {
 	Trie* pCur = this;
 	int x;
 	for (int i = 0; i < word.length(); i++) {
-		x = word[i] - ' ';
+		x = letterToInt(word[i]);
+		if (x == -1)
+			return 0;
 		if (!pCur->child[x])
 			return 0;
 		pCur = pCur->child[x];
@@ -83,6 +87,18 @@ int Trie::wordInFile(string word, string fileName) {
 }
 
 // Load data function
+int letterToInt(char a) {
+	int x = (int)a;
+	if ((x - 48) * (x - 57) <= 0) // 0->9 thi tu 26->35;
+		return x - 48 + 26;
+	if ((x - 65) * (x - 90) <= 0) // A->Z thi tu 0->25
+		return x - 65;
+	if ((x - 97) * (x - 122) <= 0) // a->z thi tu 0->25
+		return x - 97;
+	if ((x - 35) * (x - 36) == 0) // 36 37
+		return x + 1;
+	return -1;
+}
 string wordIgnore(string t) {
 	string result = "";
 	for (int i = 0; i < t.length(); i++) {
@@ -91,14 +107,28 @@ string wordIgnore(string t) {
 	}
 	return result;
 }
+string standardString(string s) {
+	string result = "";
+	for (int i = 0; i < s.length(); i++) {
+		if (int(s[i] - 33) * (int(s[i]) - 127) > 0)
+			continue;
+		if (isalpha(s[i]))
+			result += tolower(s[i]);
+		else if (isalnum(s[i]))
+			result += tolower(s[i]);
+		else if (s[i] == '#' || s[i] == '$')
+			result += tolower(s[i]);
+	}
+	return result;
+}
 
 bool loadData() {
 	// load stopwords
 	ifstream input("Database/Stopwords/stopwords.txt");
 	string stopword;
-	while (input >> stopword) {
+	while (input >> stopword)
 		stopwordsRoot->insert(stopword, "", 0);
-	}
+
 	input.close();
 
 	// load data
@@ -117,9 +147,9 @@ bool loadData() {
 			string word;
 			int pos = fin1.tellg();
 			fin1 >> word;
-			if (stopwordsRoot->wordInFile(wordIgnore(word), "")) //Ignore stopwords
+			if (stopwordsRoot->wordInFile(standardString(word), "")) //Ignore stopwords
 				continue;
-			dataRoot->insert(wordIgnore(word), fileName, pos);
+			dataRoot->insert(standardString(word), fileName, pos);
 			totalWord++;
 		}
 		fin1.close();
@@ -156,20 +186,17 @@ double tfidf(string word, string fileName) {
 	return tf(word, fileName) * idf(word);
 }
 
-
-// function 1
-//
-//
 Trie* getLeaf(string word) {
 	Trie* temp = dataRoot;
 	for (int i = 0; i < word.length(); i++) {
-		int x = word[i] - ' ';
+		int x = letterToInt(word[i]);
 		temp = temp->child[x];
 		if (!temp)
-			break;
+			return nullptr;
 	}
 	return temp;
 }
+
 void rankAndDisplay(map<string, double> score) {
 	// sort and output
 	map<string, double>::iterator it;
@@ -191,25 +218,31 @@ void rankAndDisplay(map<string, double> score) {
 		cout << "Suggestions:\n-Make sure that all words are spelled correctly. \n-Try different keywords.\nTry more general keywords.\n\n";
 	}
 }
+
+// function 1
 map<string, double> function_1(string doc) {
 	// array stored words
 	vector<string> wordArr;
 	string word;
 	stringstream iss(doc);
-	/*system("cls");*/
+	system("cls");
 	while (iss >> word)
-		if (!stopwordsRoot->wordInFile(wordIgnore(word), "") && word != "AND")
-			wordArr.push_back(word);
+		if (!stopwordsRoot->wordInFile(standardString(word), ""))
+			wordArr.push_back(standardString(word));
 
 	// array stored link
 	map<string, int> fileNameList;
 	map<string, int>::iterator _it;
+	map<string, vector<int> >::iterator it;
+	bool checkNull = true;
+
 	for (int i = 0; i < wordArr.size(); i++) {
 		if (getLeaf(wordArr[i])) {
 			// load filename cua word nay vo fileNameList
 			map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
-			for (_it = file.begin(); _it != file.end(); _it++)
-				fileNameList[_it->first]++;
+
+			for (it = file.begin(); it != file.end(); it++)
+				fileNameList[it->first]++;
 			// neu file nay k bao gom tat ca word truoc, bi loai
 			vector<string> del;
 			for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
@@ -221,35 +254,78 @@ map<string, double> function_1(string doc) {
 			for (int i = 0; i < del.size(); i++)
 				fileNameList.erase(del[i]);
 		}
+		else {
+			checkNull = false;
+			break;
+		}
 	}
 
 	// score cac file trong bang sum cac tf-idf trong fileNameList
 	map<string, double> score;
-	for (int i = 0; i < wordArr.size(); i++) {
-		if (getLeaf(wordArr[i])) {
-			map<string, int> file = getLeaf(wordArr[i])->fileArr;
-			for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
-				//tf
-				double tf = file[_it->first] * 1.0 / maxwd[_it->first];
-				// tdf
-				double tdf = 1; // vi so van ban chua word nay = tong so van ban minh dang xet.
-				// score
-				score[_it->first] += tf * tdf;
+	if (checkNull)
+		for (int i = 0; i < wordArr.size(); i++) {
+			if (getLeaf(wordArr[i])) {
+				map<string, vector<int>> file = getLeaf(wordArr[i])->fileArr;
+				for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
+					// score
+					score[_it->first] += tf(wordArr[i], _it->first); // vi idf = 0 nen minh chi can 
+																	 //so sanh tf la du
+				}
 			}
 		}
-	}
 	return score;
 }
 
-//
-//
-//
-void function_2(Trie* root) {
+//function 2
+map<string, double> function_2(string doc) {
+	// array stored words
+	vector<string> wordArr;
+	string word;
+	stringstream iss(doc);
+	system("cls");
+	while (iss >> word)
+		if (!stopwordsRoot->wordInFile(standardString(word), ""))
+			wordArr.push_back(standardString(word));
 
+	// array stored link
+	map<string, int> fileNameList;
+	map<string, int>::iterator _it;
+	map<string, vector<int> >::iterator it;
+	bool checkNull = true;
+
+	for (int i = 0; i < wordArr.size(); i++) {
+		if (getLeaf(wordArr[i])) {
+			// load filename cua word nay vo fileNameList
+			map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
+			for (it = file.begin(); it != file.end(); it++)
+				fileNameList[it->first]++;
+		}
+		else {
+			checkNull = false;
+			break;
+		}
+	}
+
+	// score cac file trong bang sum cac tf-idf trong fileNameList
+	map<string, double> score;
+	if (checkNull)
+		for (int i = 0; i < wordArr.size(); i++) {
+			if (getLeaf(wordArr[i])) {
+				map<string, vector<int>> file = getLeaf(wordArr[i])->fileArr;
+				for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
+					//tf
+					double TF = tf(wordArr[i], _it->first);
+					// tdf
+					double tdf = log(double(fileNameList.size() / (1 + file[_it->first].size())));
+					// score
+					score[_it->first] += TF * tdf;
+				}
+			}
+		}
+	return score;
 }
+
 // function 3
-//
-//
 map<string, double> function_3(string doc) {
 	// vi du search: manchester -united soccer, thi minh se search keyword : machester, soccer 
 	// va loai tru nhung file co tu united (google no lam vay)
@@ -257,43 +333,84 @@ map<string, double> function_3(string doc) {
 	// search left-hand side
 	string mainDoc, deleteWord, minorDoc;
 	stringstream iss(doc);
+	system("cls");
 	getline(iss, mainDoc, '-');
 	iss >> deleteWord;
 	getline(iss, minorDoc, '\n');
-
-	map<string, double> score = function_1(mainDoc + minorDoc);
+	map<string, double> score = function_2(standardString(mainDoc) + standardString(minorDoc));
 	// cho nay la search theo OR(function_2) thi dung hon, khi nao viet xong het roi minh edit lai sau.
 
 	// delete unwanted text
 	if (getLeaf(deleteWord)) {
-		map<string, int> file = getLeaf(deleteWord)->fileArr;
-		map<string, int>::iterator it;
+		map<string, vector<int> > file = getLeaf(deleteWord)->fileArr;
+		map<string, vector<int>>::iterator it;
 		for (it = file.begin(); it != file.end(); ++it)
-			if (score[it->first] != 0)
+			if (score.find(it->first) != score.end()) {
 				score.erase(it->first);
+			}
+
 	}
 	return score;
 }
 
 //function 4
-//
-//
-string upperDocument(string doc) {
-	string newDoc, word;
-	stringstream iss(doc);
-	while (iss >> word) {
-		word[0] = toupper(word[0]);
-		newDoc += word + " ";
-	}
-	return newDoc;
-}
 map<string, double> function_4(string doc) {
-	string mainDoc, ignoreWord;
+	string mainDoc;
 	stringstream iss(doc);
-	getline(iss, ignoreWord, ':');
+	getline(iss, mainDoc, ':'); // ignore titile
 	getline(iss, mainDoc, '\n');
+	// array stored words
+	vector<string> wordArr;
+	string word;
+	stringstream _iss(mainDoc);
+	system("cls");
+	while (_iss >> word)
+		if (!stopwordsRoot->wordInFile(standardString(word), ""))
+			wordArr.push_back(standardString(word));
 
-	return function_1(upperDocument(mainDoc));   // titile thi co dang uppercase chu cai dau tien.
+	// array stored link
+	map<string, int> fileNameList;
+	map<string, int>::iterator _it;
+	map<string, vector<int> >::iterator it;
+	bool checkNull = true;
+
+	for (int i = 0; i < wordArr.size(); i++) {
+		if (getLeaf(wordArr[i])) {
+			// load filename cua word nay vo fileNameList
+			map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
+			for (it = file.begin(); it != file.end(); it++)
+				if (it->second[0] < 150)
+					fileNameList[it->first]++;
+			// neu file nay k bao gom tat ca word truoc, bi loai
+			vector<string> del;
+			for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
+				if (_it->second != i + 1) {
+					del.push_back(_it->first);
+				}
+			}
+			// delete
+			for (int i = 0; i < del.size(); i++)
+				fileNameList.erase(del[i]);
+		}
+		else {
+			checkNull = false;
+			break;
+		}
+	}
+
+	// score cac file trong bang sum cac tf-idf trong fileNameList
+	map<string, double> score;
+	if (checkNull)
+		for (int i = 0; i < wordArr.size(); i++) {
+			if (getLeaf(wordArr[i])) {
+				map<string, vector<int>> file = getLeaf(wordArr[i])->fileArr;
+				for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
+					// score
+					score[_it->first] += tf(wordArr[i], _it->first);
+				}
+			}
+		}
+	return score;
 }
 
 void function_5(Trie* root) {
@@ -302,12 +419,15 @@ void function_5(Trie* root) {
 void function_6(Trie* root) {
 
 }
-void function_7(Trie* root) {
-
+// function 7
+map<string, double> function_7(string doc) {
+	return function_2(doc);
 }
-void function_8(Trie* root) {
-
+// function 8
+map<string, double> function_8(string doc) {
+	return function_2(doc);
 }
+
 void function_9(Trie* root) {
 
 }
