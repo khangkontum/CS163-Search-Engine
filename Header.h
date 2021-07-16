@@ -50,11 +50,12 @@ double idf(string word);
 double tfidf(string word, string fileName);
 vector<string> split(string s);
 string subtract(string s, int start, int end);
-
+vector<string> loadWordArr(string doc, int x);
+Trie* getLeaf(string word);
+void highlightLine(string get, vector<string> wordArr);
+void rankAndDisplay(map<string, double> score, vector<string> wordArr);
 
 // function 1
-Trie* getLeaf(string word);
-void rankAndDisplay(map<string, double> score);
 map<string, double> function_1(string doc);
 //function 2
 map<string, double> function_2(string doc);
