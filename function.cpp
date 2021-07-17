@@ -178,7 +178,6 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
-	/*
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
     json j;
     string s;
@@ -193,7 +192,6 @@ bool loadData() {
 		}
     }
     fin.close();
-	/**/
 
 	return true;
 }
