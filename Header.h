@@ -85,7 +85,7 @@ map<string, double> function_4(string doc);
 void normalSearchTmp(string keyword);
 vector<string> normalSearch(string keyword);
 void function_5(string keyword);
-void function_6(Trie* root);
+void function_6(string keyword);
 
 // function 7
 map<string, double> function_7(string doc);
