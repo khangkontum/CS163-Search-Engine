@@ -3,6 +3,7 @@
         "chrono": "cpp",
         "iostream": "cpp",
         "string": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "*.tcc": "cpp"
     }
 }

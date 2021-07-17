@@ -54,6 +54,7 @@ vector<string> loadWordArr(string doc, int x);
 Trie* getLeaf(string word);
 void highlightLine(string get, vector<string> wordArr);
 void rankAndDisplay(map<string, double> score, vector<string> wordArr);
+int isSequenceInFile(vector<string> wordList, string fileName);
 
 // function 1
 map<string, double> function_1(string doc);
@@ -64,7 +65,9 @@ map<string, double> function_3(string doc);
 // function 4
 map<string, double> function_4(string doc);
 
-void function_5(Trie* root);
+void normalSearchTmp(string keyword);
+vector<string> normalSearch(string keyword);
+void function_5(string keyword);
 void function_6(Trie* root);
 
 // function 7

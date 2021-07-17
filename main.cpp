@@ -30,7 +30,7 @@ int main() {
 		switch (command.first)
 		{
 		case -1:	//Normal keyword
-			// T nghi~ la normal keyword minh se search nhu operator OR
+			normalSearchTmp(command.se);
 			break;
 		case 0:
 			return cout << "Program Stop!", 0;
@@ -48,6 +48,7 @@ int main() {
 			rankAndDisplay(function_4(command.second), loadWordArr(command.second, 4));
 			break;
 		case 5:
+			function_5(command.se);
 			break;
 		case 6:
 			break;
