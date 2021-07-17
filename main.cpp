@@ -64,6 +64,7 @@ int main() {
 		case 11:
 			break;
 		case 12:
+			function_12(command.se);
 			break;
 		default:
 			cout << "Input invalid or could not found keyword.\n";

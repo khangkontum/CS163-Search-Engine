@@ -4,6 +4,8 @@
         "iostream": "cpp",
         "string": "cpp",
         "iosfwd": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "iterator": "cpp",
+        "cstdio": "cpp"
     }
 }

@@ -52,6 +52,8 @@ is getInput() {
 	//11
 
 	//12
+	if (keyword[0] == '~')
+		return is(12, keyword);
 
 	return is(-1, keyword); //Normal keyword
 }
@@ -117,7 +119,7 @@ string standardString(string s) {
 			result += tolower(s[i]);
 		else if (isalnum(s[i]))
 			result += s[i];
-		else if (s[i] == '#' || s[i] == '$' || s[i] == '*' || s[i] == ' ')
+		else if (s[i] == '#' || s[i] == '$' || s[i] == '*' || s[i] == ' ' || s[i] == '~')
 			result += s[i];
 	}
 	return result;
@@ -158,7 +160,20 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
-
+	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
+    json j;
+    string s;
+    int cnt = 10;
+    while(getline(fin, s)) {
+        j = json::parse(s);
+		string word = standardString(j["word"].dump());
+        for (auto sy : j["synonyms"]) {
+			if (sy.dump().find(" ") != string::npos)
+				continue;
+            thesaurusRoot->insert(word, standardString(sy.dump()), 0);
+		}
+    }
+    fin.close();
 
 	return true;
 }
@@ -235,6 +250,17 @@ vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
 	
 }
 
+Trie* getLeaf(string word, Trie* &root) {
+	Trie* temp = root;
+	for (int i = 0; i < word.length(); i++) {
+		int x = letterToInt(word[i]);
+		temp = temp->child[x];
+		if (!temp)
+			return nullptr;
+	}
+	return temp;
+}
+
 Trie* getLeaf(string word) {
 	Trie* temp = dataRoot;
 	for (int i = 0; i < word.length(); i++) {
@@ -245,6 +271,7 @@ Trie* getLeaf(string word) {
 	}
 	return temp;
 }
+
 void highlightLine(string get, vector<string> wordArr) {
 	stringstream iss(get);
 	string word;
@@ -550,13 +577,18 @@ int continuosString(vector<string> wordList, vector<int> trace, string fileName)
 vector<string> normalSearch(string keyword) {
 	vector <string> wordList;
 	vector <string> tmp;
+	Trie* leaf;
 	tmp = split(keyword);
+
+	
 	for (auto word : tmp) {
 		word = standardString(word);
-		if (stopwordsRoot->wordInFile(word, ""))
+		leaf = getLeaf(word, stopwordsRoot);
+		if (leaf != NULL)
 			continue;
 		wordList.pb(word);
 	}
+	
 
 	sd maxIdf = sd("", -1.0);
 	for (int i = 0; i < wordList.size(); i++) {
@@ -568,7 +600,7 @@ vector<string> normalSearch(string keyword) {
 		}
 	}
 	
-	Trie* leaf = getLeaf(maxIdf.fi);
+	leaf = getLeaf(maxIdf.fi);
 	vector<string> fileNameList;
 	for (auto fileName : leaf->fileArr) {
 		if (fileName.se.size())
@@ -583,6 +615,7 @@ void normalSearchTmp(string keyword) {
 	vector<string> fileNameList = normalSearch(keyword);
 	for (int i = 0; i < min(size_t(5), fileNameList.size()); i++)
 		cout << fileNameList[i] << "\n";
+	
 	return;
 }
 
@@ -692,13 +725,23 @@ void exactMatch(string keyword) {
 		cout << x << "\n";
 	/**/
 }
-
-void function_10(Trie* root) {
-
-}
 void function_11(Trie* root) {
 
 }
-void function_12(Trie* root) {
-
+void function_12(string keyword) {
+	keyword = subtract(keyword, 1, keyword.size());
+	keyword = standardString(keyword);
+	
+	Trie* leaf = getLeaf(keyword, thesaurusRoot);
+	if (leaf == NULL) {
+		cout << "There are no synonyms for this word.\n";
+		return;
+	}
+	keyword = "";
+	for (auto word : leaf->fileArr) {
+		keyword += " " + word.fi;
+	}
+	
+	normalSearchTmp(keyword);
+	/**/
 }
