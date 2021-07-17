@@ -51,6 +51,7 @@ int main() {
 			function_5(command.se);
 			break;
 		case 6:
+			function_6(command.se);
 			break;
 		case 7:
 			rankAndDisplay(function_7(command.second), loadWordArr(command.second, 2));

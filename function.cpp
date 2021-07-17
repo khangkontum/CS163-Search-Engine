@@ -8,6 +8,9 @@ is getInput() {
 	//0
 	if (keyword.size() == 1 && keyword[0] == '0')
 		return is(0, "");
+	//9
+	if (keyword[0] == '"' && keyword[keyword.size() - 1] == '"')
+		return is(9, keyword);
 	//1
 	if (keyword.find(" AND ") != string::npos)
 		return is(1, keyword);
@@ -38,15 +41,16 @@ is getInput() {
 	if (keyword.find("+") != string::npos)
 		return is(5, keyword);
 	//6
+	int id = keyword.find("filetype:");
+	if (id != string::npos && id == 0)
+		return is(6, keyword);
 	//7
 	if (keyword.find("$") != string::npos)
 		return is(7, keyword);
 	//8
 	if (keyword[0] == '#')
 		return is(8, keyword);
-	//9
-	if (keyword[0] == '"' && keyword[keyword.size() - 1] == '"')
-		return is(9, keyword);
+	
 
 	//10 done in 9
 	//11
@@ -601,6 +605,10 @@ vector<string> normalSearch(string keyword) {
 	}
 	
 	leaf = getLeaf(maxIdf.fi);
+	if (leaf == NULL) {
+		cout << "Cant find any approriate result.\n";
+		return {};
+	}
 	vector<string> fileNameList;
 	for (auto fileName : leaf->fileArr) {
 		if (fileName.se.size())
@@ -649,8 +657,23 @@ void function_5(string keyword) {
 	for (int i = 0; i < min(size_t(5), result.size()); i++)
 		cout << result[i] << "\n";
 }
-void function_6(Trie* root) {
-
+void function_6(string keyword) {
+	string fileType = subtract(keyword, 9, keyword.size());
+	string fileName;
+	ifstream fin("Database/Search Engine-Data/___index.txt");
+	int cnt = 0;
+	while(fin >> fileName) {
+		int id = fileName.size() - fileType.size() + 1;
+		string tmp = subtract(fileName, id, fileName.size());
+		if (tmp == fileType){
+			cnt++;
+			string file = subtract(fileName, 0, id - 1);
+			string tail = subtract(fileName, id, fileName.size());
+			cout << file << "\033[32m" << tail << "\033[m" << "\n";
+		}
+		if (cnt == 5)
+			return;
+	}
 }
 // function 7
 map<string, double> function_7(string doc) {
@@ -677,7 +700,7 @@ int isSequenceInFile(vector<string> wordList, string fileName) {
 	return continuosString(wordList, trace, fileName);
 }
 
-//function 9 NOT DONE
+//function 9 
 void exactMatch(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size() - 2);
 	
