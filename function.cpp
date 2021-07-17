@@ -44,6 +44,21 @@ is getInput() {
 	int id = keyword.find("filetype:");
 	if (id != string::npos && id == 0)
 		return is(6, keyword);
+	//11
+	for (int i = 0; i < keyword.size(); i++)
+	{
+		if (keyword[i] == '$') {
+			int j = i + 1;
+			while (j < keyword.size() && keyword[j] - '0' >= 0 && keyword[j] - '0' <= 9)
+				j++;
+			if (j >= keyword.size() - 3)
+				break;
+			if (keyword[j] != '.')
+				break;
+			if (keyword[j] == '.' && keyword[j + 1] == '.' && keyword[j + 2] == '$')
+				return is(11, keyword);
+		}
+	}
 	//7
 	if (keyword.find("$") != string::npos)
 		return is(7, keyword);
@@ -53,7 +68,6 @@ is getInput() {
 	
 
 	//10 done in 9
-	//11
 
 	//12
 	if (keyword[0] == '~')
@@ -164,6 +178,7 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
+	/*
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
     json j;
     string s;
@@ -178,6 +193,7 @@ bool loadData() {
 		}
     }
     fin.close();
+	/**/
 
 	return true;
 }
@@ -330,7 +346,7 @@ vector<string> loadWordArr(string doc, int x) {
 	if (x == 3) {
 		string mainDoc, deleteWord, minorDoc;
 		stringstream iss(doc);
-		system("cls");
+		//system("cls");
 		getline(iss, mainDoc, '-');
 		iss >> deleteWord;
 		getline(iss, minorDoc, '\n');
@@ -346,7 +362,7 @@ vector<string> loadWordArr(string doc, int x) {
 	vector<string> wordArr;
 	string word;
 	stringstream iss(doc);
-	system("cls");
+	//system("cls");
 	while (iss >> word)
 		if (!stopwordsRoot->wordInFile(standardString(word), ""))
 			wordArr.push_back(standardString(word));
@@ -455,7 +471,7 @@ map<string, double> function_3(string doc) {
 	// search left-hand side
 	string mainDoc, deleteWord, minorDoc;
 	stringstream iss(doc);
-	system("cls");
+	//system("cls");
 	getline(iss, mainDoc, '-');
 	iss >> deleteWord;
 	getline(iss, minorDoc, '\n');
@@ -748,8 +764,45 @@ void exactMatch(string keyword) {
 		cout << x << "\n";
 	/**/
 }
-void function_11(Trie* root) {
+void function_11(string keyword) {
+	string item = "";
+	int minx = 0;
+	int maxx = 0;
+	for (int i = 0; i < keyword.size(); i++)
+	{
+		if (keyword[i] == '$') {
+			int j = i + 1;
+			while (j < keyword.size() && keyword[j] - '0' >= 0 && keyword[j] - '0' <= 9) {
+				minx = minx * 10 + (keyword[j] - '0');
+				j++;
+			}
+			if (j >= keyword.size() - 3)
+				break;
+			if (keyword[j] != '.')
+				break;
+			if (keyword[j] == '.' && keyword[j + 1] == '.' && keyword[j + 2] == '$') {
+				string tmp = subtract(keyword, j + 3, keyword.size() - 1);
+				for (auto x : tmp) {
+					maxx = maxx * 10 + (x - '0');
+				}
+				break;
+			}
+		}
+		else {
+			item += keyword[i];
+		}
+	}
+	map<string, double> result; 
+	for (int i = minx; i <= maxx; i++) {
+		string price = to_string(i);
+		auto s = function_1(item + " $" + price);
+		for (auto it : s) {
+			result[it.fi] = it.se;
+		}
+	}
 
+	for (auto fileName : result) 
+		cout << fileName.fi << "\n";
 }
 void function_12(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size());

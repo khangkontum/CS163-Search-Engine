@@ -93,8 +93,7 @@ map<string, double> function_7(string doc);
 map<string, double> function_8(string doc);
 
 void exactMatch(string keyword);
-void function_10(Trie* root);
-void function_11(Trie* root);
+void function_11(string keyword);
 void function_12(string keyword);
 
 #endif 

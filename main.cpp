@@ -63,6 +63,7 @@ int main() {
 			exactMatch(command.se);
 			break;
 		case 11:
+			function_11(command.se);
 			break;
 		case 12:
 			function_12(command.se);
