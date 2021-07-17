@@ -35,9 +35,9 @@ is getInput() {
 	}
 
 	//5
-
+	if (keyword.find("+") != string::npos)
+		return is(5, keyword);
 	//6
-
 	//7
 	if (keyword.find("$") != string::npos)
 		return is(7, keyword);
@@ -49,7 +49,6 @@ is getInput() {
 		return is(9, keyword);
 
 	//10 done in 9
-
 	//11
 
 	//12
@@ -166,7 +165,10 @@ bool loadData() {
 
 //TF-IDF
 double tf(string word, string fileName) {
-	int ftd = dataRoot->wordInFile(word, fileName);
+	Trie* leaf = getLeaf(word);
+	if (leaf == NULL)
+		return 0;
+	int ftd = leaf->fileArr[fileName].size();
 	return double(ftd) / double(maxwd[fileName]);
 }
 
@@ -174,25 +176,36 @@ double idf(string word) {
 	string fileName;
 	int fileCount = 0;
 	int numOfFile = 0;
+	Trie* leaf = getLeaf(word);
+	if (leaf == NULL)
+		return 0;
 	ifstream fin("Database/Search Engine-Data/___index.txt");
 	while (fin >> fileName) {
 		numOfFile++;
-		if (dataRoot->wordInFile(word, fileName))
+		if (leaf->fileArr[fileName].size())
 			fileCount++;
 	}
 
-	return log(double((numOfFile + 1) / (1 + fileCount))) + 1;
+	return log(double((numOfFile) / (1 + fileCount)));
 }
 
+bool compare(ds a, ds b) {
+	return a.fi > b.fi;
+}
 vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
 	double D = fileNameList.size();
 	double d = 0.0;
-
+	
 	Trie* leaf;
 	vector<ds> trace;
 	map<string, double> IDF;
+
 	for (auto word : wordList) {
 		leaf = getLeaf(word);
+		if (leaf == NULL) {
+			IDF[word] = 0;
+			continue;
+		}
 		d = 0.0;
 		for (auto fileName : fileNameList) {
 			if (leaf->fileArr[fileName].size())
@@ -200,26 +213,26 @@ vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
 		}
 		IDF[word] = log(double(D / (1 + d)));
 	}
-
+	
 	double sum;
 	for (auto fileName : fileNameList) {
 		sum = 0;
 		for (auto word : wordList) {
-			sum += tf(word, fileName) * IDF[word];
+			sum += tf(word, fileName) * (IDF[word] > 0 ? IDF[word] : 1) ;
 		}
 		trace.pb(ds(sum, fileName));
 	}
 
-	sort(trace.begin(), trace.end());
+	sort(trace.begin(), trace.end(), compare);
+	/**/
 
 	vector<string> tmp;
 	for (auto x : trace) {
-		cout.precision(16);
-		cout << x.fi << " " << x.se << "\n";
 		tmp.pb(x.se);
 	}
 
 	return tmp;
+	
 }
 
 Trie* getLeaf(string word) {
@@ -308,9 +321,6 @@ vector<string> loadWordArr(string doc, int x) {
 			wordArr.push_back(standardString(word));
 	return wordArr;
 }
-
-
-
 
 // function 1
 map<string, double> function_1(string doc) {
@@ -514,24 +524,97 @@ int continuosString(vector<string> wordList, vector<int> trace, string fileName)
 		fin.seekg(x);
 		found = true;
 		for (auto word : wordList) {
-			fin >> tmp;
-			if (word == "*")
+			if (word == "*") {
+				fin >> tmp;
 				continue;
+			}
+			do {
+				fin >> tmp;
+				tmp = standardString(tmp);
+			}while(stopwordsRoot->wordInFile(tmp, ""));
+
 			if (tmp != word) {
 				found = false;
 				break;
 			}
 		}
-		if (found)
+		if (found) {
+			fin.close();
 			return x;
+		}
 	}
 	fin.close();
 	return -1;
 }
 
+vector<string> normalSearch(string keyword) {
+	vector <string> wordList;
+	vector <string> tmp;
+	tmp = split(keyword);
+	for (auto word : tmp) {
+		word = standardString(word);
+		if (stopwordsRoot->wordInFile(word, ""))
+			continue;
+		wordList.pb(word);
+	}
 
-void function_5(Trie* root) {
+	sd maxIdf = sd("", -1.0);
+	for (int i = 0; i < wordList.size(); i++) {
+		if (wordList[i] == "*")
+			continue;
+		int curIdf = idf(wordList[i]);
+		if (curIdf > maxIdf.se) {
+			maxIdf = sd(wordList[i], curIdf);
+		}
+	}
+	
+	Trie* leaf = getLeaf(maxIdf.fi);
+	vector<string> fileNameList;
+	for (auto fileName : leaf->fileArr) {
+		if (fileName.se.size())
+			fileNameList.pb(fileName.fi);
+	}
+	sortFile(wordList, fileNameList);
 
+	return fileNameList;
+}
+
+void normalSearchTmp(string keyword) {
+	vector<string> fileNameList = normalSearch(keyword);
+	for (int i = 0; i < min(size_t(5), fileNameList.size()); i++)
+		cout << fileNameList[i] << "\n";
+	return;
+}
+
+void function_5(string keyword) {
+	int mid = keyword.find('+');
+	string normal_kw = subtract(keyword, 0, mid - 1);
+	string exact_kw = subtract(keyword, mid + 1, keyword.size());
+
+	string dummy = normal_kw + exact_kw;
+	vector<string> fileNameList = normalSearch(dummy);
+
+	vector<string> normalList;
+	vector<string> exactList;
+	
+	vector <string> tmp;
+	tmp = split(exact_kw);
+	for (auto word : tmp) {
+		word = standardString(word);
+		if (stopwordsRoot->wordInFile(word, ""))
+			continue;
+		exactList.pb(word);
+	}
+
+	vector<string> result;
+	for (auto fileName : fileNameList) {
+		int begin = isSequenceInFile(exactList, fileName);
+		if (begin != -1) {
+			result.pb(fileName);
+		}
+	}
+	for (int i = 0; i < min(size_t(5), result.size()); i++)
+		cout << result[i] << "\n";
 }
 void function_6(Trie* root) {
 
@@ -546,32 +629,52 @@ map<string, double> function_8(string doc) {
 }
 
 int isSequenceInFile(vector<string> wordList, string fileName) {
-	string word = wordList[0];
+	string word;
+	for (auto x : wordList) {
+		if (!stopwordsRoot->wordInFile(x, "")) {
+			word = x;
+			break;
+		}
+	}
 	Trie* leaf = getLeaf(word);
+	if (leaf == NULL)
+		return -1;
 	vector<int> trace = leaf->fileArr[fileName];
 
 	return continuosString(wordList, trace, fileName);
 }
 
-//function 9
+//function 9 NOT DONE
 void exactMatch(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size() - 2);
-	vector<string> wordList = split(keyword);
+	
+	vector<string> tmpWord = split(keyword);
+	vector<string> wordList;
+	for (auto word : tmpWord) {
+		word = standardString(word);
+		if (stopwordsRoot->wordInFile(word, ""))
+			continue;
+		wordList.pb(word);
+	}
+
 	sd maxIdf = sd("", -1.0);
+	
 	for (int i = 0; i < wordList.size(); i++) {
+		if (wordList[i] == "*")
+			continue;
 		int curIdf = idf(wordList[i]);
 		if (curIdf > maxIdf.se) {
 			maxIdf = sd(wordList[i], curIdf);
 		}
 	}
-
+	
 	Trie* leaf = getLeaf(maxIdf.fi);
 	vector<string> fileNameList;
 	for (auto fileName : leaf->fileArr) {
 		if (fileName.se.size())
 			fileNameList.pb(fileName.fi);
 	}
-
+	
 	vector<si> result;
 	for (auto fileName : fileNameList) {
 		int begin = isSequenceInFile(wordList, fileName);
@@ -579,11 +682,15 @@ void exactMatch(string keyword) {
 			result.pb(si(fileName, begin));
 	}
 
+	
 	vector<string> tmp;
 	for (auto x : result) {
 		tmp.pb(x.fi);
 	}
 	vector<string> trace = sortFile(wordList, tmp);
+	for (auto x : trace) 
+		cout << x << "\n";
+	/**/
 }
 
 void function_10(Trie* root) {
