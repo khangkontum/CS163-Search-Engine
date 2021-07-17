@@ -1,7 +1,23 @@
 #ifndef myfunction
 #define myfunction
 
-#include<bits/stdc++.h>
+//#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <string.h>
+#include <string>
+#include <fstream>
+#include <cstdio>
+#include <cmath> 
+#include <iterator>
+#include <map>
+#include <algorithm>
+#include <type_traits>
+#include "nlohmann/json.hpp"
+
+
+using json = nlohmann::json;
 using namespace std;
 //
 
@@ -51,6 +67,7 @@ double tfidf(string word, string fileName);
 vector<string> split(string s);
 string subtract(string s, int start, int end);
 vector<string> loadWordArr(string doc, int x);
+Trie* getLeaf(string word, Trie* &root);
 Trie* getLeaf(string word);
 void highlightLine(string get, vector<string> wordArr);
 void rankAndDisplay(map<string, double> score, vector<string> wordArr);
@@ -78,6 +95,6 @@ map<string, double> function_8(string doc);
 void exactMatch(string keyword);
 void function_10(Trie* root);
 void function_11(Trie* root);
-void function_12(Trie* root);
+void function_12(string keyword);
 
 #endif 
