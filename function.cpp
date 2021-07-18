@@ -222,6 +222,78 @@ double idf(string word) {
 	return log(double((numOfFile) / (1 + fileCount)));
 }
 
+void display(string keyword, vector<string> fileNameList) {
+    vector<pair<string, bool> > wordArray;
+    vector<string> keywordArr = split(keyword);
+    for (int i = 0; i < keywordArr.size(); i++) {
+        keywordArr[i] = standardString(keywordArr[i]);\
+    }
+    string word;
+    int cnt = 0;
+    for (auto fileName : fileNameList) {
+        cout << cnt + 1 << ". " << fileName << "\n";
+        cnt++;
+        ifstream fin("Database/Search Engine-Data/" + fileName);
+        while (fin >> word) {
+            bool isKey = false;
+            string tmp = standardString(word);
+            for (auto keyword : keywordArr) {
+                if (tmp == keyword) {
+                    isKey = true;
+                    break;
+                }
+            }
+            wordArray.pb(pair<string, bool>(word, isKey));
+        }
+
+        
+        bool* marked = new bool[keywordArr.size() + 5];
+        for (int i = 0; i < keywordArr.size(); i++)
+            marked[i] = false;
+
+        int seqLen;
+        int starting;
+        for (int id = 0; id < wordArray.size(); id++) {
+            seqLen = 10;
+            starting = -1;
+            string word = standardString(wordArray[id].fi);
+            if (wordArray[id].se == false) 
+                continue;
+
+            for (int i = 0; i < keywordArr.size(); i++) {
+                if (keywordArr[i] == word) {
+                    if (marked[i] == true) 
+                        break;
+                    else {
+                        starting = max(id - 1, 0);
+                        marked[i] = true;
+                    }
+                } 
+            }
+            if (starting == -1)
+                continue;
+            cout << "...";
+            while(seqLen--) {
+                if(wordArray[starting].se) {
+                    wordArray[starting].fi = "\033[32m" + wordArray[starting].fi + "\033[m";
+                    seqLen++;
+                }
+                cout << wordArray[starting].fi << " ";
+                starting++;
+                if (starting == wordArray.size())
+                    break;
+            }
+            cout << "...";
+        }
+        cout << "\n";
+
+        if (cnt == 5)
+            return;
+
+        wordArray.clear();
+    }
+}
+
 bool compare(ds a, ds b) {
 	return a.fi > b.fi;
 }
@@ -635,9 +707,8 @@ vector<string> normalSearch(string keyword) {
 
 void normalSearchTmp(string keyword) {
 	vector<string> fileNameList = normalSearch(keyword);
-	for (int i = 0; i < min(size_t(5), fileNameList.size()); i++)
-		cout << fileNameList[i] << "\n";
-	
+	cout << fileNameList.size();
+	display(keyword, fileNameList);
 	return;
 }
 
@@ -758,8 +829,7 @@ void exactMatch(string keyword) {
 		tmp.pb(x.fi);
 	}
 	vector<string> trace = sortFile(wordList, tmp);
-	for (auto x : trace) 
-		cout << x << "\n";
+	display(keyword, trace);
 	/**/
 }
 void function_11(string keyword) {
@@ -798,9 +868,6 @@ void function_11(string keyword) {
 			result[it.fi] = it.se;
 		}
 	}
-
-	for (auto fileName : result) 
-		cout << fileName.fi << "\n";
 }
 void function_12(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size());
