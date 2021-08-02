@@ -27,6 +27,8 @@ int main() {
 		cout << "Input keyword (0 to exit): ";
 		pair<int, string> command = getInput(); // command.first = commmand | command.second = keyword
 		string keyword = command.second;
+		for (int i = 1; i <= 10; i++)
+			cout << '\n';
 		switch (command.first)
 		{
 		case -1:	//Normal keyword
