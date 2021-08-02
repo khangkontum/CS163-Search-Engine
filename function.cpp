@@ -231,7 +231,7 @@ void display(string keyword, vector<string> fileNameList) {
     string word;
     int cnt = 0;
     for (auto fileName : fileNameList) {
-        cout << cnt + 1 << ". " << fileName << "\n";
+        cout << "LINK: " << fileName << "\n";
         cnt++;
         ifstream fin("Database/Search Engine-Data/" + fileName);
         while (fin >> word) {
@@ -707,7 +707,6 @@ vector<string> normalSearch(string keyword) {
 
 void normalSearchTmp(string keyword) {
 	vector<string> fileNameList = normalSearch(keyword);
-	cout << fileNameList.size();
 	display(keyword, fileNameList);
 	return;
 }
