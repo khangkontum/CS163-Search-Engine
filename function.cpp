@@ -88,6 +88,7 @@ void Trie::insert(string word, string fileName, int pos) {
 		}
 	}
 	pCur->fileArr[fileName].push_back(pos);
+	pCur->isTail = true;
 	maxwd[fileName] = (int)max(size_t(maxwd[fileName]), pCur->fileArr[fileName].size());
 }
 
@@ -147,8 +148,9 @@ bool loadData() {
 	// load stopwords
 	ifstream input("Database/Stopwords/stopwords.txt");
 	string stopword;
-	while (input >> stopword)
+	while (input >> stopword) {
 		stopwordsRoot->insert(stopword, "", 0);
+	}
 
 	input.close();
 
@@ -223,10 +225,19 @@ double idf(string word) {
 }
 
 void display(string keyword, vector<string> fileNameList) {
+	if (fileNameList.size() == 0) {
+		cout << "Your search did not match any documents.\n";
+		cout << "Suggestions:\n";
+		cout << "-Make sure that all words are spelled correctly.\n"; 
+		cout << "-Try different keywords.\n";
+		cout << "-Try more general keywords.\n";
+		cout << "-Keyword with only stopwords will not get any result!\n";
+		return;
+	}
     vector<pair<string, bool> > wordArray;
     vector<string> keywordArr = split(keyword);
     for (int i = 0; i < keywordArr.size(); i++) {
-        keywordArr[i] = standardString(keywordArr[i]);\
+        keywordArr[i] = standardString(keywordArr[i]);
     }
     string word;
     int cnt = 0;
@@ -344,11 +355,14 @@ Trie* getLeaf(string word, Trie* &root) {
 	Trie* temp = root;
 	for (int i = 0; i < word.length(); i++) {
 		int x = letterToInt(word[i]);
-		temp = temp->child[x];
-		if (!temp)
+		if (temp->child[x] == nullptr)
 			return nullptr;
+		temp = temp->child[x];
 	}
-	return temp;
+	if (temp->isTail == true)
+		return temp;
+	else
+		return nullptr;
 }
 
 Trie* getLeaf(string word) {
@@ -674,12 +688,11 @@ vector<string> normalSearch(string keyword) {
 	for (auto word : tmp) {
 		word = standardString(word);
 		leaf = getLeaf(word, stopwordsRoot);
-		if (leaf != NULL)
+		if (leaf != nullptr)
 			continue;
 		wordList.pb(word);
 	}
 	
-
 	sd maxIdf = sd("", -1.0);
 	for (int i = 0; i < wordList.size(); i++) {
 		if (wordList[i] == "*")
@@ -689,16 +702,19 @@ vector<string> normalSearch(string keyword) {
 			maxIdf = sd(wordList[i], curIdf);
 		}
 	}
+
+	if (maxIdf.fi == "")
+		return {};
 	
 	leaf = getLeaf(maxIdf.fi);
 	if (leaf == NULL) {
-		cout << "Cant find any approriate result.\n";
 		return {};
 	}
 	vector<string> fileNameList;
 	for (auto fileName : leaf->fileArr) {
-		if (fileName.se.size())
+		if (fileName.se.size()) {
 			fileNameList.pb(fileName.fi);
+		}
 	}
 	sortFile(wordList, fileNameList);
 
