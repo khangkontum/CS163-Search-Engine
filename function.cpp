@@ -217,10 +217,9 @@ double idf(string word) {
 	ifstream fin("Database/Search Engine-Data/___index.txt");
 	while (fin >> fileName) {
 		numOfFile++;
-		if (leaf->fileArr[fileName].size())
+		if (leaf->fileArr.find(fileName) != leaf->fileArr.end())
 			fileCount++;
 	}
-
 	return log(double((numOfFile) / (1 + fileCount)));
 }
 
