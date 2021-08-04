@@ -403,32 +403,15 @@ void rankAndDisplay(map<string, double> score, vector<string> wordArr) {
 	for (it = score.begin(); it != score.end(); it++)
 		scoreArr.push_back(make_pair(it->second, it->first));
 	sort(scoreArr.begin(), scoreArr.end());
-	bool run = false;
-	for (int i = scoreArr.size() - 1; i >= (int)scoreArr.size() - 5; i--) {
-		if (i >= 0) {
-			run = true;
-			cout << "LINK: " << scoreArr[i].second << endl;
-			ifstream fin("Database/Search Engine-Data/" + scoreArr[i].second);
-			if (fin.is_open()) {
-				string get;
-				while (!fin.eof()) {
-					getline(fin, get, '.');
-					for (int i = 0; i < wordArr.size(); i++)
-						if (standardString(get).find(wordArr[i]) != string::npos) {
-							highlightLine(get, wordArr);
-							cout << endl;
-							break;
-						}
-				}
-			}
-			fin.close();
-			cout << "\n" << endl;
-		}
+	vector<string> fileNameList;
+	for (int i = scoreArr.size() - 1; i >= (int)scoreArr.size() - 5; i--)
+		if (i >= 0)
+			fileNameList.push_back(scoreArr[i].second);
+	string s = "";
+	for (int i = 0; i < (int)wordArr.size(); i++) {
+		s += wordArr[i] + " ";
 	}
-	if (!run) {
-		cout << "Your search did not match any documents." << endl;
-		cout << "Suggestions:\n-Make sure that all words are spelled correctly. \n-Try different keywords.\nTry more general keywords.\n\n";
-	}
+	display(s, fileNameList);
 }
 vector<string> loadWordArr(string doc, int x) {
 	if (x == 3) {
@@ -879,14 +862,20 @@ void function_11(string keyword) {
 			item += keyword[i];
 		}
 	}
-	map<string, double> result; 
+	map<string, double> tfScore;
+	vector<string> wordArr;
+	// load tfScore to Array
+	wordArr.push_back(item);
+
 	for (int i = minx; i <= maxx; i++) {
 		string price = to_string(i);
+		wordArr.push_back(" $" + price);
 		auto s = function_1(item + " $" + price);
 		for (auto it : s) {
-			result[it.fi] = it.se;
+			tfScore[it.fi] += it.se;
 		}
 	}
+	rankAndDisplay(tfScore, wordArr);
 }
 void function_12(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size());
