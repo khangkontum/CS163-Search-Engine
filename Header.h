@@ -37,7 +37,9 @@ typedef pair<string, double> sd;
 struct Trie {
 	Trie* child[39];  // a->z : 0->25 , 0->9 : 26->35 , # $ *: 36->38
 	map<string, vector<int> > fileArr;
+	bool isTail;
 	Trie() {
+		isTail = false;
 		for (int i = 0; i < 39; ++i)
 			child[i] = nullptr;
 	}
