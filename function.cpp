@@ -264,6 +264,7 @@ void display(string keyword, vector<string> fileNameList) {
 
         int seqLen;
         int starting;
+		int maxWord = 100;
         for (int id = 0; id < wordArray.size(); id++) {
             seqLen = 10;
             starting = -1;
@@ -290,11 +291,14 @@ void display(string keyword, vector<string> fileNameList) {
                     seqLen++;
                 }
                 cout << wordArray[starting].fi << " ";
+				maxWord--;
                 starting++;
                 if (starting == wordArray.size())
                     break;
             }
             cout << "...";
+			if (maxWord <= 0)
+				break;
         }
         cout << "\n";
 
