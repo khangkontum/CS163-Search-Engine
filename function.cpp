@@ -178,7 +178,7 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
-	
+	/*
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
     json j;
     string s;
@@ -193,6 +193,7 @@ bool loadData() {
 		}
     }
     fin.close();
+	/**/
 
 	return true;
 }
@@ -717,22 +718,27 @@ void function_5(string keyword) {
 	vector<string> normalList;
 	vector<string> exactList;
 	
-	vector <string> tmp;
-	tmp = split(exact_kw);
-	for (auto word : tmp) {
-		word = standardString(word);
-		if (stopwordsRoot->wordInFile(word, ""))
-			continue;
-		exactList.pb(word);
-	}
+	exactList = split(exact_kw);
 
 	vector<string> result;
+	Trie* leaf;
 	for (auto fileName : fileNameList) {
-		int begin = isSequenceInFile(exactList, fileName);
-		if (begin != -1) {
-			result.pb(fileName);
+		bool ok = true;
+		for (auto word : exactList) {
+			leaf = getLeaf(standardString(word));
+			if (leaf == NULL) {
+				display("", {});
+				return;
+			}
+			if (leaf->fileArr.find(fileName) == leaf->fileArr.end()) {
+				ok = false;
+				break;
+			}
 		}
+		if (ok)
+			result.push_back(fileName);
 	}
+	/**/
 	display(normal_kw + exact_kw, result);
 }
 void function_6(string keyword) {
@@ -742,6 +748,8 @@ void function_6(string keyword) {
 	int cnt = 0;
 	while(fin >> fileName) {
 		int id = fileName.size() - fileType.size() + 1;
+		if(id < 0)
+			continue;
 		string tmp = subtract(fileName, id, fileName.size());
 		if (tmp == fileType){
 			cnt++;
@@ -763,8 +771,8 @@ map<string, double> function_8(string doc) {
 }
 
 int isSequenceInFile(vector<string> wordList, string fileName) {
-	string word;
 	Trie* leaf = getLeaf(wordList[0]);
+	
 	if (leaf == NULL || leaf->fileArr.find(fileName) == leaf->fileArr.end())
 		return -1;
 
