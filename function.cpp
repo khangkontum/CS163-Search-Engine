@@ -762,7 +762,7 @@ void function_6(string keyword) {
 }
 // function 7
 map<string, double> function_7(string doc) {
-	return function_2(doc);
+	return function_1(doc);
 }
 // function 8
 map<string, double> function_8(string doc) {
