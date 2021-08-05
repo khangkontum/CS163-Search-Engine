@@ -41,7 +41,7 @@ is getInput() {
 	if (keyword.find("+") != string::npos)
 		return is(5, keyword);
 	//6
-	int id = keyword.find("filetype:");
+	int id = keyword.find("fil etype:");
 	if (id != string::npos && id == 0)
 		return is(6, keyword);
 	//11
@@ -64,7 +64,7 @@ is getInput() {
 		return is(7, keyword);
 	//8
 	if (keyword[0] == '#')
-		return is(8, keyword);
+		return is(9, '"' + keyword + '"');
 	
 
 	//10 done in 9
@@ -178,7 +178,7 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
-	/*
+	
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
     json j;
     string s;
@@ -193,7 +193,6 @@ bool loadData() {
 		}
     }
     fin.close();
-	/**/
 
 	return true;
 }
@@ -796,7 +795,12 @@ void exactMatch(string keyword) {
 			maxIdf = sd(wordList[i], curIdf);
 		}
 	}
+	
 	Trie* leaf = getLeaf(maxIdf.fi);
+	if (leaf == nullptr) {
+		display("", {});
+		return;
+	}
 	vector<string> fileNameList;
 	for (auto fileName : leaf->fileArr) {
 		if (fileName.se.size())
@@ -809,7 +813,7 @@ void exactMatch(string keyword) {
 		if (begin != -1)
 			result.pb(fileName);
 	}
-
+	
 	vector<string> trace = sortFile(wordList, result);
 	display(keyword, trace);
 }
