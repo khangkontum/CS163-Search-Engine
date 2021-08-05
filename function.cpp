@@ -41,7 +41,7 @@ is getInput() {
 	if (keyword.find("+") != string::npos)
 		return is(5, keyword);
 	//6
-	int id = keyword.find("fil etype:");
+	int id = keyword.find("filetype:");
 	if (id != string::npos && id == 0)
 		return is(6, keyword);
 	//11
@@ -240,7 +240,7 @@ void display(string keyword, vector<string> fileNameList) {
     string word;
     int cnt = 0;
     for (auto fileName : fileNameList) {
-        cout << "LINK: " << fileName << "\n";
+        cout << ">>> LINK: " << fileName << "\n";
         cnt++;
         ifstream fin("Database/Search Engine-Data/" + fileName);
         while (fin >> word) {
@@ -294,11 +294,10 @@ void display(string keyword, vector<string> fileNameList) {
                 if (starting == wordArray.size())
                     break;
             }
-            cout << "...";
 			if (maxWord <= 0)
 				break;
         }
-        cout << "\n";
+        cout << "...\n\n";
 
         if (cnt == 5)
             return;
