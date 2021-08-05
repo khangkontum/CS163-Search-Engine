@@ -170,8 +170,6 @@ bool loadData() {
 			string word;
 			int pos = fin1.tellg();
 			fin1 >> word;
-			if (stopwordsRoot->wordInFile(standardString(word), "")) //Ignore stopwords
-				continue;
 			dataRoot->insert(standardString(word), fileName, pos);
 			totalWord++;
 		}
@@ -180,6 +178,7 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
+	/*
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
     json j;
     string s;
@@ -194,6 +193,7 @@ bool loadData() {
 		}
     }
     fin.close();
+	/**/
 
 	return true;
 }
@@ -645,12 +645,8 @@ int continuosString(vector<string> wordList, vector<int> trace, string fileName)
 				fin >> tmp;
 				continue;
 			}
-			do {
-				fin >> tmp;
-				tmp = standardString(tmp);
-			}while(stopwordsRoot->wordInFile(tmp, ""));
-
-			if (tmp != word) {
+			fin >> tmp;
+			if (standardString(tmp) != word) {
 				found = false;
 				break;
 			}
@@ -669,7 +665,6 @@ vector<string> normalSearch(string keyword) {
 	vector <string> tmp;
 	Trie* leaf;
 	tmp = split(keyword);
-
 	
 	for (auto word : tmp) {
 		word = standardString(word);
@@ -740,8 +735,7 @@ void function_5(string keyword) {
 			result.pb(fileName);
 		}
 	}
-	for (int i = 0; i < min(size_t(5), result.size()); i++)
-		cout << result[i] << "\n";
+	display(normal_kw + exact_kw, result);
 }
 void function_6(string keyword) {
 	string fileType = subtract(keyword, 9, keyword.size());
@@ -772,18 +766,11 @@ map<string, double> function_8(string doc) {
 
 int isSequenceInFile(vector<string> wordList, string fileName) {
 	string word;
-	for (auto x : wordList) {
-		if (!stopwordsRoot->wordInFile(x, "")) {
-			word = x;
-			break;
-		}
-	}
-	Trie* leaf = getLeaf(word);
-	if (leaf == NULL)
+	Trie* leaf = getLeaf(wordList[0]);
+	if (leaf == NULL || leaf->fileArr.find(fileName) == leaf->fileArr.end())
 		return -1;
-	vector<int> trace = leaf->fileArr[fileName];
 
-	return continuosString(wordList, trace, fileName);
+	return continuosString(wordList, leaf->fileArr[fileName], fileName);
 }
 
 //function 9 
@@ -809,7 +796,6 @@ void exactMatch(string keyword) {
 			maxIdf = sd(wordList[i], curIdf);
 		}
 	}
-	
 	Trie* leaf = getLeaf(maxIdf.fi);
 	vector<string> fileNameList;
 	for (auto fileName : leaf->fileArr) {
@@ -817,21 +803,15 @@ void exactMatch(string keyword) {
 			fileNameList.pb(fileName.fi);
 	}
 	
-	vector<si> result;
+	vector<string> result;
 	for (auto fileName : fileNameList) {
 		int begin = isSequenceInFile(wordList, fileName);
 		if (begin != -1)
-			result.pb(si(fileName, begin));
+			result.pb(fileName);
 	}
 
-	
-	vector<string> tmp;
-	for (auto x : result) {
-		tmp.pb(x.fi);
-	}
-	vector<string> trace = sortFile(wordList, tmp);
+	vector<string> trace = sortFile(wordList, result);
 	display(keyword, trace);
-	/**/
 }
 void function_11(string keyword) {
 	string item = "";
