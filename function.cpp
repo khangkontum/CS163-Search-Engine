@@ -178,7 +178,7 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
-	/*
+	
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
     json j;
     string s;
@@ -193,7 +193,6 @@ bool loadData() {
 		}
     }
     fin.close();
-	/**/
 
 	return true;
 }
@@ -712,7 +711,7 @@ void function_5(string keyword) {
 	string normal_kw = subtract(keyword, 0, mid - 1);
 	string exact_kw = subtract(keyword, mid + 1, keyword.size());
 
-	string dummy = normal_kw + exact_kw;
+	string dummy = normal_kw + " " + exact_kw;
 	vector<string> fileNameList = normalSearch(dummy);
 
 	vector<string> normalList;
@@ -739,7 +738,7 @@ void function_5(string keyword) {
 			result.push_back(fileName);
 	}
 	/**/
-	display(normal_kw + exact_kw, result);
+	display(normal_kw + " " + exact_kw, result);
 }
 void function_6(string keyword) {
 	string fileType = subtract(keyword, 9, keyword.size());
