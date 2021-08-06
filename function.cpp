@@ -437,7 +437,7 @@ vector<string> loadWordArr(string doc, int x) {
 	return wordArr;
 }
 
-// function 1
+// function 1: AND
 map<string, double> function_1(string doc) {
 	// array stored words
 	vector<string> wordArr = loadWordArr(doc, 1);
@@ -488,7 +488,7 @@ map<string, double> function_1(string doc) {
 	return score;
 }
 
-//function 2
+//function 2: OR
 map<string, double> function_2(string doc) {
 	// array stored words
 	vector<string> wordArr = loadWordArr(doc, 2);
@@ -531,7 +531,7 @@ map<string, double> function_2(string doc) {
 	return score;
 }
 
-// function 3
+// function 3: Manchester –united
 map<string, double> function_3(string doc) {
 	// vi du search: manchester -united soccer, thi minh se search keyword : machester, soccer 
 	// va loai tru nhung file co tu united (google no lam vay)
@@ -559,7 +559,7 @@ map<string, double> function_3(string doc) {
 	return score;
 }
 
-//function 4
+//function 4: intitle:hammer nails
 map<string, double> function_4(string doc) {
 	// array stored words
 	vector<string> wordArr = loadWordArr(doc, 4);
@@ -706,6 +706,7 @@ void normalSearchTmp(string keyword) {
 	return;
 }
 
+// function 5: Peanut Butter +and Jam
 void function_5(string keyword) {
 	int mid = keyword.find('+');
 	string normal_kw = subtract(keyword, 0, mid - 1);
@@ -740,6 +741,8 @@ void function_5(string keyword) {
 	/**/
 	display(normal_kw + " " + exact_kw, result);
 }
+
+// function 6: filetype:txt
 void function_6(string keyword) {
 	string fileType = subtract(keyword, 9, keyword.size());
 	string fileName;
@@ -760,11 +763,11 @@ void function_6(string keyword) {
 			return;
 	}
 }
-// function 7
+// function 7: Search for a price
 map<string, double> function_7(string doc) {
 	return function_1(doc);
 }
-// function 8
+// function 8: Search hashtag
 map<string, double> function_8(string doc) {
 	return function_2(doc);
 }
@@ -778,7 +781,7 @@ int isSequenceInFile(vector<string> wordList, string fileName) {
 	return continuosString(wordList, leaf->fileArr[fileName], fileName);
 }
 
-//function 9 
+//function 9: Search for exact math 
 void exactMatch(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size() - 2);
 	
@@ -823,6 +826,8 @@ void exactMatch(string keyword) {
 	vector<string> trace = sortFile(wordList, result);
 	display(keyword, trace);
 }
+
+// function 11: Search within a range of numbers
 void function_11(string keyword) {
 	string item = "";
 	int minx = 0;
@@ -866,6 +871,8 @@ void function_11(string keyword) {
 	}
 	rankAndDisplay(tfScore, wordArr);
 }
+
+// function 12
 void function_12(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size());
 	keyword = standardString(keyword);
