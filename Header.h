@@ -9,13 +9,12 @@
 #include <string>
 #include <fstream>
 #include <cstdio>
-#include <cmath> 
+#include <cmath>
 #include <iterator>
 #include <map>
 #include <algorithm>
 #include <type_traits>
 #include "nlohmann/json.hpp"
-
 
 using json = nlohmann::json;
 using namespace std;
@@ -24,7 +23,7 @@ using namespace std;
 typedef pair<int, string> is;
 typedef pair<string, int> si;
 typedef pair<string, string> ss;
-typedef pair<string, vector<int> > svec;
+typedef pair<string, vector<int>> svec;
 typedef pair<int, int> ii;
 typedef pair<int, ii> iii;
 typedef pair<double, string> ds;
@@ -34,11 +33,13 @@ typedef pair<string, double> sd;
 #define se second
 
 // structure
-struct Trie {
-	Trie* child[39];  // a->z : 0->25 , 0->9 : 26->35 , # $ *: 36->38
-	map<string, vector<int> > fileArr;
+struct Trie
+{
+	Trie *child[39]; // a->z : 0->25 , 0->9 : 26->35 , # $ *: 36->38
+	map<string, vector<int>> fileArr;
 	bool isTail;
-	Trie() {
+	Trie()
+	{
 		isTail = false;
 		for (int i = 0; i < 39; ++i)
 			child[i] = nullptr;
@@ -47,13 +48,11 @@ struct Trie {
 	int wordInFile(string word, string fileName);
 };
 
-
 extern int totalWord;
-extern Trie* dataRoot;
-extern Trie* stopwordsRoot;
-extern Trie* thesaurusRoot;
+extern Trie *dataRoot;
+extern Trie *stopwordsRoot;
+extern Trie *thesaurusRoot;
 extern map<string, int> maxwd;
-
 
 // input function
 pair<int, string> getInput();
@@ -62,15 +61,15 @@ int letterToInt(char a);
 string wordIgnore(string t);
 bool loadData();
 
-// implement function
+// function helpers
 double tf(string word, string fileName);
 double idf(string word);
 double tfidf(string word, string fileName);
 vector<string> split(string s);
 string subtract(string s, int start, int end);
 vector<string> loadWordArr(string doc, int x);
-Trie* getLeaf(string word, Trie* &root);
-Trie* getLeaf(string word);
+Trie *getLeaf(string word, Trie *&root);
+Trie *getLeaf(string word);
 void highlightLine(string get, vector<string> wordArr);
 void rankAndDisplay(map<string, double> score, vector<string> wordArr);
 int isSequenceInFile(vector<string> wordList, string fileName);
@@ -98,4 +97,4 @@ void exactMatch(string keyword);
 void function_11(string keyword);
 void function_12(string keyword);
 
-#endif 
+#endif
