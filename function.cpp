@@ -109,11 +109,11 @@ int Trie::wordInFile(string word, string fileName) {
 // Load data function
 int letterToInt(char a) {
 	int x = (int)a;
-	if ((x - 48) * (x - 57) <= 0) // 0->9 thi tu 26->35;
+	if ((x - 48) * (x - 57) <= 0) // 0->9: 26->35;
 		return x - 48 + 26;
-	if ((x - 65) * (x - 90) <= 0) // A->Z thi tu 0->25
+	if ((x - 65) * (x - 90) <= 0) // A->Z: 0->25
 		return x - 65;
-	if ((x - 97) * (x - 122) <= 0) // a->z thi tu 0->25
+	if ((x - 97) * (x - 122) <= 0) // a->z: 0->25
 		return x - 97;
 	if ((x - 35) * (x - 36) == 0) // 36 37
 		return x + 1;
@@ -226,10 +226,10 @@ void display(string keyword, vector<string> fileNameList) {
 	if (fileNameList.size() == 0) {
 		cout << "Your search did not match any documents.\n";
 		cout << "Suggestions:\n";
-		cout << "-Make sure that all words are spelled correctly.\n"; 
-		cout << "-Try different keywords.\n";
-		cout << "-Try more general keywords.\n";
-		cout << "-Keyword with only stopwords will not get any result!\n";
+		cout << "- Make sure that all words are spelled correctly.\n"; 
+		cout << "- Try different keywords.\n";
+		cout << "- Try more general keywords.\n";
+		cout << "- Keyword with only stopwords will not get any result!\n";
 		return;
 	}
     vector<pair<string, bool> > wordArray;
@@ -260,11 +260,11 @@ void display(string keyword, vector<string> fileNameList) {
         for (int i = 0; i < keywordArr.size(); i++)
             marked[i] = false;
 
-        int seqLen;
+        int seqLength;
         int starting;
 		int maxWord = 100;
         for (int id = 0; id < wordArray.size(); id++) {
-            seqLen = 10;
+            seqLength = 10;
             starting = -1;
             string word = standardString(wordArray[id].fi);
             if (wordArray[id].se == false) 
@@ -283,10 +283,10 @@ void display(string keyword, vector<string> fileNameList) {
             if (starting == -1)
                 continue;
             cout << "...";
-            while(seqLen--) {
+            while(seqLength--) {
                 if(wordArray[starting].se) {
                     wordArray[starting].fi = "\033[32m" + wordArray[starting].fi + "\033[m";
-                    seqLen++;
+                    seqLength++;
                 }
                 cout << wordArray[starting].fi << " ";
 				maxWord--;
@@ -888,5 +888,4 @@ void function_12(string keyword) {
 	}
 	
 	normalSearchTmp(keyword);
-	/**/
 }
