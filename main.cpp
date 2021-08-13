@@ -22,7 +22,7 @@ int main() {
 		exit(1);
 	}
 
-	// searhing menu
+	// Searching Menu
 	do {
 		cout << "-----------------------------------------------\n";
 		cout << "Input keyword (0 to exit): ";
