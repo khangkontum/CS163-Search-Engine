@@ -4,19 +4,21 @@
 is getInput() {
 	string keyword;
 	getline(cin, keyword, '\n');
-
-	//0
 	if (keyword.size() == 1 && keyword[0] == '0')
 		return is(0, "");
+
 	//9
 	if (keyword[0] == '"' && keyword[keyword.size() - 1] == '"')
 		return is(9, keyword);
+
 	//1
 	if (keyword.find(" AND ") != string::npos)
 		return is(1, keyword);
+
 	//2
 	if (keyword.find(" OR ") != string::npos)
 		return is(2, keyword);
+
 	//3
 	for (int i = 0; i < keyword.length(); i++) {
 		if (keyword[i] == '-' && i == 0)
@@ -24,6 +26,7 @@ is getInput() {
 		if (keyword[i] == '-' && keyword[i - 1] == ' ')
 			return is(3, keyword);
 	}
+
 	//4
 	string intitle = "intitle:";
 	for (int i = 0; i < intitle.length(); i++) {
@@ -65,9 +68,6 @@ is getInput() {
 	//8
 	if (keyword[0] == '#')
 		return is(9, '"' + keyword + '"');
-	
-
-	//10 done in 9
 
 	//12
 	if (keyword[0] == '~')
@@ -148,9 +148,8 @@ bool loadData() {
 	// load stopwords
 	ifstream input("Database/Stopwords/stopwords.txt");
 	string stopword;
-	while (input >> stopword) {
+	while (input >> stopword)
 		stopwordsRoot->insert(stopword, "", 0);
-	}
 
 	input.close();
 
@@ -178,21 +177,20 @@ bool loadData() {
 	fin.close();
 
 	// load thesaurus
-	
 	fin.open("Database/Thesaurus/en_thesaurus.jsonl");
-    json j;
-    string s;
-    int cnt = 10;
-    while(getline(fin, s)) {
-        j = json::parse(s);
+	json j;
+	string s;
+	int cnt = 10;
+	while (getline(fin, s)) {
+		j = json::parse(s);
 		string word = standardString(j["word"].dump());
-        for (auto sy : j["synonyms"]) {
+		for (auto sy : j["synonyms"]) {
 			if (sy.dump().find(" ") != string::npos)
 				continue;
-            thesaurusRoot->insert(word, standardString(sy.dump()), 0);
+			thesaurusRoot->insert(word, standardString(sy.dump()), 0);
 		}
-    }
-    fin.close();
+	}
+	fin.close();
 
 	return true;
 }
@@ -226,93 +224,95 @@ void display(string keyword, vector<string> fileNameList) {
 	if (fileNameList.size() == 0) {
 		cout << "Your search did not match any documents.\n";
 		cout << "Suggestions:\n";
-		cout << "- Make sure that all words are spelled correctly.\n"; 
+		cout << "- Make sure that all words are spelled correctly.\n";
 		cout << "- Try different keywords.\n";
 		cout << "- Try more general keywords.\n";
 		cout << "- Keyword with only stopwords will not get any result!\n";
 		return;
 	}
-    vector<pair<string, bool> > wordArray;
-    vector<string> keywordArr = split(keyword);
-    for (int i = 0; i < keywordArr.size(); i++) {
-        keywordArr[i] = standardString(keywordArr[i]);
-    }
-    string word;
-    int cnt = 0;
-    for (auto fileName : fileNameList) {
-        cout << ">>> LINK: " << fileName << "\n";
-        cnt++;
-        ifstream fin("Database/Search Engine-Data/" + fileName);
-        while (fin >> word) {
-            bool isKey = false;
-            string tmp = standardString(word);
-            for (auto keyword : keywordArr) {
-                if (tmp == keyword) {
-                    isKey = true;
-                    break;
-                }
-            }
-            wordArray.pb(pair<string, bool>(word, isKey));
-        }
 
-        
-        bool* marked = new bool[keywordArr.size() + 5];
-        for (int i = 0; i < keywordArr.size(); i++)
-            marked[i] = false;
+	vector<pair<string, bool> > wordArray;
+	vector<string> keywordArr = split(keyword);
+	for (int i = 0; i < keywordArr.size(); i++) {
+		keywordArr[i] = standardString(keywordArr[i]);
+	}
+	string word;
+	int cnt = 0;
+	for (auto fileName : fileNameList) {
+		cout << ">>> LINK: " << fileName << "\n";
+		cnt++;
+		ifstream fin("Database/Search Engine-Data/" + fileName);
+		while (fin >> word) {
+			bool isKey = false;
+			string tmp = standardString(word);
+			for (auto keyword : keywordArr) {
+				if (tmp == keyword) {
+					isKey = true;
+					break;
+				}
+			}
+			wordArray.pb(pair<string, bool>(word, isKey));
+		}
 
-        int seqLength;
-        int starting;
+
+		bool* marked = new bool[keywordArr.size() + 5];
+		for (int i = 0; i < keywordArr.size(); i++)
+			marked[i] = false;
+
+		int seqLength;
+		int starting;
 		int maxWord = 100;
-        for (int id = 0; id < wordArray.size(); id++) {
-            seqLength = 10;
-            starting = -1;
-            string word = standardString(wordArray[id].fi);
-            if (wordArray[id].se == false) 
-                continue;
+		for (int id = 0; id < wordArray.size(); id++) {
+			seqLength = 10;
+			starting = -1;
+			string word = standardString(wordArray[id].fi);
+			if (wordArray[id].se == false)
+				continue;
 
-            for (int i = 0; i < keywordArr.size(); i++) {
-                if (keywordArr[i] == word) {
-                    if (marked[i] == true) 
-                        break;
-                    else {
-                        starting = max(id - 1, 0);
-                        marked[i] = true;
-                    }
-                } 
-            }
-            if (starting == -1)
-                continue;
-            cout << "...";
-            while(seqLength--) {
-                if(wordArray[starting].se) {
-                    wordArray[starting].fi = "\033[32m" + wordArray[starting].fi + "\033[m";
-                    seqLength++;
-                }
-                cout << wordArray[starting].fi << " ";
+			for (int i = 0; i < keywordArr.size(); i++) {
+				if (keywordArr[i] == word) {
+					if (marked[i] == true)
+						break;
+					else {
+						starting = max(id - 1, 0);
+						marked[i] = true;
+					}
+				}
+			}
+			if (starting == -1)
+				continue;
+			cout << "...";
+			while (seqLength--) {
+				if (wordArray[starting].se) {
+					wordArray[starting].fi = "\033[32m" + wordArray[starting].fi + "\033[m";
+					seqLength++;
+				}
+				cout << wordArray[starting].fi << " ";
 				maxWord--;
-                starting++;
-                if (starting == wordArray.size())
-                    break;
-            }
+				starting++;
+				if (starting == wordArray.size())
+					break;
+			}
 			if (maxWord <= 0)
 				break;
-        }
-        cout << "...\n\n";
+		}
+		cout << "...\n\n";
 
-        if (cnt == 5)
-            return;
+		if (cnt == 5)
+			return;
 
-        wordArray.clear();
-    }
+		wordArray.clear();
+	}
 }
 
 bool compare(ds a, ds b) {
 	return a.fi > b.fi;
 }
+
 vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
 	double D = fileNameList.size();
 	double d = 0.0;
-	
+
 	Trie* leaf;
 	vector<ds> trace;
 	map<string, double> IDF;
@@ -330,18 +330,17 @@ vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
 		}
 		IDF[word] = log(double(D / (1 + d)));
 	}
-	
+
 	double sum;
 	for (auto fileName : fileNameList) {
 		sum = 0;
 		for (auto word : wordList) {
-			sum += tf(word, fileName) * (IDF[word] > 0 ? IDF[word] : 1) ;
+			sum += tf(word, fileName) * (IDF[word] > 0 ? IDF[word] : 1);
 		}
 		trace.pb(ds(sum, fileName));
 	}
 
 	sort(trace.begin(), trace.end(), compare);
-	/**/
 
 	vector<string> tmp;
 	for (auto x : trace) {
@@ -349,10 +348,10 @@ vector<string> sortFile(vector<string> wordList, vector<string> fileNameList) {
 	}
 
 	return tmp;
-	
+
 }
 
-Trie* getLeaf(string word, Trie* &root) {
+Trie* getLeaf(string word, Trie*& root) {
 	Trie* temp = root;
 	for (int i = 0; i < word.length(); i++) {
 		int x = letterToInt(word[i]);
@@ -544,7 +543,6 @@ map<string, double> function_3(string doc) {
 	iss >> deleteWord;
 	getline(iss, minorDoc, '\n');
 	map<string, double> score = function_2(standardString(mainDoc) + standardString(minorDoc));
-	// cho nay la search theo OR(function_2) thi dung hon, khi nao viet xong het roi minh edit lai sau.
 
 	// delete unwanted text
 	if (getLeaf(deleteWord)) {
@@ -572,11 +570,13 @@ map<string, double> function_4(string doc) {
 
 	for (int i = 0; i < wordArr.size(); i++) {
 		if (getLeaf(wordArr[i])) {
+
 			// load filename cua word nay vo fileNameList
 			map<string, vector<int> > file = getLeaf(wordArr[i])->fileArr;
 			for (it = file.begin(); it != file.end(); it++)
 				if (it->second[0] < 150)
 					fileNameList[it->first]++;
+
 			// neu file nay k bao gom tat ca word truoc, bi loai
 			vector<string> del;
 			for (_it = fileNameList.begin(); _it != fileNameList.end(); _it++) {
@@ -615,9 +615,10 @@ vector<string> split(string s) {
 	vector<string> trace;
 	stringstream ss(s);
 	string word;
-	while (ss >> word) {
+
+	while (ss >> word)
 		trace.push_back(word);
-	}
+
 	return trace;
 }
 
@@ -663,7 +664,7 @@ vector<string> normalSearch(string keyword) {
 	vector <string> tmp;
 	Trie* leaf;
 	tmp = split(keyword);
-	
+
 	for (auto word : tmp) {
 		word = standardString(word);
 		leaf = getLeaf(word, stopwordsRoot);
@@ -671,30 +672,28 @@ vector<string> normalSearch(string keyword) {
 			continue;
 		wordList.pb(word);
 	}
-	
+
 	sd maxIdf = sd("", -1.0);
 	for (int i = 0; i < wordList.size(); i++) {
 		if (wordList[i] == "*")
 			continue;
 		int curIdf = idf(wordList[i]);
-		if (curIdf > maxIdf.se) {
+		if (curIdf > maxIdf.se)
 			maxIdf = sd(wordList[i], curIdf);
-		}
 	}
 
 	if (maxIdf.fi == "")
 		return {};
-	
+
 	leaf = getLeaf(maxIdf.fi);
-	if (leaf == NULL) {
+	if (leaf == NULL)
 		return {};
-	}
+
 	vector<string> fileNameList;
-	for (auto fileName : leaf->fileArr) {
-		if (fileName.se.size()) {
+	for (auto fileName : leaf->fileArr)
+		if (fileName.se.size())
 			fileNameList.pb(fileName.fi);
-		}
-	}
+
 	sortFile(wordList, fileNameList);
 
 	return fileNameList;
@@ -717,7 +716,7 @@ void function_5(string keyword) {
 
 	vector<string> normalList;
 	vector<string> exactList;
-	
+
 	exactList = split(exact_kw);
 
 	vector<string> result;
@@ -748,12 +747,12 @@ void function_6(string keyword) {
 	string fileName;
 	ifstream fin("Database/Search Engine-Data/___index.txt");
 	int cnt = 0;
-	while(fin >> fileName) {
+	while (fin >> fileName) {
 		int id = fileName.size() - fileType.size() + 1;
-		if(id < 0)
+		if (id < 0)
 			continue;
 		string tmp = subtract(fileName, id, fileName.size());
-		if (tmp == fileType){
+		if (tmp == fileType) {
 			cnt++;
 			string file = subtract(fileName, 0, id - 1);
 			string tail = subtract(fileName, id, fileName.size());
@@ -763,10 +762,12 @@ void function_6(string keyword) {
 			return;
 	}
 }
+
 // function 7: Search for a price
 map<string, double> function_7(string doc) {
 	return function_1(doc);
 }
+
 // function 8: Search hashtag
 map<string, double> function_8(string doc) {
 	return function_2(doc);
@@ -774,7 +775,7 @@ map<string, double> function_8(string doc) {
 
 int isSequenceInFile(vector<string> wordList, string fileName) {
 	Trie* leaf = getLeaf(wordList[0]);
-	
+
 	if (leaf == NULL || leaf->fileArr.find(fileName) == leaf->fileArr.end())
 		return -1;
 
@@ -784,7 +785,7 @@ int isSequenceInFile(vector<string> wordList, string fileName) {
 //function 9: Search for exact math 
 void exactMatch(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size() - 2);
-	
+
 	vector<string> tmpWord = split(keyword);
 	vector<string> wordList;
 	for (auto word : tmpWord) {
@@ -795,7 +796,7 @@ void exactMatch(string keyword) {
 	}
 
 	sd maxIdf = sd("", -1.0);
-	
+
 	for (int i = 0; i < wordList.size(); i++) {
 		if (wordList[i] == "*")
 			continue;
@@ -804,7 +805,7 @@ void exactMatch(string keyword) {
 			maxIdf = sd(wordList[i], curIdf);
 		}
 	}
-	
+
 	Trie* leaf = getLeaf(maxIdf.fi);
 	if (leaf == nullptr) {
 		display("", {});
@@ -815,14 +816,14 @@ void exactMatch(string keyword) {
 		if (fileName.se.size())
 			fileNameList.pb(fileName.fi);
 	}
-	
+
 	vector<string> result;
 	for (auto fileName : fileNameList) {
 		int begin = isSequenceInFile(wordList, fileName);
 		if (begin != -1)
 			result.pb(fileName);
 	}
-	
+
 	vector<string> trace = sortFile(wordList, result);
 	display(keyword, trace);
 }
@@ -852,15 +853,13 @@ void function_11(string keyword) {
 				break;
 			}
 		}
-		else {
-			item += keyword[i];
-		}
+		else item += keyword[i];
+
 	}
 	map<string, double> tfScore;
 	vector<string> wordArr;
 	// load tfScore to Array
 	wordArr.push_back(item);
-
 	for (int i = minx; i <= maxx; i++) {
 		string price = to_string(i);
 		wordArr.push_back(" $" + price);
@@ -876,7 +875,7 @@ void function_11(string keyword) {
 void function_12(string keyword) {
 	keyword = subtract(keyword, 1, keyword.size());
 	keyword = standardString(keyword);
-	
+
 	Trie* leaf = getLeaf(keyword, thesaurusRoot);
 	if (leaf == NULL) {
 		cout << "There are no synonyms for this word.\n";
@@ -886,6 +885,5 @@ void function_12(string keyword) {
 	for (auto word : leaf->fileArr) {
 		keyword += " " + word.fi;
 	}
-	
 	normalSearchTmp(keyword);
 }
