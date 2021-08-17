@@ -3,8 +3,10 @@
 // Input function
 is getInput() {
 	string keyword;
-	getline(cin, keyword, '\n');
-	if (keyword.size() == 1 && keyword[0] == '0')
+	do {
+		getline(cin, keyword, '\n');
+	} while(keyword.size() == 0);
+	if (keyword == "0")
 		return is(0, "");
 
 	//9
@@ -157,7 +159,7 @@ bool loadData() {
 	ifstream fin("Database/Search Engine-Data/___index.txt");
 	if (!fin.is_open())
 		return false;
-	while (!fin.eof()) {
+	while (!fin.eof() && FILE_NUM--) {
 		string fileName;
 		getline(fin, fileName, '\n');
 		ifstream fin1("Database/Search Engine-Data/" + fileName);
@@ -236,11 +238,12 @@ void display(string keyword, vector<string> fileNameList) {
 	for (int i = 0; i < keywordArr.size(); i++) {
 		keywordArr[i] = standardString(keywordArr[i]);
 	}
+	ignoreStopwords(keywordArr);
 	string word;
 	int cnt = 0;
 	for (auto fileName : fileNameList) {
-		cout << ">>> LINK: " << fileName << "\n";
 		cnt++;
+		cout << '[' << cnt << "] " << fileName << "\n";
 		ifstream fin("Database/Search Engine-Data/" + fileName);
 		while (fin >> word) {
 			bool isKey = false;
@@ -253,7 +256,7 @@ void display(string keyword, vector<string> fileNameList) {
 			}
 			wordArray.pb(pair<string, bool>(word, isKey));
 		}
-
+		fin.close();
 
 		bool* marked = new bool[keywordArr.size() + 5];
 		for (int i = 0; i < keywordArr.size(); i++)
@@ -299,10 +302,43 @@ void display(string keyword, vector<string> fileNameList) {
 		cout << "...\n\n";
 
 		if (cnt == 5)
-			return;
+			break;
 
 		wordArray.clear();
 	}
+	int command = 0;
+	cout << "Enter file number to preview (0 to continue search): ";
+	cin >> command;
+	while (command < 0 || command > min(size_t(5), fileNameList.size())) {
+		cout << "Please enter correctly (0-5): ";
+		cin >> command;
+	}
+	if (command == 0)
+		return;
+	cout << "--------------------------------------\n";
+	string fileName = fileNameList[command - 1];
+	ifstream fin("Database/Search Engine-Data/" + fileName);
+	string line;
+	while (getline(fin, line)) {
+		stringstream linestream(line);
+		while(linestream >> word) {
+			bool isKey = false;
+			string tmp = standardString(word);
+			for (auto keyword : keywordArr) {
+				if (tmp == keyword) {
+					isKey = true;
+					break;
+				}
+			}
+			if (isKey) {
+				cout << "\033[32m" + word + "\033[m ";
+			}
+			else 
+				cout << word << ' ';
+		}
+		cout << '\n';
+	}
+	fin.close();
 }
 
 bool compare(ds a, ds b) {
@@ -530,7 +566,7 @@ map<string, double> function_2(string doc) {
 	return score;
 }
 
-// function 3: Manchester –united
+// function 3: Manchester ï¿½united
 map<string, double> function_3(string doc) {
 	// vi du search: manchester -united soccer, thi minh se search keyword : machester, soccer 
 	// va loai tru nhung file co tu united (google no lam vay)
@@ -761,6 +797,8 @@ void function_6(string keyword) {
 		if (cnt == 5)
 			return;
 	}
+	if (cnt == 0)
+		display("",{});
 }
 
 // function 7: Search for a price
@@ -780,6 +818,17 @@ int isSequenceInFile(vector<string> wordList, string fileName) {
 		return -1;
 
 	return continuosString(wordList, leaf->fileArr[fileName], fileName);
+}
+
+void ignoreStopwords(vector<string> &wordList) {
+	vector<string> result;
+	Trie* leaf;
+	for (auto word : wordList) {
+		leaf = getLeaf(word, stopwordsRoot);
+		if (leaf == NULL)
+			result.pb(word);
+	}
+	wordList = result;
 }
 
 //function 9: Search for exact math 

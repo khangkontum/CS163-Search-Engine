@@ -4,16 +4,14 @@ int totalWord = 0;
 Trie* dataRoot = new Trie;
 Trie* stopwordsRoot = new Trie;
 Trie* thesaurusRoot = new Trie;
+int FILE_NUM = 1000;
 map<string, int> maxwd;		//the most word occur in file 
 
 int main() {
-
-
 	cout.precision(16);
 	// loading data
 	cout << "Data loading...\n";
 	bool check = loadData();
-	//system("cls");   //clear the screen
 
 	if (check)
 		cout << "Loading successfully\n\n" << "Total word: " << totalWord << "\n";
@@ -23,9 +21,12 @@ int main() {
 	}
 
 	// Searching Menu
+	int queryCount = 0;
 	do {
+		system("clear");
 		cout << "-----------------------------------------------\n";
 		cout << "Input keyword (0 to exit): ";
+		queryCount++;
 		pair<int, string> command = getInput(); // command.first = commmand | command.second = keyword
 		string keyword = command.second;
 		
@@ -74,6 +75,7 @@ int main() {
 			cout << "Input invalid or could not found keyword.\n";
 			break;
 		}
+		system("read -p \"\nPress a key to continue...\" -n 1 -s");
 	} while (true);
 
 	return 0;

@@ -3,6 +3,7 @@
 
 //#include<bits/stdc++.h>
 #include <iostream>
+#include <time.h>
 #include <vector>
 #include <sstream>
 #include <string.h>
@@ -49,6 +50,7 @@ struct Trie
 };
 
 extern int totalWord;
+extern int FILE_NUM;
 extern Trie *dataRoot;
 extern Trie *stopwordsRoot;
 extern Trie *thesaurusRoot;
@@ -73,6 +75,7 @@ Trie *getLeaf(string word);
 void highlightLine(string get, vector<string> wordArr);
 void rankAndDisplay(map<string, double> score, vector<string> wordArr);
 int isSequenceInFile(vector<string> wordList, string fileName);
+void ignoreStopwords(vector<string> &wordList);
 
 // function 1
 map<string, double> function_1(string doc);
